@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>大玉 — Ōdama｜花火大会のフィナーレを指揮せよ</title>
+<meta name="theme-color" content="#050614">
+<meta name="description" content="長押しで溜めて、夜空の頂点で離す。花火大会のフィナーレを指揮するタイミング体感ゲー。">
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;background:#050614;overflow:hidden;
+    font-family:-apple-system,'Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif;
+    color:#eef1ff;touch-action:none;user-select:none;-webkit-user-select:none;}
+  #sky{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:1;}
+  #ui{position:fixed;inset:0;z-index:2;pointer-events:none;}
+  #ui>*{pointer-events:auto;}
+
+  /* HUD */
+  #hud{position:absolute;top:0;left:0;right:0;padding:14px 16px 6px;
+    display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+    background:linear-gradient(#050614cc,#05061400);}
+  .stat{font-variant-numeric:tabular-nums;}
+  .stat .lbl{font-size:10px;letter-spacing:2px;color:#8b93b6;}
+  .stat .val{font-size:26px;font-weight:900;line-height:1;margin-top:2px;
+    text-shadow:0 0 14px currentColor;}
+  #score .val{color:#ffd76a;}
+  #shells .val{color:#8fe6ff;}
+  #shells{text-align:right;}
+  #cheerWrap{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:40%;max-width:180px;}
+  #cheerWrap .lbl{font-size:9px;letter-spacing:2px;color:#ff9ecb;text-align:center;margin-bottom:4px;text-shadow:0 0 8px #ff2d8788;}
+  #cheerBar{height:7px;border-radius:6px;background:#211427;border:1px solid #3a2340;overflow:hidden;}
+  #cheerFill{height:100%;width:0%;border-radius:6px;
+    background:linear-gradient(90deg,#ff2d87,#ffb547);transition:width .18s ease;box-shadow:0 0 12px #ff2d87aa;}
+
+  /* controls */
+  #controls{position:absolute;left:0;right:0;bottom:0;padding:10px 14px calc(14px + env(safe-area-inset-bottom));
+    background:linear-gradient(#05061400,#050614dd);}
+  #hint{text-align:center;font-size:11px;color:#9aa2c6;letter-spacing:1px;margin-bottom:9px;height:14px;}
+  #types{display:flex;gap:9px;}
+  .type{flex:1;border:1.5px solid var(--c);border-radius:15px;padding:9px 4px 8px;
+    background:#0c1022;text-align:center;transition:transform .08s,box-shadow .2s,background .2s;cursor:pointer;}
+  .type .nm{font-size:15px;font-weight:900;color:var(--c);text-shadow:0 0 10px var(--c);}
+  .type .dt{font-size:9.5px;color:#93a0c4;margin-top:3px;line-height:1.35;}
+  .type.sel{background:color-mix(in srgb,var(--c) 22%,#0c1022);box-shadow:0 0 18px -2px var(--c),inset 0 0 14px -6px var(--c);transform:translateY(-2px);}
+  .type:active{transform:scale(.96);}
+
+  /* overlays */
+  .overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:26px;text-align:center;background:radial-gradient(120% 90% at 50% 30%,#0b1030f0,#050614fb);}
+  .hidden{display:none!important;}
+  .brand{font-size:13px;letter-spacing:6px;color:#ffb547;text-shadow:0 0 14px #ffb54788;margin-bottom:6px;}
+  .big{font-size:64px;font-weight:900;letter-spacing:4px;line-height:1;
+    background:linear-gradient(180deg,#fff,#8fe6ff 55%,#ff2d87);-webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 34px #8fe6ff44;}
+  .romaji{font-size:14px;letter-spacing:8px;color:#8fb2ff;margin-top:8px;}
+  .lead{font-size:13px;color:#c2c8e6;line-height:1.9;margin:20px 6px 4px;max-width:340px;}
+  .cta{margin-top:26px;padding:16px 44px;border:none;border-radius:40px;font-size:19px;font-weight:900;letter-spacing:3px;
+    color:#0a0710;background:linear-gradient(120deg,#ffd76a,#ffb547);box-shadow:0 0 28px #ffb54766;cursor:pointer;}
+  .cta:active{transform:scale(.96);}
+  .mini{font-size:11px;color:#7d84a6;margin-top:18px;line-height:1.7;}
+
+  /* result */
+  #shareCard{width:min(78vw,300px);border-radius:16px;box-shadow:0 10px 40px #000a,0 0 30px #ff2d8722;}
+  #resBtns{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:center;}
+  .rbtn{padding:13px 22px;border-radius:30px;font-size:14px;font-weight:800;letter-spacing:1px;border:1.5px solid #3a4372;background:#111632;color:#dfe4ff;cursor:pointer;}
+  .rbtn.pri{background:linear-gradient(120deg,#ff2d87,#ffb547);color:#180512;border:none;box-shadow:0 0 20px #ff2d8755;}
+  .rbtn:active{transform:scale(.95);}
+
+  /* finale banner */
+  #banner{position:absolute;top:34%;left:0;right:0;text-align:center;opacity:0;transform:scale(.7);transition:opacity .2s,transform .2s;pointer-events:none;}
+  #banner.show{opacity:1;transform:scale(1);}
+  #banner .b1{font-size:15px;letter-spacing:8px;color:#ffd76a;text-shadow:0 0 16px #ffd76a;}
+  #banner .b2{font-size:46px;font-weight:900;letter-spacing:6px;
+    background:linear-gradient(90deg,#ff2d87,#ffd76a,#8fe6ff);-webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 30px #ffb54744;}
+  .judge{position:absolute;top:46%;left:0;right:0;text-align:center;font-size:40px;font-weight:900;letter-spacing:3px;
+    opacity:0;pointer-events:none;text-shadow:0 0 22px currentColor;}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+
+<div id="ui">
+  <!-- in-game HUD -->
+  <div id="hud" class="hidden">
+    <div id="score" class="stat"><div class="lbl">SCORE</div><div class="val">0</div></div>
+    <div id="cheerWrap"><div class="lbl">歓声 CHEER</div><div id="cheerBar"><div id="cheerFill"></div></div></div>
+    <div id="shells" class="stat"><div class="lbl">玉 SHELLS</div><div class="val">10</div></div>
+  </div>
+
+  <div id="banner"><div class="b1">満場の歓声</div><div class="b2">FINALE!</div></div>
+  <div id="judge" class="judge"></div>
+
+  <!-- controls -->
+  <div id="controls" class="hidden">
+    <div id="hint">長押しで溜め・夜空の頂点でパッと離す</div>
+    <div id="types">
+      <div class="type sel" data-t="kiku" style="--c:#00e5ff"><div class="nm">菊</div><div class="dt">広い・安全<br>×1.0</div></div>
+      <div class="type" data-t="botan" style="--c:#ff2d87"><div class="nm">牡丹</div><div class="dt">狭い・一発<br>×2.0</div></div>
+      <div class="type" data-t="shikake" style="--c:#ffb547"><div class="nm">仕掛け</div><div class="dt">連発<br>×1.5</div></div>
+    </div>
+  </div>
+
+  <!-- title -->
+  <div id="title" class="overlay">
+    <div class="brand">IDEA RADAR ＝ 花火大会</div>
+    <div class="big">大玉</div>
+    <div class="romaji">Ō D A M A</div>
+    <div class="lead">長押しで導火線を溜め、<br>音が高鳴る夜空の<b style="color:#ffd76a">頂点</b>で指を離す。<br>ジャストなら、腹に響く<b style="color:#ff2d87">ドーン</b>と大輪。<br>10発で夜空をどこまで埋められる？</div>
+    <button class="cta" id="startBtn">点火する</button>
+    <div class="mini">音が出ます 🔊 ／ スマホ縦画面推奨<br>完全オンデバイス・データ送信なし</div>
+  </div>
+
+  <!-- result -->
+  <div id="result" class="overlay hidden">
+    <div class="brand" id="resTitle">花火師</div>
+    <img id="shareCard" alt="結果カード">
+    <div id="resBtns">
+      <button class="rbtn pri" id="shareBtn">シェア / 保存</button>
+      <button class="rbtn" id="retryBtn">もう一度</button>
+    </div>
+    <div class="mini"><a href="../" style="color:#8fb2ff;text-decoration:none;">📡 他の優勝アプリを見る →</a></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+(function(){
+  const cv = document.getElementById('sky');
+  const ctx = cv.getContext('2d');
+  let W=0,H=0,DPR=1;
+  function resize(){
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    W=window.innerWidth; H=window.innerHeight;
+    cv.width=W*DPR; cv.height=H*DPR; cv.style.width=W+'px'; cv.style.height=H+'px';
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  window.addEventListener('resize',resize); resize();
+
+  // ---------- Audio (WebAudio, synthesized, no files) ----------
+  let AC=null, master=null;
+  function initAudio(){
+    if(AC) return;
+    try{
+      AC = new (window.AudioContext||window.webkitAudioContext)();
+      master = AC.createGain(); master.gain.value=0.9; master.connect(AC.destination);
+    }catch(e){ AC=null; }
+  }
+  function now(){ return AC?AC.currentTime:0; }
+  // low "DON" using missing fundamental (55/44Hz + harmonics) + noise pop
+  function boom(mult, finale){
+    if(!AC) return;
+    const t=now();
+    const base = finale?44:55;
+    const g=AC.createGain(); g.connect(master);
+    const peak=Math.min(0.95, 0.34+0.16*mult+(finale?0.25:0));
+    const tail=finale?1.2:0.42;
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(peak,t+0.006);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+tail);
+    [1,2,3,4].forEach((h,i)=>{
+      const o=AC.createOscillator(); o.type='sine'; o.frequency.value=base*h;
+      const og=AC.createGain(); og.gain.value=[1,0.6,0.4,0.28][i];
+      o.connect(og); og.connect(g); o.start(t); o.stop(t+tail+0.05);
+    });
+    // noise burst "pop"
+    const nlen=finale?0.14:0.06;
+    const buf=AC.createBuffer(1,Math.ceil(AC.sampleRate*nlen),AC.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++){ d[i]=(Math.random()*2-1)*(1-i/d.length); }
+    const ns=AC.createBufferSource(); ns.buffer=buf;
+    const nf=AC.createBiquadFilter(); nf.type='lowpass';
+    nf.frequency.setValueAtTime(2600,t); nf.frequency.exponentialRampToValueAtTime(500,t+nlen);
+    const ng=AC.createGain(); ng.gain.value=0.5+0.3*mult;
+    ns.connect(nf); nf.connect(ng); ng.connect(master); ns.start(t); ns.stop(t+nlen);
+  }
+  // ascending arpeggio on a good/perfect release
+  function sparkArp(perfect){
+    if(!AC) return; const t=now();
+    const notes=perfect?[523,659,784,1047]:[392,523,659];
+    notes.forEach((f,i)=>{
+      const o=AC.createOscillator(); o.type='sine'; o.frequency.value=f;
+      const g=AC.createGain(); g.connect(master); o.connect(g);
+      const s=t+i*0.05;
+      g.gain.setValueAtTime(0.0001,s); g.gain.exponentialRampToValueAtTime(0.22,s+0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001,s+0.18);
+      o.start(s); o.stop(s+0.2);
+    });
+  }
+  function fizzle(){
+    if(!AC) return; const t=now();
+    const o=AC.createOscillator(); o.type='triangle';
+    o.frequency.setValueAtTime(300,t); o.frequency.exponentialRampToValueAtTime(90,t+0.3);
+    const g=AC.createGain(); g.connect(master); o.connect(g);
+    g.gain.setValueAtTime(0.18,t); g.gain.exponentialRampToValueAtTime(0.0001,t+0.32);
+    o.start(t); o.stop(t+0.34);
+  }
+  // crowd cheer swell (filtered noise) for finale
+  function cheerRoar(){
+    if(!AC) return; const t=now(), len=1.4;
+    const buf=AC.createBuffer(1,Math.ceil(AC.sampleRate*len),AC.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++){ d[i]=(Math.random()*2-1); }
+    const src=AC.createBufferSource(); src.buffer=buf;
+    const bp=AC.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1400; bp.Q.value=0.6;
+    const g=AC.createGain(); g.connect(master); src.connect(bp); bp.connect(g);
+    g.gain.setValueAtTime(0.0001,t); g.gain.linearRampToValueAtTime(0.32,t+0.5);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+len);
+    src.start(t); src.stop(t+len);
+  }
+  // charge oscillator (rising) — created per charge
+  let chargeOsc=null, chargeGain=null;
+  function startChargeTone(){
+    if(!AC) return;
+    chargeOsc=AC.createOscillator(); chargeOsc.type='triangle';
+    chargeGain=AC.createGain(); chargeGain.gain.value=0.0;
+    chargeOsc.connect(chargeGain); chargeGain.connect(master);
+    chargeOsc.frequency.value=110; chargeOsc.start();
+    chargeGain.gain.setTargetAtTime(0.13,now(),0.05);
+  }
+  function updateChargeTone(f){
+    if(chargeOsc){ chargeOsc.frequency.setTargetAtTime(f,now(),0.02); }
+  }
+  function stopChargeTone(){
+    if(chargeOsc){ try{ chargeGain.gain.setTargetAtTime(0.0001,now(),0.03); chargeOsc.stop(now()+0.12);}catch(e){} chargeOsc=null; chargeGain=null; }
+  }
+  function tick(){ // sweet-zone entry blip
+    if(!AC) return; const t=now();
+    const o=AC.createOscillator(); o.type='sine'; o.frequency.value=880;
+    const g=AC.createGain(); g.connect(master); o.connect(g);
+    g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.16,t+0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+0.09); o.start(t); o.stop(t+0.1);
+  }
+  function vibe(p){ try{ if(navigator.vibrate) navigator.vibrate(p); }catch(e){} }
+
+  // ---------- Stars ----------
+  const stars=[];
+  function makeStars(){ stars.length=0; const n=Math.round(W*H/9000);
+    for(let i=0;i<n;i++){ stars.push({x:Math.random()*W,y:Math.random()*H*0.82,r:Math.random()*1.3+0.2,tw:Math.random()*6.28}); } }
+  makeStars(); window.addEventListener('resize',makeStars);
+
+  // ---------- Particles ----------
+  const parts=[]; const CAP=1000;
+  function rainbow(a){ return 'hsl('+Math.floor(Math.random()*360)+',100%,'+ (60+Math.random()*20) +'%)'; }
+  function spawnBurst(x,y,size,color,finale){
+    // size: 'fizz','good','perfect','finale'
+    const cfg={fizz:{n:16,sp:1.4,life:0.6},good:{n:95,sp:3.6,life:1.05},
+               perfect:{n:170,sp:4.6,life:1.35},finale:{n:300,sp:5.6,life:1.7}}[size];
+    let n=cfg.n; if(parts.length+n>CAP) n=Math.max(0,CAP-parts.length);
+    for(let i=0;i<n;i++){
+      const ang=Math.random()*6.2832;
+      const sp=(cfg.sp*(0.35+Math.random()*0.65))*(size==='fizz'?0.6:1);
+      const c=(color==='rainbow')?rainbow():color;
+      parts.push({x,y,px:x,py:y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-(size==='fizz'?0.4:0),
+        life:cfg.life*(0.7+Math.random()*0.5),max:cfg.life,color:c,r:(size==='finale'?2.4:1.9)*(0.6+Math.random()*0.7)});
+    }
+  }
+  function launchTrail(x0,y0,x1,y1,color){ // rising rocket trail
+    const steps=14;
+    for(let i=0;i<steps;i++){
+      const p=i/steps, x=x0+(x1-x0)*p, y=y0+(y1-y0)*p;
+      parts.push({x,y,px:x,py:y,vx:(Math.random()-0.5)*0.5,vy:0.6+Math.random()*0.6,
+        life:0.4,max:0.5,color:color,r:1.4});
+    }
+  }
+
+  // ---------- Game state ----------
+  const G={ state:'title', score:0, shellsLeft:10, shellTotal:10, shellIdx:0,
+    type:'kiku', cheer:0, cheerMax:100, streak:0, nextFinale:false,
+    charging:false, chargeV:0, chargeRate:90, enteredSweet:false,
+    sweetLo:70, sweetHi:98, perfLo:92, lockUntil:0, flash:0, wind:0,
+    perfects:0, goods:0, misses:0, best:0, finaleCount:0 };
+
+  const TYPE={ kiku:{mult:1.0,color:'#00e5ff',wLo:70,wHi:98},
+               botan:{mult:2.0,color:'#ff2d87',wLo:85,wHi:98},
+               shikake:{mult:1.5,color:'#ffb547',wLo:79,wHi:98} };
+
+  const el=(id)=>document.getElementById(id);
+  const hud=el('hud'), controls=el('controls'), titleO=el('title'), resultO=el('result');
+  const scoreEl=el('score').querySelector('.val'), shellsEl=el('shells').querySelector('.val'), cheerFill=el('cheerFill');
+  const banner=el('banner'), judgeEl=el('judge'), hintEl=el('hint');
+
+  function setType(t){ G.type=t; document.querySelectorAll('.type').forEach(n=>n.classList.toggle('sel',n.dataset.t===t)); }
+  document.querySelectorAll('.type').forEach(n=>n.addEventListener('click',()=>{ if(!G.charging){ setType(n.dataset.t); vibe(6);} }));
+
+  function configShell(){
+    const T=TYPE[G.type];
+    const prog=G.shellIdx/Math.max(1,G.shellTotal-1); // 0..1
+    G.chargeRate = 88 + prog*38; // faster later
+    const narrow = prog*7;
+    G.sweetLo = T.wLo + narrow;
+    G.sweetHi = T.wHi;
+    G.perfLo  = G.sweetHi-6;
+    G.wind = prog>0.5 ? (Math.sin(G.shellIdx*1.7)*0.35) : 0;
+    if(G.nextFinale){ G.sweetLo=Math.min(G.sweetLo,55); } // finale is forgiving
+  }
+
+  function startGame(){
+    initAudio(); if(AC&&AC.state==='suspended') AC.resume();
+    G.state='play'; G.score=0; G.shellsLeft=G.shellTotal; G.shellIdx=0; G.cheer=0; G.streak=0;
+    G.nextFinale=false; G.perfects=0; G.goods=0; G.misses=0; G.finaleCount=0;
+    setType('kiku'); configShell();
+    titleO.classList.add('hidden'); resultO.classList.add('hidden');
+    hud.classList.remove('hidden'); controls.classList.remove('hidden');
+    updateHUD(); hintEl.textContent='長押しで溜め・夜空の頂点でパッと離す';
+  }
+  function updateHUD(){
+    scoreEl.textContent=G.score.toLocaleString();
+    shellsEl.textContent=G.shellsLeft;
+    cheerFill.style.width=Math.min(100,G.cheer/G.cheerMax*100)+'%';
+  }
+
+  function beginCharge(){
+    if(G.state!=='play'||G.charging||G.shellsLeft<=0) return;
+    if(performance.now()<G.lockUntil) return;
+    configShell();
+    G.charging=true; G.chargeV=0; G.enteredSweet=false;
+    startChargeTone(); vibe(8);
+    if(G.nextFinale){ showBanner(); }
+  }
+  function showBanner(){ banner.classList.add('show'); cheerRoar(); setTimeout(()=>banner.classList.remove('show'),900); }
+
+  function releaseCharge(){
+    if(!G.charging) return;
+    G.charging=false; stopChargeTone();
+    const v=G.chargeV, finale=G.nextFinale;
+    const T=TYPE[G.type];
+    let quality; // 'perfect','good','fizz'
+    if(finale){ quality = v>=G.perfLo?'perfect':'good'; }
+    else if(v>=G.sweetLo && v<=G.sweetHi+3){ quality = (v>=G.perfLo && v<=G.sweetHi+2)?'perfect':'good'; }
+    else { quality='fizz'; }
+
+    // launch origin
+    const ox = W*(0.28+Math.random()*0.44);
+    const oy = H*(0.24+Math.random()*0.16);
+    launchTrail(ox,H*0.9,ox,oy,T.color);
+
+    let add=0;
+    if(quality==='fizz'){
+      G.misses++; G.streak=0; G.cheer=Math.max(0,G.cheer-14);
+      spawnBurst(ox,oy,'fizz',T.color,false); fizzle(); vibe(0);
+      flashJudge('しょぼ玉…','#8a90b4');
+    } else {
+      const isP = quality==='perfect';
+      isP?G.perfects++:G.goods++;
+      const baseVal = isP?320:100;
+      const fm = finale?3:1;
+      const shells = (G.type==='shikake'&&!finale)?3:1;
+      add = Math.round(baseVal*T.mult*fm);
+      G.score += add;
+      G.streak++;
+      G.cheer=Math.min(G.cheerMax, G.cheer + (isP?26:16));
+      // visuals
+      if(finale){
+        G.finaleCount++;
+        // multi-shell screen filler
+        for(let k=0;k<5;k++){
+          const fx=W*(0.14+Math.random()*0.72), fy=H*(0.16+Math.random()*0.3);
+          setTimeout(()=>{ spawnBurst(fx,fy,'finale','rainbow',true); G.flash=Math.max(G.flash,0.9); }, k*120);
+        }
+        boom(3,true); sparkArp(true); vibe([0,40,30,60,30,90]);
+        flashJudge('大玉ッ！','#ffd76a');
+      } else {
+        const sz=isP?'perfect':'good';
+        if(shells>1){ // 仕掛け volley
+          for(let k=0;k<3;k++){ const fx=ox+(k-1)*W*0.14, fy=oy-(k===1?H*0.05:0);
+            setTimeout(()=>spawnBurst(fx,fy,sz,T.color,false),k*90); }
+        } else { spawnBurst(ox,oy,sz,T.color,false); }
+        boom(isP?1.4:1.0,false); sparkArp(isP);
+        G.flash=Math.max(G.flash,isP?0.55:0.25);
+        vibe(isP?[0,26,20,44]:[0,22]);
+        flashJudge(isP?'PERFECT!':'GOOD','+'+add.toLocaleString());
+      }
+      // finale trigger
+      if(G.cheer>=G.cheerMax){ G.nextFinale=true; G.cheer=G.cheerMax; hintEl.textContent='歓声MAX！次の一発は 大玉フィナーレ'; }
+      else if(!finale){ hintEl.textContent='長押しで溜め・夜空の頂点でパッと離す'; }
+    }
+    if(finale){ G.nextFinale=false; G.cheer=0; hintEl.textContent='長押しで溜め・夜空の頂点でパッと離す'; }
+
+    G.shellsLeft--; G.shellIdx++;
+    G.lockUntil=performance.now()+280;
+    updateHUD();
+    if(G.shellsLeft<=0){ setTimeout(endGame,1400); }
+  }
+
+  function flashJudge(txt,color){
+    judgeEl.textContent=txt; judgeEl.style.color=color;
+    judgeEl.style.transition='none'; judgeEl.style.opacity='1'; judgeEl.style.transform='translateY(0) scale(1.05)';
+    requestAnimationFrame(()=>{ judgeEl.style.transition='opacity .7s, transform .7s';
+      judgeEl.style.opacity='0'; judgeEl.style.transform='translateY(-18px) scale(1)'; });
+  }
+
+  // ---------- Pointer / charge input ----------
+  cv.addEventListener('pointerdown',e=>{ if(G.state==='play'){ e.preventDefault(); beginCharge(); }},{passive:false});
+  window.addEventListener('pointerup',e=>{ if(G.charging) releaseCharge(); });
+  window.addEventListener('pointercancel',e=>{ if(G.charging) releaseCharge(); });
+
+  // ---------- Main loop ----------
+  let last=performance.now();
+  function frame(t){
+    const dt=Math.min(0.05,(t-last)/1000); last=t;
+    // charge progression
+    if(G.charging){
+      G.chargeV += G.chargeRate*dt;
+      updateChargeTone(110 + G.chargeV*3.2);
+      if(!G.enteredSweet && G.chargeV>=G.sweetLo){ G.enteredSweet=true; tick(); vibe([0,12,26,12]); }
+      if(G.chargeV>128){ // overcharge -> auto fizzle
+        G.chargeV=128; releaseCharge();
+      }
+    }
+    render(dt);
+    requestAnimationFrame(frame);
+  }
+  function render(dt){
+    // fade for trails
+    ctx.globalCompositeOperation='source-over';
+    ctx.fillStyle='rgba(5,6,20,0.30)';
+    ctx.fillRect(0,0,W,H);
+    // stars
+    ctx.save();
+    for(const s of stars){ s.tw+=dt*2.2; const a=0.35+0.4*(0.5+0.5*Math.sin(s.tw));
+      ctx.globalAlpha=a; ctx.fillStyle='#cfe0ff'; ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.28); ctx.fill(); }
+    ctx.restore();
+    // horizon glow (festival)
+    const hg=ctx.createLinearGradient(0,H*0.7,0,H);
+    hg.addColorStop(0,'rgba(20,10,40,0)'); hg.addColorStop(1,'rgba(60,20,60,0.35)');
+    ctx.fillStyle=hg; ctx.fillRect(0,H*0.7,W,H*0.3);
+
+    // particles (additive)
+    ctx.globalCompositeOperation='lighter';
+    const wind=G.wind;
+    for(let i=parts.length-1;i>=0;i--){
+      const p=parts[i]; p.px=p.x; p.py=p.y;
+      p.vy+=2.2*dt; p.vx+=wind*dt; p.x+=p.vx; p.y+=p.vy; p.life-=dt;
+      if(p.life<=0){ parts.splice(i,1); continue; }
+      const a=Math.max(0,p.life/p.max);
+      ctx.strokeStyle=p.color; ctx.globalAlpha=a*0.9; ctx.lineWidth=p.r;
+      ctx.beginPath(); ctx.moveTo(p.px,p.py); ctx.lineTo(p.x,p.y); ctx.stroke();
+      ctx.globalAlpha=a; ctx.fillStyle=p.color; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*0.6,0,6.28); ctx.fill();
+    }
+    ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1;
+
+    // charge gauge (right side) while charging
+    if(G.charging || (G.state==='play' && performance.now()<G.lockUntil)){
+      drawGauge();
+    }
+    // screen flash
+    if(G.flash>0){ ctx.fillStyle='rgba(255,255,255,'+Math.min(0.8,G.flash)+')'; ctx.fillRect(0,0,W,H); G.flash-=dt*3.2; }
+  }
+  function drawGauge(){
+    const gx=W-26, gTop=H*0.20, gH=H*0.5;
+    // track
+    ctx.fillStyle='rgba(255,255,255,0.06)'; roundRect(gx-7,gTop,14,gH,7); ctx.fill();
+    // sweet zone
+    const T=TYPE[G.type];
+    const yFor=(v)=> gTop+gH*(1-Math.min(120,v)/120);
+    const zTop=yFor(G.sweetHi+2), zBot=yFor(G.sweetLo);
+    ctx.fillStyle='rgba(0,229,255,0.18)'; if(G.type==='botan')ctx.fillStyle='rgba(255,45,135,0.20)'; if(G.type==='shikake')ctx.fillStyle='rgba(255,181,71,0.20)';
+    ctx.fillRect(gx-7,zTop,14,zBot-zTop);
+    // perfect band
+    const pTop=yFor(G.sweetHi+2), pBot=yFor(G.perfLo);
+    ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.fillRect(gx-8,pTop,16,Math.max(2,pBot-pTop));
+    // current marker
+    const my=yFor(G.chargeV);
+    const inSweet=G.chargeV>=G.sweetLo&&G.chargeV<=G.sweetHi+3;
+    ctx.fillStyle=inSweet?'#fff':T.color;
+    ctx.shadowColor=T.color; ctx.shadowBlur=inSweet?22:10;
+    ctx.beginPath(); ctx.arc(gx,my,8,0,6.28); ctx.fill(); ctx.shadowBlur=0;
+    // edge pulse when in sweet
+    if(inSweet && G.charging){ ctx.strokeStyle=T.color; ctx.lineWidth=3; ctx.globalAlpha=0.5+0.5*Math.sin(performance.now()/70);
+      ctx.strokeRect(2,2,W-4,H-4); ctx.globalAlpha=1; }
+  }
+  function roundRect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+  // ---------- Titles / result ----------
+  const TITLES=[
+    {min:0 ,t:'線香花火'},{min:10,t:'手持ち花火'},{min:20,t:'打ち上げ見習い'},
+    {min:30,t:'三尺玉ルーキー'},{min:40,t:'花火職人'},{min:50,t:'尺玉の使い手'},
+    {min:62,t:'大曲の常連'},{min:74,t:'夜空の演出家'},{min:85,t:'花火師'},{min:94,t:'大玉・伝説の花火師'}
+  ];
+  function pickTitle(fill){ let r=TITLES[0]; for(const x of TITLES){ if(fill>=x.min) r=x; } return r.t; }
+
+  function endGame(){
+    G.state='result';
+    hud.classList.add('hidden'); controls.classList.add('hidden');
+    const fill=Math.max(0,Math.min(100,Math.round(G.score/4800*100)));
+    const title=pickTitle(fill);
+    el('resTitle').textContent=title;
+    buildCard(fill,title);
+    resultO.classList.remove('hidden');
+  }
+
+  function buildCard(fill,title){
+    const c=document.createElement('canvas'); c.width=1080; c.height=1920;
+    const x=c.getContext('2d');
+    // bg
+    const bg=x.createRadialGradient(540,620,80,540,900,1300);
+    bg.addColorStop(0,'#0d1338'); bg.addColorStop(1,'#050614'); x.fillStyle=bg; x.fillRect(0,0,1080,1920);
+    // stars
+    x.fillStyle='#cfe0ff'; for(let i=0;i<120;i++){ x.globalAlpha=Math.random()*0.6+0.1; x.beginPath(); x.arc(Math.random()*1080,Math.random()*1300,Math.random()*2+0.5,0,6.28); x.fill(); }
+    x.globalAlpha=1;
+    // decorative fireworks
+    function fw(cx,cy,rad,col,n){ x.globalCompositeOperation='lighter';
+      for(let i=0;i<n;i++){ const a=i/n*6.2832, r=rad*(0.5+Math.random()*0.5);
+        const gx=Math.cos(a)*r, gy=Math.sin(a)*r;
+        const g=x.createLinearGradient(cx,cy,cx+gx,cy+gy);
+        g.addColorStop(0,col); g.addColorStop(1,'transparent'); x.strokeStyle=g; x.lineWidth=4;
+        x.beginPath(); x.moveTo(cx,cy); x.lineTo(cx+gx,cy+gy); x.stroke();
+        x.fillStyle=col; x.beginPath(); x.arc(cx+gx,cy+gy,4,0,6.28); x.fill(); }
+      x.globalCompositeOperation='source-over'; }
+    fw(300,430,230,'#00e5ff',46); fw(800,330,270,'#ff2d87',54); fw(560,640,320,'#ffb547',60);
+    // brand
+    x.textAlign='center';
+    x.fillStyle='#ffb547'; x.font='700 34px sans-serif'; x.fillText('大玉  ／  Ō D A M A',540,150);
+    // big fill %
+    x.fillStyle='#eaf2ff'; x.font='600 46px sans-serif'; x.fillText('夜空を埋めた率',540,1090);
+    const grd=x.createLinearGradient(300,1120,780,1320); grd.addColorStop(0,'#8fe6ff'); grd.addColorStop(1,'#ff2d87');
+    x.fillStyle=grd; x.font='900 300px sans-serif'; x.fillText(fill+'%',540,1360);
+    // title chip
+    x.fillStyle='#ffd76a'; x.font='900 66px sans-serif'; x.fillText('― '+title+' ―',540,1500);
+    // stats
+    x.fillStyle='#aeb6da'; x.font='600 38px sans-serif';
+    x.fillText('SCORE '+G.score.toLocaleString()+'   PERFECT '+G.perfects+'   FINALE '+G.finaleCount,540,1590);
+    // footer
+    x.fillStyle='#6f77a0'; x.font='500 30px sans-serif';
+    const d=new Date(); const ds=d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate();
+    x.fillText('Idea Radar 花火大会  ·  '+ds,540,1760);
+    x.fillStyle='#586089'; x.font='500 27px sans-serif';
+    x.fillText('t-aka-h.github.io/idea-radar/odama',540,1808);
+    // border
+    x.strokeStyle='rgba(255,181,71,0.5)'; x.lineWidth=6; x.strokeRect(24,24,1032,1872);
+    const img=el('shareCard'); img.src=c.toDataURL('image/png'); G._cardCanvas=c;
+  }
+
+  el('startBtn').addEventListener('click',startGame);
+  el('retryBtn').addEventListener('click',startGame);
+  el('shareBtn').addEventListener('click',async()=>{
+    const c=G._cardCanvas; if(!c) return;
+    c.toBlob(async(blob)=>{
+      const file=new File([blob],'odama.png',{type:'image/png'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        try{ await navigator.share({files:[file],title:'大玉 — 夜空を埋めた率',text:'花火大会のフィナーレを指揮した！ #大玉 #IdeaRadar'}); }catch(e){}
+      } else {
+        const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='odama.png'; a.click();
+        setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+      }
+    },'image/png');
+  });
+
+  requestAnimationFrame(frame);
+
+  // expose a tiny hook for automated verification (no effect on normal play)
+  window.__odama={G, startGame, beginCharge, releaseCharge, forceRelease:(v)=>{ if(G.charging){G.chargeV=v; releaseCharge();} }, setType, endGame};
+})();
+</script>
+</body>
+</html>
