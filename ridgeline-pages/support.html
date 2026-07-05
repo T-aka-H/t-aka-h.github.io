@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ridgeline — サポート / Support</title>
+<title>Ridgeline — サポート</title>
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
@@ -13,60 +13,54 @@
   h1 { font-size: 26px; letter-spacing: 3px; }
   h2 { color: rgba(237,235,228,0.92); margin-top: 34px; font-size: 18px; }
   h3 { color: #A9C1EE; margin-top: 22px; font-size: 15px; }
-  p, li { color: rgba(237,235,228,0.78); }
+  p { color: rgba(237,235,228,0.78); }
   a { color: #A9C1EE; }
   .nav { margin: 12px 0 28px; }
   .nav a { margin-right: 16px; }
+  .lang { margin: 0 0 24px; font-size: 14px; color: rgba(237,235,228,0.55); }
   .answer { padding-left: 14px; border-left: 2px solid rgba(169,193,238,0.4); margin: 8px 0 18px; }
   .last { color: rgba(237,235,228,0.35); font-size: 12px; }
-  hr { border: 0; border-top: 1px solid rgba(237,235,228,0.13); margin: 52px 0 40px; }
 </style>
 </head>
 <body>
-  <h1>Ridgeline — サポート / Support</h1>
+  <h1>Ridgeline — サポート</h1>
+  <p class="lang">English: <a href="support-en.html">Peakline Support</a></p>
   <div class="nav">
-    <a href="index.html">ホーム / Home</a>
+    <a href="index.html">ホーム</a>
     <a href="privacy.html">プライバシー</a>
-    <a href="privacy-en.html">Privacy</a>
   </div>
 
-  <h2>お問い合わせ / Contact</h2>
-  <p>ご質問・不具合のご報告は下記までお願いします。/ For questions or bug reports, please contact:</p>
+  <h2>お問い合わせ</h2>
+  <p>ご質問・不具合のご報告は下記までお願いします。</p>
   <p><a href="mailto:trim.hoist.6b@icloud.com">trim.hoist.6b@icloud.com</a></p>
 
-  <h2>よくある質問 / FAQ</h2>
+  <h2>よくある質問</h2>
 
-  <h3>地形が描かれない / Nothing is drawn</h3>
+  <h3>地形が描かれない</h3>
   <div class="answer">
-    <p>標高データはインターネット経由で取得します。通信環境をご確認ください。海の上や標高データのない範囲では線が描かれないことがあります。<br>
-    Elevation data is fetched over the internet — please check your connection. Areas over open sea or without elevation data may show no lines.</p>
+    <p>標高データはインターネット経由で取得します。通信環境をご確認ください。海の上や標高データのない範囲では線が描かれないことがあります。</p>
   </div>
 
-  <h3>海岸線（COAST）が真っ白になる / The coastline view is blank</h3>
+  <h3>海岸線（COAST）が真っ白になる</h3>
   <div class="answer">
-    <p>COAST モードは海に面した範囲でのみ線が現れます。内陸の地点では「この範囲には海がありません」と表示されます。RANGE を広げるか、海のある地点を選んでください。<br>
-    COAST mode draws only where the sea meets land. Inland spots show “No coastline in this area.” Widen the range or pick a coastal spot.</p>
+    <p>COAST モードは海に面した範囲でのみ線が現れます。内陸の地点では「この範囲には海がありません」と表示されます。RANGE を広げるか、海のある地点を選んでください。</p>
   </div>
 
-  <h3>低い山でも稜線が高く描かれる / Even low hills look tall</h3>
+  <h3>低い山でも稜線が高く描かれる</h3>
   <div class="answer">
-    <p>SCALE を AUTO にすると、その範囲内で最も高い地点が常に大きく描かれます。実際の高さの比率で描きたい場合は SCALE を REAL（エベレスト基準）に切り替えてください。<br>
-    With SCALE set to AUTO, the highest point in the range always fills the frame. Switch SCALE to REAL (relative to Everest) to draw true-to-height.</p>
+    <p>SCALE を AUTO にすると、その範囲内で最も高い地点が常に大きく描かれます。実際の高さの比率で描きたい場合は SCALE を REAL（エベレスト基準）に切り替えてください。</p>
   </div>
 
-  <h3>日本以外の場所は描けますか / Can I draw places outside Japan?</h3>
+  <h3>日本以外の場所は描けますか</h3>
   <div class="answer">
-    <p>はい。検索や地図から世界中の地点を選べます。日本は国土地理院、日本以外は Mapzen Terrain Tiles の標高データを使います。<br>
-    Yes. Search or pick anywhere on the map. Japan uses GSI data; elsewhere uses Mapzen Terrain Tiles.</p>
+    <p>はい。検索や地図から世界中の地点を選べます。日本は国土地理院、日本以外は Mapzen Terrain Tiles の標高データを使います。</p>
   </div>
 
-  <h3>データはどこに保存されますか / Where is my data stored?</h3>
+  <h3>データはどこに保存されますか</h3>
   <div class="answer">
-    <p>作成した作品はすべて端末内にのみ保存されます。アカウント登録は不要で、個人情報の収集もありません。<br>
-    All your pieces are stored only on your device. No account, no personal data collection.</p>
+    <p>作成した作品はすべて端末内にのみ保存されます。アカウント登録は不要で、個人情報の収集もありません。</p>
   </div>
 
-  <hr>
   <p class="last">© 2026 Takanori Hamuro · 標高: 国土地理院 / Mapzen Terrain Tiles</p>
 </body>
 </html>
