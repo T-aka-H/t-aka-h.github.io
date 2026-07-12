@@ -24,6 +24,7 @@
   .nav a:hover { text-decoration: underline; }
   hr.divider { border: 0; border-top: 1px solid rgba(91,138,255,0.3); margin: 60px 0 40px; }
   .lang-hint { color: rgba(26,34,56,0.55); font-size: 13px; margin-top: 16px; }
+  .changenote { background: rgba(91,138,255,0.07); border-left: 3px solid #5b8aff; padding: 10px 14px; border-radius: 6px; font-size: 13px; color: #2a3858; margin: 8px 0 20px; }
   code { background: rgba(91,138,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
 </style>
 </head>
@@ -39,94 +40,122 @@
 
 <!-- ===================== Japanese ===================== -->
 <h1 id="ja">Strideline — プライバシーポリシー</h1>
-<p class="last">最終更新: 2026-05-30 (v1.0)</p>
+<p class="last">最終更新: 2026-07-12 (v1.1)</p>
 
-<p>Strideline (以下「本アプリ」) は個人開発者が提供するアプリです。本ポリシーは、本アプリがユーザー情報をどのように扱うかを説明します。</p>
+<p class="changenote">v1.1 での変更: 有料版 (Strideline Pro) の案内画面がどれくらい表示・購入されたかを把握するため、<strong>匿名の操作カウント</strong>の送信を追加しました (下記セクション2)。氏名・メールアドレス・端末識別子・位置情報・学習内容は一切含まれず、個人を特定できる情報は送信しません。お子さま本人の利用 (アプリの起動など) は計測しません。変更点を隠さずお知らせするため、本セクションを記載しています。</p>
+
+<p>Strideline (以下「本アプリ」) がユーザー情報をどのように扱うかを説明します。</p>
 
 <h2>1. データ収集</h2>
-<p>本アプリは、ユーザーの個人データを開発者のサーバーに送信・収集することはありません。学習スケジュール・予定ブロック・実測セッション・カウントダウン・教材ライブラリなど、すべてのデータは iOS 標準の SwiftData によって <strong>お使いの端末内にのみ</strong> 保存されます。</p>
+<p>学習スケジュール・予定ブロック・実測セッション・カウントダウン・教材ライブラリなど、<strong>あなたの学習に関するデータおよび個人データは、すべて iOS 標準の SwiftData によってお使いの端末内にのみ保存され、開発者のサーバーには送信されません</strong>。端末外へ送信されるのは、セクション2で説明する匿名の利用統計 (個人と結び付かない操作カウント) のみです。</p>
 
-<h2>2. アカウント登録</h2>
+<h2>2. 匿名の利用統計</h2>
+<p>本アプリを改善し、有料機能の価格や内容を判断するため、有料版 (Strideline Pro) の案内まわりの操作について、<strong>匿名の操作カウント</strong>を開発者自身のサーバー (<code>collect.appline.app</code>) に送信します。</p>
+<p><strong>送信する内容 (これだけです):</strong></p>
+<ul>
+  <li>あらかじめ決められた固定のイベント名のみ — 例:「Pro画面が表示された」「購入ボタンが押された」「購入が完了した」「購入を復元した」</li>
+  <li>アプリのバージョン番号 (例: 1.1)</li>
+</ul>
+<p><strong>送信しないもの:</strong> 氏名・メールアドレス・アカウント情報・端末識別子 (IDFA / IDFV など)・広告 ID・位置情報・学習内容・その他あらゆる個人を特定できる情報。これらは一切送信しません。送られるのは「ある操作が起きた」という<strong>回数だけ</strong>で、「誰が」の情報は含まれず、特定のユーザーや端末と結び付けられることはありません。</p>
+<p><strong>送信先:</strong> 開発者自身が管理するサーバー (Cloudflare 上) のみです。Google・Firebase・Meta などの第三者には一切渡しません。通信はネットワーク上、開発者のサーバー基盤 (Cloudflare) を経由しますが、<strong>あなたの IP アドレスを記録・保存・利用することはなく</strong>、上記の匿名カウントと結び付けることもありません。</p>
+<p><strong>お子さまの利用は計測しません:</strong> アプリの起動やお子さまの学習操作は記録しません。計測するのは、保護者が購入を検討する画面まわりの上記イベントのみです。</p>
+
+<h2>3. アカウント登録</h2>
 <p>本アプリはアカウント登録機能を持ちません。メールアドレス・電話番号・氏名などの登録は不要です。お子さま (プロフィール) の名前は端末内に保存されるラベルであり、外部送信はされません。</p>
 
-<h2>3. ユーザートラッキング</h2>
-<p>本アプリは Google Analytics や Facebook SDK 等の第三者アナリティクス・トラッキング SDK を組み込んでいません。広告も表示しません。App Tracking Transparency (ATT) のリクエストも行いません。</p>
+<h2>4. ユーザートラッキング</h2>
+<p>本アプリは Google Analytics や Facebook SDK 等の第三者アナリティクス・トラッキング SDK を組み込んでいません。広告も表示しません。セクション2の匿名カウントは開発者自身のサーバーにのみ送られ、個人と結び付かず、他社のアプリやウェブサイトをまたいであなたを追跡する用途には使いません。そのため App Tracking Transparency (ATT) の対象となるトラッキングには該当せず、ATT のリクエストも行いません。</p>
 
-<h2>4. 位置情報の使用</h2>
+<h2>5. 位置情報の使用</h2>
 <p>天気予報の取得のため、初回のみ位置情報の使用許可をお願いします (オプション)。位置情報は <strong>Apple WeatherKit</strong> へのリクエストにのみ使用され、開発者を含む第三者には共有されません。位置情報の使用を拒否した場合は、東京の天気を既定値として表示します。</p>
 
-<h2>5. 天気 API への通信</h2>
+<h2>6. 天気 API への通信</h2>
 <p>天気予報の取得には <strong>Apple WeatherKit</strong> (apple.com) を使用します。リクエストには緯度経度のみが含まれ、ユーザー識別子・端末識別子などの個人情報は送信されません。取得した天気データはお使いの端末内のみに保存されます。</p>
 
-<h2>6. カレンダーへのアクセス</h2>
+<h2>7. カレンダーへのアクセス</h2>
 <p>学習スケジュールへの予定取り込み機能を使用する場合、iOS のカレンダー API (EventKit) へのアクセス許可をお願いします (オプション)。アクセスが許可されると、ユーザーが選択したイベントを <strong>端末内でローカルに</strong> 学習スケジュールに変換します。カレンダーの内容が開発者を含む第三者に送信されることは一切ありません。</p>
 
-<h2>7. アプリ連携・ウィジェット</h2>
+<h2>8. アプリ連携・ウィジェット</h2>
 <p>ホーム画面ウィジェット及びロック画面 Live Activity に学習データのスナップショットを表示するため、iOS の App Group 機能を使用してアプリ本体とウィジェット間で表示用データを共有しています。これらは <strong>お使いの端末内のみ</strong> のデータ共有であり、外部送信は行われません。</p>
 
-<h2>8. アプリ内課金 (Strideline Pro)</h2>
+<h2>9. アプリ内課金 (Strideline Pro)</h2>
 <p>本アプリは Strideline Pro (買い切り型 IAP) を提供しています。購入処理は Apple の StoreKit を介して行われ、Apple のプライバシーポリシーが適用されます。開発者は決済情報を一切受け取らず、ユーザーの購入の事実 (isProUnlocked フラグ) のみを Apple App Store から取得します。</p>
 
-<h2>9. お子さまのプライバシー</h2>
-<p>本アプリは中学受験生を含む 13 歳未満のお子さまの利用を想定していますが、以下の理由により、お子さまから個人情報を収集することはありません:</p>
+<h2>10. お子さまのプライバシー</h2>
+<p>本アプリは中学受験生を含む 13 歳未満のお子さまの利用を想定しています。以下の理由により、お子さまから個人情報を収集することはありません:</p>
 <ul>
   <li>アカウント登録機能なし</li>
   <li>学習データはすべて端末内のみに保存</li>
   <li>位置情報・カレンダー連携はすべてオプション (使わなくても基本機能はすべて使えます)</li>
-  <li>広告・トラッキング SDK ゼロ</li>
+  <li>第三者の広告・トラッキング SDK ゼロ</li>
+  <li>セクション2の匿名利用統計は、保護者向けの購入検討画面の操作カウントのみで、<strong>お子さま本人の利用は計測せず</strong>、個人 (お子さまを含む) を特定する情報を一切含みません</li>
 </ul>
 
-<h2>10. ポリシーの変更</h2>
-<p>本ポリシーは予告なく変更される場合があります。重要な変更はアプリ内およびこのページでお知らせします。</p>
+<h2>11. ポリシーの変更</h2>
+<p>本ポリシーは変更される場合があります。重要な変更はアプリ内およびこのページでお知らせします。</p>
 
-<h2>11. 連絡先</h2>
+<h2>12. 連絡先</h2>
 <p>本ポリシーに関するご質問は <a href="mailto:trim.hoist.6b@icloud.com">trim.hoist.6b@icloud.com</a> までお寄せください。</p>
 
 <hr class="divider">
 
 <!-- ===================== English ===================== -->
 <h1 id="en">Strideline — Privacy Policy</h1>
-<p class="last">Last updated: 2026-05-30 (v1.0)</p>
+<p class="last">Last updated: 2026-07-12 (v1.1)</p>
 
-<p>Strideline (the "App") is provided by an independent developer. This Privacy Policy explains how the App handles user information.</p>
+<p class="changenote">What changed in v1.1: To understand how often the paid upgrade screen (Strideline Pro) is viewed and purchased, we added the sending of <strong>anonymous usage counts</strong> (see Section 2 below). No name, email, device identifier, location, or study content is included, and nothing that could identify a person is sent. A child's own usage (such as launching the app) is not measured. We include this note to be transparent about the change.</p>
+
+<p>This Privacy Policy explains how Strideline (the "App") handles user information.</p>
 
 <h2>1. Data Collection</h2>
-<p>The App does not transmit or collect personal user data to or from the developer's servers. Study schedules, planned blocks, recorded sessions, countdowns, materials, and all related data are stored <strong>only on your device</strong> via iOS-native SwiftData.</p>
+<p><strong>All of your study data and personal data — study schedules, planned blocks, recorded sessions, countdowns, and materials — are stored only on your device via iOS-native SwiftData and are never sent to the developer's servers.</strong> The only thing that leaves your device is the anonymous usage statistics (identity-free event counts) described in Section 2.</p>
 
-<h2>2. Account Registration</h2>
+<h2>2. Anonymous Usage Statistics</h2>
+<p>To improve the App and to make decisions about the pricing and content of paid features, the App sends <strong>anonymous usage counts</strong> about the paid upgrade (Strideline Pro) flow to the developer's own server (<code>collect.appline.app</code>).</p>
+<p><strong>What is sent (only this):</strong></p>
+<ul>
+  <li>A fixed, predefined event name only — e.g. "Pro screen shown", "purchase button tapped", "purchase completed", "purchase restored"</li>
+  <li>The app version number (e.g. 1.1)</li>
+</ul>
+<p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, location, study content, or any other information that could identify a person. Only the <strong>count</strong> that "an action happened" is sent — it contains no "who", and is never linked to a specific user or device.</p>
+<p><strong>Where it goes:</strong> only to a server operated by the developer (on Cloudflare). It is never shared with any third party such as Google, Firebase, or Meta. The request necessarily transits the developer's server infrastructure (Cloudflare) at the network level, but <strong>your IP address is not logged, stored, or used</strong>, and is never associated with the anonymous counts above.</p>
+<p><strong>A child's usage is not measured:</strong> app launches and a child's study activity are not recorded. Only the parent-facing purchase-consideration events above are counted.</p>
+
+<h2>3. Account Registration</h2>
 <p>The App has no account registration feature. No email address, phone number, or personal identifier is required. Profile names (e.g. for siblings) are stored as on-device labels only and are never transmitted externally.</p>
 
-<h2>3. User Tracking</h2>
-<p>The App does not embed any third-party analytics or tracking SDKs (Google Analytics, Facebook SDK, etc.). No advertisements are displayed. No App Tracking Transparency (ATT) prompts are issued.</p>
+<h2>4. User Tracking</h2>
+<p>The App does not embed any third-party analytics or tracking SDKs (Google Analytics, Facebook SDK, etc.). No advertisements are displayed. The anonymous counts in Section 2 are sent only to the developer's own server, are not linked to your identity, and are not used to track you across other companies' apps or websites. They therefore do not constitute tracking under App Tracking Transparency (ATT), and no ATT prompt is issued.</p>
 
-<h2>4. Use of Location</h2>
+<h2>5. Use of Location</h2>
 <p>To provide weather forecasts, the App requests location permission once (optional). Location is used solely for requests to <strong>Apple WeatherKit</strong> and is not shared with anyone, including the developer. If location access is denied, weather for Tokyo is displayed as a default.</p>
 
-<h2>5. Communication with Weather API</h2>
+<h2>6. Communication with Weather API</h2>
 <p>For weather forecasts, the App uses <strong>Apple WeatherKit</strong> (apple.com). Requests include only latitude/longitude coordinates, never any user or device identifier. Retrieved weather data is stored only on your device.</p>
 
-<h2>6. Calendar Access</h2>
+<h2>7. Calendar Access</h2>
 <p>If you use the schedule-import feature, the App will request access to the iOS Calendar API (EventKit) (optional). When granted, events you select are converted to study blocks <strong>locally on your device</strong>. Calendar contents are never transmitted to the developer or any third party.</p>
 
-<h2>7. App Integrations & Widgets</h2>
+<h2>8. App Integrations & Widgets</h2>
 <p>To display study snapshots on Home Screen widgets and Lock Screen Live Activities, the App uses iOS App Groups to share display data between the main app and the widget extension. This is <strong>on-device data sharing only</strong>; nothing is transmitted externally.</p>
 
-<h2>8. In-App Purchase (Strideline Pro)</h2>
+<h2>9. In-App Purchase (Strideline Pro)</h2>
 <p>The App offers Strideline Pro, a one-time non-consumable IAP. Purchase processing is handled by Apple StoreKit and is governed by Apple's Privacy Policy. The developer never receives payment details and only learns the purchase fact (isProUnlocked) from the Apple App Store.</p>
 
-<h2>9. Children's Privacy</h2>
+<h2>10. Children's Privacy</h2>
 <p>The App is intended for students preparing for entrance exams, including those under 13. The following measures ensure no personal data is collected from children:</p>
 <ul>
   <li>No account registration</li>
   <li>All study data is stored only on the device</li>
   <li>Location access and Calendar integration are entirely optional (core features work without them)</li>
-  <li>Zero advertising or tracking SDKs</li>
+  <li>Zero third-party advertising or tracking SDKs</li>
+  <li>The anonymous usage statistics in Section 2 are counts of the parent-facing purchase screen only; they <strong>do not measure a child's own usage</strong> and contain nothing that identifies any person, including a child</li>
 </ul>
 
-<h2>10. Changes to This Policy</h2>
-<p>This Policy may be updated without notice. Material changes will be announced in-app and on this page.</p>
+<h2>11. Changes to This Policy</h2>
+<p>This Policy may be updated. Material changes will be announced in-app and on this page.</p>
 
-<h2>11. Contact</h2>
+<h2>12. Contact</h2>
 <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:trim.hoist.6b@icloud.com">trim.hoist.6b@icloud.com</a>.</p>
 
 </body>
