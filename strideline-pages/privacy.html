@@ -42,7 +42,7 @@
 <h1 id="ja">Strideline — プライバシーポリシー</h1>
 <p class="last">最終更新: 2026-07-12 (v1.1)</p>
 
-<p class="changenote">v1.1 での変更: 有料版 (Strideline Pro) の案内画面がどれくらい表示・購入されたかを把握するため、<strong>匿名の操作カウント</strong>の送信を追加しました (下記セクション2)。氏名・メールアドレス・端末識別子・位置情報・学習内容は一切含まれず、個人を特定できる情報は送信しません。お子さま本人の利用 (アプリの起動など) は計測しません。変更点を隠さずお知らせするため、本セクションを記載しています。</p>
+<p class="changenote">v1.1 での変更: アプリ改善のため、<strong>匿名の操作カウント</strong>の送信を追加しました (下記セクション2)。数えるのは「アプリが起動された回数」「どの機能が使われたか」「有料版 (Strideline Pro) の案内・購入の回数」で、いずれも<strong>匿名の合計値</strong>です。<strong>識別子を一切持たない</strong>ため、特定のお子さまを識別したり、個人を時系列で追跡したり、プロファイルを作ることはできません。氏名・メールアドレス・端末識別子・位置情報・学習内容は一切含みません。変更点を隠さずお知らせするため、本セクションを記載しています。</p>
 
 <p>Strideline (以下「本アプリ」) がユーザー情報をどのように扱うかを説明します。</p>
 
@@ -50,15 +50,16 @@
 <p>学習スケジュール・予定ブロック・実測セッション・カウントダウン・教材ライブラリなど、<strong>あなたの学習に関するデータおよび個人データは、すべて iOS 標準の SwiftData によってお使いの端末内にのみ保存され、開発者のサーバーには送信されません</strong>。端末外へ送信されるのは、セクション2で説明する匿名の利用統計 (個人と結び付かない操作カウント) のみです。</p>
 
 <h2>2. 匿名の利用統計</h2>
-<p>本アプリを改善し、有料機能の価格や内容を判断するため、有料版 (Strideline Pro) の案内まわりの操作について、<strong>匿名の操作カウント</strong>を開発者自身のサーバー (<code>collect.appline.app</code>) に送信します。</p>
-<p><strong>送信する内容 (これだけです):</strong></p>
+<p>本アプリをよりよくするため、<strong>匿名の操作カウント</strong>を開発者自身のサーバー (<code>collect.appline.app</code>) に送信します。数えるのは次の3種類で、いずれも<strong>合計値 (集計) のみ</strong>です:</p>
 <ul>
-  <li>あらかじめ決められた固定のイベント名のみ — 例:「Pro画面が表示された」「購入ボタンが押された」「購入が完了した」「購入を復元した」</li>
-  <li>アプリのバージョン番号 (例: 1.1)</li>
+  <li><strong>アプリが起動された回数</strong> (どれくらい使われているかの目安)</li>
+  <li><strong>どの機能・画面が使われたか</strong> (例: カレンダー・統計・カウントダウンを開いた、学習タイマーを開始した、教材を追加した、カレンダーから取り込んだ — 使われていない機能を見つけて改善するため)</li>
+  <li><strong>有料版 (Strideline Pro) の案内・購入まわりの操作</strong> (例: Pro画面が表示された、購入ボタンが押された、購入が完了した、復元した)</li>
 </ul>
-<p><strong>送信しないもの:</strong> 氏名・メールアドレス・アカウント情報・端末識別子 (IDFA / IDFV など)・広告 ID・位置情報・学習内容・その他あらゆる個人を特定できる情報。これらは一切送信しません。送られるのは「ある操作が起きた」という<strong>回数だけ</strong>で、「誰が」の情報は含まれず、特定のユーザーや端末と結び付けられることはありません。</p>
+<p><strong>送信する内容 (これだけです):</strong> あらかじめ決められた固定のイベント名 + アプリのバージョン番号 (例: 1.1) のみ。</p>
+<p><strong>送信しないもの:</strong> 氏名・メールアドレス・アカウント情報・端末識別子 (IDFA / IDFV など)・広告 ID・位置情報・学習内容・その他あらゆる個人を特定できる情報。これらは一切送信しません。</p>
+<p><strong>個人・お子さまを特定・追跡することはできません:</strong> 本アプリは端末やお子さまに<strong>永続的な識別子を一切割り当てません</strong> (端末 ID やセッション ID を持ちません)。そのため送られるのは「ある操作が合計で何回起きたか」だけで、それらを結び付ける手がかりが存在せず、<strong>特定のユーザーやお子さまを識別したり、同一人物を時系列で追いかけたり、プロファイルを作ったりすることは構造的に不可能</strong>です。「何人が使ったか (アクティブユーザー数)」や継続率のような個人単位の統計も、この仕組みでは取得できません (それらは Apple の App Store Connect が集計する匿名データからのみ把握します)。</p>
 <p><strong>送信先:</strong> 開発者自身が管理するサーバー (Cloudflare 上) のみです。Google・Firebase・Meta などの第三者には一切渡しません。通信はネットワーク上、開発者のサーバー基盤 (Cloudflare) を経由しますが、<strong>あなたの IP アドレスを記録・保存・利用することはなく</strong>、上記の匿名カウントと結び付けることもありません。</p>
-<p><strong>お子さまの利用は計測しません:</strong> アプリの起動やお子さまの学習操作は記録しません。計測するのは、保護者が購入を検討する画面まわりの上記イベントのみです。</p>
 
 <h2>3. アカウント登録</h2>
 <p>本アプリはアカウント登録機能を持ちません。メールアドレス・電話番号・氏名などの登録は不要です。お子さま (プロフィール) の名前は端末内に保存されるラベルであり、外部送信はされません。</p>
@@ -88,7 +89,7 @@
   <li>学習データはすべて端末内のみに保存</li>
   <li>位置情報・カレンダー連携はすべてオプション (使わなくても基本機能はすべて使えます)</li>
   <li>第三者の広告・トラッキング SDK ゼロ</li>
-  <li>セクション2の匿名利用統計は、保護者向けの購入検討画面の操作カウントのみで、<strong>お子さま本人の利用は計測せず</strong>、個人 (お子さまを含む) を特定する情報を一切含みません</li>
+  <li>セクション2の匿名利用統計は識別子を持たない合計値 (集計) のみで、<strong>特定のお子さまを識別したり、時系列で追跡したり、プロファイルを作ったりすることは構造的にできず</strong>、個人 (お子さまを含む) を特定する情報を一切含みません</li>
 </ul>
 
 <h2>11. ポリシーの変更</h2>
@@ -103,7 +104,7 @@
 <h1 id="en">Strideline — Privacy Policy</h1>
 <p class="last">Last updated: 2026-07-12 (v1.1)</p>
 
-<p class="changenote">What changed in v1.1: To understand how often the paid upgrade screen (Strideline Pro) is viewed and purchased, we added the sending of <strong>anonymous usage counts</strong> (see Section 2 below). No name, email, device identifier, location, or study content is included, and nothing that could identify a person is sent. A child's own usage (such as launching the app) is not measured. We include this note to be transparent about the change.</p>
+<p class="changenote">What changed in v1.1: To improve the App, we added the sending of <strong>anonymous usage counts</strong> (see Section 2 below). We count how many times the app is launched, which features are used, and views/purchases of the paid upgrade (Strideline Pro) — all as <strong>anonymous totals</strong>. Because the App holds <strong>no identifier of any kind</strong>, it cannot identify a specific child, track an individual over time, or build a profile. No name, email, device identifier, location, or study content is included. We include this note to be transparent about the change.</p>
 
 <p>This Privacy Policy explains how Strideline (the "App") handles user information.</p>
 
@@ -111,15 +112,16 @@
 <p><strong>All of your study data and personal data — study schedules, planned blocks, recorded sessions, countdowns, and materials — are stored only on your device via iOS-native SwiftData and are never sent to the developer's servers.</strong> The only thing that leaves your device is the anonymous usage statistics (identity-free event counts) described in Section 2.</p>
 
 <h2>2. Anonymous Usage Statistics</h2>
-<p>To improve the App and to make decisions about the pricing and content of paid features, the App sends <strong>anonymous usage counts</strong> about the paid upgrade (Strideline Pro) flow to the developer's own server (<code>collect.appline.app</code>).</p>
-<p><strong>What is sent (only this):</strong></p>
+<p>To make the App better, it sends <strong>anonymous usage counts</strong> to the developer's own server (<code>collect.appline.app</code>). Three kinds of things are counted, all as <strong>totals (aggregates) only</strong>:</p>
 <ul>
-  <li>A fixed, predefined event name only — e.g. "Pro screen shown", "purchase button tapped", "purchase completed", "purchase restored"</li>
-  <li>The app version number (e.g. 1.1)</li>
+  <li><strong>How many times the app is launched</strong> (a rough measure of how much it is used)</li>
+  <li><strong>Which features / screens are used</strong> (e.g. opening the calendar, stats, or countdown; starting the study timer; adding a material; importing from the calendar — so we can find features that are unused and improve them)</li>
+  <li><strong>Actions around the paid upgrade (Strideline Pro)</strong> (e.g. Pro screen shown, purchase button tapped, purchase completed, purchase restored)</li>
 </ul>
-<p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, location, study content, or any other information that could identify a person. Only the <strong>count</strong> that "an action happened" is sent — it contains no "who", and is never linked to a specific user or device.</p>
+<p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number (e.g. 1.1). Nothing else.</p>
+<p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, location, study content, or any other information that could identify a person.</p>
+<p><strong>No individual or child can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or a child (no device ID, no session ID). So all that is sent is "how many times, in total, an action happened" — there is no key to join these counts on, which makes it <strong>structurally impossible to identify a specific user or child, follow the same person over time, or build a profile</strong>. Per-user metrics such as the number of active users or retention are also not obtainable this way (we learn those only from the anonymous data aggregated by Apple's App Store Connect).</p>
 <p><strong>Where it goes:</strong> only to a server operated by the developer (on Cloudflare). It is never shared with any third party such as Google, Firebase, or Meta. The request necessarily transits the developer's server infrastructure (Cloudflare) at the network level, but <strong>your IP address is not logged, stored, or used</strong>, and is never associated with the anonymous counts above.</p>
-<p><strong>A child's usage is not measured:</strong> app launches and a child's study activity are not recorded. Only the parent-facing purchase-consideration events above are counted.</p>
 
 <h2>3. Account Registration</h2>
 <p>The App has no account registration feature. No email address, phone number, or personal identifier is required. Profile names (e.g. for siblings) are stored as on-device labels only and are never transmitted externally.</p>
@@ -149,7 +151,7 @@
   <li>All study data is stored only on the device</li>
   <li>Location access and Calendar integration are entirely optional (core features work without them)</li>
   <li>Zero third-party advertising or tracking SDKs</li>
-  <li>The anonymous usage statistics in Section 2 are counts of the parent-facing purchase screen only; they <strong>do not measure a child's own usage</strong> and contain nothing that identifies any person, including a child</li>
+  <li>The anonymous usage statistics in Section 2 are identifier-free totals (aggregates) only; they make it <strong>structurally impossible to identify, track over time, or profile a specific child</strong>, and contain nothing that identifies any person, including a child</li>
 </ul>
 
 <h2>11. Changes to This Policy</h2>
