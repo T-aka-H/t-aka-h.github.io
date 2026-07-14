@@ -11,6 +11,7 @@
     max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
   }
   h1 { font-size: 26px; letter-spacing: 3px; }
+  h2 { color: rgba(237,235,228,0.92); margin-top: 34px; font-size: 18px; }
   p, li { color: rgba(237,235,228,0.78); }
   a { color: #A9C1EE; }
   .nav { margin: 12px 0 28px; }
@@ -26,15 +27,24 @@
   </div>
 
   <p>Peakline does not collect, store, or transmit any personal information.</p>
+  <p><b>Changed in v1.0.1:</b> To improve the app, we added <b>anonymous action counts</b> (see "Anonymous usage statistics" below). We count how many times the app was opened and how many times features like saving, sharing, and comparing artworks were used — always as <b>anonymous totals</b>. The app holds <b>no identifier of any kind</b>, so it is impossible to identify a specific person, follow anyone over time, or build a profile. We note this change here rather than hide it.</p>
   <ul>
-    <li><b>Not collected:</b> No location, camera, photos, contacts, name, email, device identifiers, or usage analytics — none of it.</li>
+    <li><b>Not collected:</b> No location, camera, photos, contacts, name, email, or device identifiers — none of it.</li>
     <li><b>Your content:</b> The places, notes, and visit dates you record are stored only on your device and are never sent to any server.</li>
-    <li><b>Network:</b> The app connects only to fetch elevation tiles (GSI Japan / Mapzen Terrain Tiles) for drawing terrain, and place search (Apple MapKit). These requests contain no personally identifying information.</li>
+    <li><b>Network:</b> The app connects only to fetch elevation tiles (GSI Japan / Mapzen Terrain Tiles) for drawing terrain, place search (Apple MapKit), and to send the anonymous usage statistics described below. These requests contain no personally identifying information.</li>
     <li><b>Sharing:</b> Sharing happens only when you explicitly choose to, through the standard system share sheet.</li>
     <li><b>Ads &amp; tracking:</b> There are no ads and no tracking.</li>
   </ul>
+
+  <h2>Anonymous usage statistics</h2>
+  <p>To improve the app, Peakline sends <b>anonymous action counts</b> to a server operated by the developer (<code>collect.appline.app</code>). What is counted is a fixed set of actions — "the app was opened", "an artwork was saved", "a poster was exported", "the compare viewer was opened" — always as <b>aggregate totals only</b>.</p>
+  <p><b>What is sent (this is everything):</b> a fixed event name plus the app version (e.g. 1.0.1).</p>
+  <p><b>What is never sent:</b> name, email, device identifiers (IDFA / IDFV), advertising IDs, location, the content of your artworks (place names, coordinates, notes), or anything else that could identify you.</p>
+  <p><b>No one can be identified or followed:</b> the app assigns <b>no persistent identifier</b> to your device (no device ID, no session ID). Only "how many times an action happened in total" is recorded; there is no key to join events on, so identifying a specific user, following the same person over time, or building a profile is structurally impossible.</p>
+  <p><b>Where it goes:</b> only to the developer's own server (on Cloudflare). Nothing is shared with third parties such as Google, Firebase, or Meta. <b>Your IP address is never recorded, stored, or used</b>, and is never linked to the counts above. This does not constitute tracking under App Tracking Transparency (ATT).</p>
+
   <p>This policy may be updated. Questions? <a href="mailto:trim.hoist.6b@icloud.com">Email us</a>.</p>
 
-  <p class="last">Last updated: 2026-07-05 · © 2026 Takanori Hamuro</p>
+  <p class="last">Last updated: 2026-07-15 (v1.0.1) · © 2026 Takanori Hamuro</p>
 </body>
 </html>
