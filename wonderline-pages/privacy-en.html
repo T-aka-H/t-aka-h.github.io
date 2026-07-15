@@ -18,6 +18,9 @@
   .nav a { margin-right: 16px; }
   .last { color: rgba(46,42,34,0.4); font-size: 12px; }
   .lang { font-size: 13px; margin-bottom: 8px; }
+  .changenote { background: rgba(169,121,31,0.08); border-left: 3px solid #A9791F;
+    padding: 10px 14px; border-radius: 6px; font-size: 13px; margin: 8px 0 20px; }
+  code { background: rgba(169,121,31,0.10); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -27,12 +30,14 @@
     <a href="index-en.html">Home</a>
     <a href="support-en.html">Support</a>
   </div>
-  <p>Last updated: July 11, 2026</p>
+  <p>Last updated: July 16, 2026</p>
+
+  <p class="changenote">What changed in this update: To improve the app, we added the sending of <strong>anonymous usage counts</strong> (see Section 2 below). We count only <strong>totals</strong> of which features are used — never the content of what you read, your words, audio, or URLs. Because the app holds <strong>no identifier of any kind</strong>, it cannot identify a specific person, track an individual over time, or build a profile. We include this note to be transparent about the change.</p>
 
   <p>This policy explains how Wonderline (the "app") handles information.</p>
 
   <h2>1. Information we collect</h2>
-  <p>The app <strong>does not collect or store personally identifiable information</strong>. No account is required, and it contains no analytics or advertising SDKs.</p>
+  <p>The app <strong>does not collect or store personally identifiable information</strong>. No account is required, and it contains no third-party analytics or advertising SDKs. The only thing that leaves your device is the anonymous usage statistics (identity-free event counts) described in Section 2.</p>
   <p>The following data is stored <strong>only on your device</strong>:</p>
   <ul>
     <li>Imported text (photos, PDFs, web articles, pasted text, transcription results)</li>
@@ -40,33 +45,45 @@
     <li>In-app settings (English level, definition language, appearance, etc.)</li>
   </ul>
 
-  <h2>2. On-device processing</h2>
+  <h2>2. Anonymous usage statistics</h2>
+  <p>To make the app better, it sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). Three kinds of things are counted, all as <strong>totals (aggregates) only</strong>:</p>
+  <ul>
+    <li><strong>How many times the app is launched and which features are used</strong> (e.g. which import method — paste / camera / PDF — was used, how many words were saved, how many pronunciations were played — <strong>never the content of your text, words, audio, or URLs</strong>)</li>
+    <li><strong>The order in which screens are used</strong> (e.g. how many times the transition "reader → word sheet" happened in total. Only <strong>transition pairs from a fixed list of screen names</strong> are counted; an individual's sequence is never sent and can never be reconstructed)</li>
+    <li><strong>Actions around Wonderline Pro</strong> (e.g. the upgrade screen was shown, a purchase completed)</li>
+  </ul>
+  <p><strong>What is sent (only this):</strong> a fixed, predefined event or screen name plus the app version number. Nothing else.</p>
+  <p><strong>What is never sent:</strong> no name, email, device identifier (IDFA / IDFV), advertising ID, location, the text you read, your words, audio, URLs, or any other information that could identify a person. The on-device principle in the sections below is unchanged — your text and audio never leave the device.</p>
+  <p><strong>No individual can be identified or tracked:</strong> the app assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, an action happened" — there is no key to join these counts on, which makes it structurally impossible to identify a specific person, follow the same person over time, or build a profile.</p>
+  <p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. Your IP address is not logged, stored, or used, and is never associated with the anonymous counts above.</p>
+
+  <h2>3. On-device processing</h2>
   <p>Text recognition (OCR), audio transcription and speech recognition, and text translation all run <strong>on your device</strong>. Your text and audio are not sent to the developer's servers for these purposes.</p>
 
-  <h2>3. Device permissions</h2>
+  <h2>4. Device permissions</h2>
   <ul>
     <li><strong>Camera</strong> — to photograph pages of printed books and recognize the English words in them.</li>
     <li><strong>Microphone &amp; Speech Recognition</strong> — for read-aloud capture, "Voice memo", and transcribing audio/video files. Recognition is performed on your device.</li>
   </ul>
   <p>Choosing images from your library uses the system photo picker, so access to your entire photo library is not required.</p>
 
-  <h2>4. Network access</h2>
-  <p>Only when you import a web article by URL does the app <strong>access the site you specified</strong> to load that page (similar to a normal web browser). No personally identifiable information is transmitted in this request. The other reading and vocabulary features do not require a network connection.</p>
+  <h2>5. Network access</h2>
+  <p>Only when you import a web article by URL does the app <strong>access the site you specified</strong> to load that page (similar to a normal web browser). No personally identifiable information is transmitted in this request. Apart from the anonymous counts in Section 2, the other reading and vocabulary features do not require a network connection.</p>
 
-  <h2>5. Share Extension</h2>
+  <h2>6. Share Extension</h2>
   <p>Links, text, and audio/video shared from Safari and other apps are temporarily stored in the app's inbox via an App Group and used within the app for reading or transcription. They are not sent to the developer's servers.</p>
 
-  <h2>6. Integration with another app (Wordsline)</h2>
+  <h2>7. Integration with another app (Wordsline)</h2>
   <p>If you also use the review app Wordsline, only the words you explicitly choose in the Words tab are passed to Wordsline through a shared area (App Group) on your device. Nothing is sent automatically.</p>
 
-  <h2>7. In-app purchase (Wonderline Pro)</h2>
+  <h2>8. In-app purchase (Wonderline Pro)</h2>
   <p>The app offers Wonderline Pro, a one-time in-app purchase that unlocks all features after the free trial period ends. All purchase processing is handled by Apple StoreKit and is governed by Apple's Privacy Policy. The developer never receives payment details such as credit card numbers, and only learns from the App Store whether the purchase has been made.</p>
   <p>The start date of your free trial is stored <strong>only on your device</strong> and is never transmitted externally.</p>
 
-  <h2>8. Children's privacy</h2>
-  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13.</p>
+  <h2>9. Children's privacy</h2>
+  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13. The anonymous usage statistics in Section 2 are identifier-free totals that cannot identify any person, including children.</p>
 
-  <h2>9. Contact</h2>
+  <h2>10. Contact</h2>
   <p>For questions, please use the contact method listed on the app's App Store page.</p>
 
   <p class="last">© 2026 Wonderline</p>

@@ -19,20 +19,36 @@
   p, li { color: rgba(238,242,247,0.78); }
   a { color: #6cb8ff; }
   .last { color: rgba(238,242,247,0.40); font-size: 12px; }
+  .changenote { background: rgba(108,184,255,0.08); border-left: 3px solid #6cb8ff;
+    padding: 10px 14px; border-radius: 6px; font-size: 13px; margin: 8px 0 20px; }
+  code { background: rgba(108,184,255,0.10); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
 </style>
 </head>
 <body>
 
 <h1>ABS Challenge — Privacy Policy</h1>
-<p class="last">Last updated: 2026-06-09 (v1.0.0 — initial release)</p>
+<p class="last">Last updated: 2026-07-16 (v1.1)</p>
 
-<p>ABS Challenge ("the App") is developed and operated by an independent developer. This Privacy Policy describes how the App handles user information.</p>
+<p class="changenote">What changed in v1.1: To improve the App, we added the sending of <strong>anonymous usage counts</strong> (see "Anonymous Usage Statistics" below). We count totals such as how many times the app is launched or a game is completed. Because the App holds <strong>no identifier of any kind</strong>, it cannot identify a specific player, track an individual over time, or build a profile. No name, email, device identifier, or location is included. We include this note to be transparent about the change.</p>
+
+<p>This Privacy Policy describes how ABS Challenge ("the App") handles user information.</p>
 
 <h2>Data Collection</h2>
-<p>The App does <strong>not</strong> collect personal data on any developer server. There is no account system, no analytics SDK, and no third-party advertising. Local game state — scores, accuracy history, team names and colors, and settings — is stored on your device using iOS UserDefaults and never leaves your device.</p>
+<p>The App has no account system and collects no personal data. Local game state — scores, accuracy history, team names and colors, and settings — is stored on your device using iOS UserDefaults and never leaves your device. The only thing that leaves your device is the anonymous usage statistics (identity-free event counts) described below.</p>
+
+<h2>Anonymous Usage Statistics</h2>
+<p>To make the App better, it sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>:</p>
+<ul>
+  <li>How many times the app is launched, a game is started or completed, the ABS challenge is used, or the leaderboards are viewed</li>
+  <li>Which screen tends to follow which (e.g. "game over → leaderboards"), as <strong>total transition counts from a fixed screen list</strong> — never an individual's sequence</li>
+</ul>
+<p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+<p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, location, or any other information that could identify a person.</p>
+<p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, which makes it structurally impossible to identify a specific player, follow the same person over time, or build a profile.</p>
+<p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. Your IP address is not logged, stored, or used, and is never associated with the anonymous counts above.</p>
 
 <h2>No Advertising / No Tracking</h2>
-<p>The App contains <strong>no third-party advertising</strong> and does <strong>no tracking</strong> across other companies' apps or websites. It does not request App Tracking Transparency permission and does not use the advertising identifier (IDFA).</p>
+<p>The App contains <strong>no third-party advertising</strong> and does <strong>no tracking</strong> across other companies' apps or websites. The anonymous counts above are sent only to the developer's own server, are not linked to your identity, and therefore do not constitute tracking under App Tracking Transparency (ATT). The App does not request ATT permission and does not use the advertising identifier (IDFA).</p>
 
 <h2>Game Center</h2>
 <p>If you choose to sign in to Game Center (a service provided by Apple), the App submits your best scores — Top Speed (mph), Top Spin (rpm), Best Score, and Best Accuracy — to Apple's leaderboards. Score submission is handled entirely by Apple's GameKit framework. The developer does not have access to your Game Center identity beyond what is publicly visible on the leaderboard. Game Center is governed by Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></p>
@@ -41,13 +57,13 @@
 <p>The App stores progress data (best scores, accuracy history, team names/colors, settings) locally on your device using iOS UserDefaults. This data never leaves your device and is removed when you delete the App.</p>
 
 <h2>Third Parties</h2>
-<p>The App uses only Apple's own frameworks (SwiftUI, SceneKit, GameKit, AVFoundation, Core Haptics). These are not third parties, and the App sends no data to any external service.</p>
+<p>The App uses only Apple's own frameworks (SwiftUI, SceneKit, GameKit, AVFoundation, Core Haptics). No data is shared with any third party; the anonymous usage counts above go only to the developer's own server.</p>
 
 <h2>Children</h2>
-<p>The App contains no objectionable content and collects no data. It does not knowingly collect data from children of any age.</p>
+<p>The App contains no objectionable content. It collects no personal data from anyone; the anonymous usage statistics described above are identifier-free totals that cannot identify any person, including children.</p>
 
 <h2>Changes</h2>
-<p>If the App's data practices change in a future version (for example, if optional features are added), this Privacy Policy will be updated accordingly before that version is released.</p>
+<p>If the App's data practices change in a future version, this Privacy Policy will be updated accordingly before that version is released, with the change noted at the top of this page.</p>
 
 <h2>Contact</h2>
 <p>If you have any questions about this Privacy Policy, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
