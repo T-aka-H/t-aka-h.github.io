@@ -17,6 +17,9 @@
   .nav { margin: 12px 0 28px; }
   .nav a { margin-right: 16px; }
   .last { color: rgba(35,40,79,0.4); font-size: 12px; }
+  .changenote { background: rgba(214,51,92,0.06); border-left: 3px solid #D6335C;
+    padding: 10px 14px; border-radius: 6px; font-size: 13px; margin: 8px 0 20px; }
+  code { background: rgba(35,40,79,0.07); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -25,44 +28,64 @@
     <a href="index-en.html">Home</a>
     <a href="support-en.html">Support</a>
   </div>
-  <p>Last updated: July 5, 2026</p>
+  <p>Last updated: July 16, 2026</p>
+
+  <div class="changenote">
+    <strong>What changed on July 16, 2026:</strong> To improve the App, we added the sending of <strong>anonymous usage counts</strong> (see Section 2). We count how many times the app is launched, which features are used, and which screen tends to follow which — all as totals. <strong>Place names, coordinates, photos and diary text are never sent.</strong> Because the App holds <strong>no identifier of any kind</strong>, it cannot identify a person, track them over time, or build a profile. We include this note to be transparent about the change.
+  </div>
 
   <p>This policy describes how information is handled in Journeyline (the "App").</p>
 
   <h2>1. Information we collect</h2>
   <p>We do <strong>not</strong> collect or store personally identifiable information. No account sign-up is required.</p>
-  <p>The following stays on <strong>your device</strong> (and optionally in your iCloud account):</p>
+  <p>The following stays on <strong>your device</strong> (and optionally in your iCloud account), and is never sent to our servers:</p>
   <ul>
     <li>Pins (place names, notes, visit status, planned dates)</li>
     <li>Diary entries and attached photos</li>
     <li>Custom lists</li>
     <li>In-app preferences</li>
   </ul>
+  <p>The only thing that leaves your device is the anonymous usage statistics (identity-free counts) described in Section 2.</p>
 
-  <h2>2. Device permissions</h2>
+  <h2>2. Anonymous Usage Statistics</h2>
+  <p>To make the App better, it sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). Three kinds of things are counted, all as <strong>totals (aggregates) only</strong>:</p>
+  <ul>
+    <li><strong>How many times the app is launched</strong> (a rough measure of how much it is used)</li>
+    <li><strong>Which features are used</strong> (e.g. a pin was saved, a place was added from photos, a place was marked visited, a diary entry was created, the guided tour was opened — so we can find features that are unused and improve them)</li>
+    <li><strong>Which screen tends to follow which</strong> (e.g. "map → add menu"), as total transition counts from a fixed screen list — never an individual's sequence</li>
+  </ul>
+  <p><strong>What is sent (only this):</strong> a fixed, predefined event or screen name plus the app version number. Nothing else.</p>
+  <p><strong>What is never sent:</strong> <strong>place names, coordinates, addresses, photos, or diary text</strong>; no name, email, account information, device identifier (IDFA / IDFV), advertising ID, or current location. We count only <strong>that</strong> a pin was saved — never <strong>where</strong> it was.</p>
+  <p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, which makes it <strong>structurally impossible to identify a specific user, follow the same person over time, or build a profile</strong>. Screen transitions are stored only as "A→B happened N times in total"; no individual route can be reconstructed.</p>
+  <p><strong>Where it goes:</strong> only to the developer's own server (on Cloudflare). It is never shared with any third party such as Google, Firebase, or Meta. <strong>Your IP address is not logged, stored, or used</strong>, and is never associated with the anonymous counts above.</p>
+
+  <h2>3. Device permissions</h2>
   <ul>
     <li><strong>Location (when in use)</strong> — current location, reverse geocoding, and reading GPS from photos. No background tracking.</li>
     <li><strong>Photo library</strong> — attaching photos to diary entries, importing places from photos, and reading Google Takeout export files you choose.</li>
     <li><strong>Motion</strong> — optional decorative effect on the home screen when you tilt the device. Not used for health or activity tracking.</li>
   </ul>
 
-  <h2>3. iCloud</h2>
+  <h2>4. iCloud</h2>
   <p>If you are signed in to iCloud, pins, diary entries, and photos may sync across your devices via Apple iCloud under Apple's privacy policy. We do not operate a backend server for your content.</p>
 
-  <h2>4. Third-party services</h2>
+  <h2>5. Third-party services &amp; tracking</h2>
   <ul>
     <li><strong>Apple MapKit</strong> — map display and place search</li>
     <li><strong>Google Maps</strong> — only when you choose to open directions or view a place in Google Maps</li>
   </ul>
-  <p>No advertising SDKs, analytics SDKs, or social login.</p>
+  <p>No advertising SDKs, <strong>no third-party analytics SDKs</strong> (Google Analytics, Firebase, Meta, etc.), and no social login. The anonymous counts in Section 2 are sent only to the developer's own server, are not linked to your identity, and are not used to track you across other companies' apps or websites. They therefore do not constitute tracking under App Tracking Transparency (ATT), and no ATT prompt is issued.</p>
 
-  <h2>5. Share Extension</h2>
-  <p>Links shared from Safari or Google Maps are stored temporarily in an App Group inbox on your device until you import them as a pin. Nothing is sent to our servers.</p>
+  <h2>6. Share Extension</h2>
+  <p>Links shared from Safari or Google Maps are stored temporarily in an App Group inbox on your device until you import them as a pin. <strong>The link and place content are never sent to our servers</strong> (per Section 2, we only count that an import happened).</p>
 
-  <h2>6. Children's privacy</h2>
-  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13.</p>
+  <h2>7. Children's privacy</h2>
+  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13. The anonymous usage statistics in Section 2 are identifier-free totals only and contain nothing that identifies any person, including a child.</p>
 
-  <h2>7. Contact</h2>
+  <h2>8. Changes to this policy</h2>
+  <p>This policy may be updated. Material changes will be announced on this page.</p>
+
+  <h2>9. Contact</h2>
   <p>Please use the contact option on the App Store app page.</p>
 
   <p class="last">© 2026 Journeyline</p>
