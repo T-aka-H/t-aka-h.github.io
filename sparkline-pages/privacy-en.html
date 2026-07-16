@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparkline — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    background: #F2F7FB; color: #142742;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 26px; letter-spacing: 2px; }
+  h2 { color: #142742; margin-top: 34px; font-size: 18px; }
+  p, li { color: rgba(20,39,66,0.82); }
+  a { color: #16759A; }
+  .nav { margin: 12px 0 28px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(20,39,66,0.4); font-size: 12px; }
+  code { background: rgba(20,39,66,0.07); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+  <h1>Sparkline — Privacy Policy</h1>
+  <div class="nav">
+    <a href="index-en.html">Home</a>
+    <a href="support-en.html">Support</a>
+    <a href="terms-en.html">Terms</a>
+    <a href="privacy.html">日本語</a>
+  </div>
+  <p>Effective: July 16, 2026</p>
+
+  <h2>1. Information processed on device</h2>
+  <p>Sparkline briefly processes the UID/IDm of a supported NFC card at read time, for chemistry readings, re-identifying a card, card management, and history. It never issues commands to read stored value, transit or use history, payment data, names, hotel key data, or any other data held on the card.</p>
+  <p>The UID/IDm is immediately converted to an <code>HMAC-SHA256</code> using a device-only Keychain key. The raw UID/IDm is never stored, displayed, or transmitted. A QR code or barcode image and its decoded value are likewise only processed transiently; only the identifier derived with the device-only key is stored.</p>
+  <p>Card names, issuers, categories, status, storage locations, deadlines, notes, and travel sets that you enter, along with reading history, registration date, check count, and appearance style, are stored on your device. Card-face images are never stored.</p>
+
+  <h2>2. What the developer collects</h2>
+  <p>This app uses <strong>no</strong> account, developer server, advertising, analytics SDK, or tracking SDK. Nothing on your device is automatically transmitted to the internet in a form the developer can obtain, and nothing is sold or provided to third parties. With this configuration, the app is declared as "Data Not Collected" in Apple's App Privacy.</p>
+
+  <h2>3. Bump and on-device AI</h2>
+  <p>During a Bump, two nearby iPhones communicate over Bluetooth and the local network with encryption required. They exchange fresh random nonces, a protocol version, a coarse card persona, on-device AI availability, mutual confirmation state, a single-session token, and the finished fictional reading text.</p>
+  <p><strong>Never sent to the peer:</strong> the raw UID/IDm, the stored hash, card names, notes, or management data. Nothing is sent to a developer server or any internet service.</p>
+  <p>On eligible devices, Apple Foundation Models generates the secret genre, the fictional Bump chemistry text, and the solo Today's Card reading on device. Card names, notes, issuers, storage locations, UID/IDm, stored hashes, and raw QR/barcode values are not provided to the model. A bundled on-device fallback is used when generation is unavailable.</p>
+
+  <h2>4. Device permissions</h2>
+  <ul>
+    <li><strong>NFC</strong> — used only to read the UID/IDm of supported cards.</li>
+    <li><strong>Camera</strong> — used only to add QR codes and barcodes.</li>
+    <li><strong>Bluetooth / Local Network</strong> — used only to Bump with a nearby Sparkline user. Nothing is sent to the internet or a developer server.</li>
+  </ul>
+
+  <h2>5. Sharing, notifications, and protection</h2>
+  <p>Sharing happens only when you open the iOS share sheet; the shared image contains card names, the reading, and the date. Notifications are scheduled on device only if you enable deadline reminders, and their text never includes card or venue names. Stored data uses complete iOS file protection, and app contents are hidden in the app switcher.</p>
+
+  <h2>6. Retention and deletion</h2>
+  <p>Information stays on your device until you delete it. Cards can be deleted individually, and the in-app Privacy &amp; Legal screen deletes cards, travel sets, Bump history, solo history, mission state, and notifications together. Deleting the app removes the data in its container.</p>
+
+  <h2>7. Children's privacy</h2>
+  <p>This app is rated 4+. Because the developer collects no personal information at all, no personal information is collected from children under 13 either.</p>
+
+  <h2>8. Using Sparkline safely</h2>
+  <p>Credit/debit cards, identity documents, My Number cards, driver's licenses, passports, and ISO 7816 cards are unsupported. Do not read another person's card or code without that owner's clear permission. Do not enter room numbers, PINs, card numbers, names, or unlock codes into card names or notes.</p>
+  <p>FeliCa is a registered trademark of Sony Corporation and MIFARE of NXP B.V. This app is not endorsed or sponsored by any card issuer, Sony, NXP, Apple, or the NFC Forum.</p>
+
+  <h2>9. Changes to this policy</h2>
+  <p>This policy may change. Significant changes will be announced on this page.</p>
+
+  <h2>10. Contact</h2>
+  <p>Please use the contact method listed on the App Store product page.</p>
+
+  <p class="last">© 2026 Sparkline</p>
+</body>
+</html>
