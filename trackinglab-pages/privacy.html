@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking Lab — プライバシーポリシー</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #14141B; color: #F2F0EE;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 26px; letter-spacing: 1px; }
+  h2 { color: #F2F0EE; margin-top: 34px; font-size: 18px; }
+  p, li { color: rgba(242,240,238,0.82); }
+  a { color: #FF6A50; }
+  .nav { margin: 12px 0 28px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(242,240,238,0.4); font-size: 12px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  code { background: rgba(255,106,80,0.12); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="privacy-en.html">English</a></div>
+  <h1>Tracking Lab — プライバシーポリシー</h1>
+  <div class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="support.html">サポート</a>
+  </div>
+  <p>最終更新: 2026年7月18日</p>
+
+  <p>本ポリシーは、Tracking Lab（以下「本アプリ」）における情報の取り扱いを説明します。</p>
+
+  <h2>1. 収集する情報</h2>
+  <p>本アプリは<strong>個人を特定する情報を収集・保存しません</strong>。アカウント登録は不要で、第三者の分析（アナリティクス）や広告のSDKは含まれていません。端末外へ送信されるのは、セクション2で説明する匿名の利用統計（個人と結び付かない操作カウント）のみです。</p>
+  <p>以下のデータは<strong>お使いの端末上</strong>にのみ保存されます。</p>
+  <ul>
+    <li>設計したマイピッチ（球質・リリースのパラメータ）</li>
+    <li>ブルペンの投球記録・10球検定の成績</li>
+    <li>Struck Out のベストスコア、アプリ内設定（単位など）</li>
+  </ul>
+
+  <h2>2. 匿名の利用統計</h2>
+  <p>本アプリをよりよくするため、<strong>匿名の操作カウント</strong>を開発者自身のサーバー（<code>collect.appline.app</code>、Cloudflare 上）に送信します。数えるのは「アプリが起動された回数」「投球が行われた回数」「画面の使われる順番（決められた画面名リストの遷移ペアの合計）」「Pro の案内・購入まわりの操作」などの<strong>合計値（集計）のみ</strong>です。</p>
+  <p><strong>送信する内容（これだけです）:</strong> あらかじめ決められた固定のイベント名・画面名 ＋ アプリのバージョン番号のみ。</p>
+  <p><strong>送信しないもの:</strong> 氏名・メールアドレス・端末識別子（IDFA / IDFV など）・広告ID・位置情報・設計したピッチの内容・投球記録・その他あらゆる個人を特定できる情報。これらは一切送信しません。</p>
+  <p><strong>個人を特定・追跡することはできません:</strong> 本アプリは端末やユーザーに<strong>永続的な識別子を一切割り当てません</strong>。送られるのは「ある操作が合計で何回起きたか」だけで、それらを結び付ける手がかりが存在せず、特定の個人を識別したり、同一人物を時系列で追いかけたり、プロファイルを作ったりすることは構造的に不可能です。</p>
+  <p><strong>送信先:</strong> 開発者自身が管理するサーバーのみです。Google・Firebase・Meta などの第三者には一切渡しません。あなたの IP アドレスを記録・保存・利用することはなく、匿名カウントと結び付けることもありません。</p>
+
+  <h2>3. 端末内での処理</h2>
+  <p>投球の物理シミュレーション、球質の計測値の算出、記録の保存・集計、成績のグラフ表示は、いずれも<strong>お使いの端末内</strong>で実行されます。これらの目的で、データが開発者のサーバーに送信されることはありません。</p>
+
+  <h2>4. 端末の権限</h2>
+  <p>本アプリは、カメラ・マイク・位置情報・写真ライブラリなどの<strong>端末の権限を一切要求しません</strong>。</p>
+
+  <h2>5. Game Center</h2>
+  <p>Struck Out のスコアを世界ランキングに載せるため、Apple の Game Center を利用できます。サインインは任意で、サインインしなくても本アプリのすべての機能を利用できます（ランキングには自分のベストのみ表示されます）。Game Center の利用には Apple のプライバシーポリシーが適用され、本アプリが受け取るのはランキング表示に必要なスコアと公開ニックネームのみです。</p>
+
+  <h2>6. アプリ内課金（Lab Pro）</h2>
+  <p>本アプリは、マイピッチの保存枠の拡張・検定履歴・CSVエクスポートを利用するための買い切り型アプリ内課金「Lab Pro」を提供しています。購入処理はすべて Apple の StoreKit を通じて行われ、Apple のプライバシーポリシーが適用されます。開発者がクレジットカード番号などの決済情報を受け取ることはなく、App Store から購入済みかどうかの事実のみを取得します。</p>
+
+  <h2>7. CSVエクスポート</h2>
+  <p>Lab Pro のCSVエクスポートは、あなたが操作したときにのみ、端末内の記録をファイルとして書き出し、iOS の共有シートで共有先を選べるようにするものです。開発者のサーバーに自動送信されることはありません。</p>
+
+  <h2>8. 子どものプライバシー</h2>
+  <p>本アプリは 4+ 向けです。13 歳未満から意図的に個人情報を収集することはありません。セクション2の匿名利用統計は識別子を持たない合計値のみで、個人（子どもを含む）を特定する情報を一切含みません。</p>
+
+  <h2>9. 改定について</h2>
+  <p>本ポリシーを改定する場合は、本ページを更新し、冒頭の最終更新日を改めます。</p>
+
+  <h2>10. お問い合わせ</h2>
+  <p>ご質問は、App Store のアプリページに記載のお問い合わせ方法をご利用ください。</p>
+
+  <p class="last">© 2026 Tracking Lab</p>
+</body>
+</html>
