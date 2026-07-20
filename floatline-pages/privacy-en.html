@@ -18,6 +18,7 @@
   .nav a { margin-right: 16px; }
   .last { color: rgba(28,36,48,0.4); font-size: 12px; }
   .lang { font-size: 13px; margin-bottom: 8px; }
+  .changenote { background: rgba(13,97,140,0.08); padding: 14px 16px; border-radius: 10px; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -27,12 +28,14 @@
     <a href="index-en.html">Home</a>
     <a href="support-en.html">Support</a>
   </div>
-  <p>Last updated: July 20, 2026</p>
+  <p>Last updated: July 21, 2026</p>
+
+  <p class="changenote">Change on July 21, 2026: To improve the app, we added <strong>anonymous usage counts</strong> (see Section 2). We count launches, which features are used, memo save / notification response events, and Floatline Pro funnel events — all as <strong>aggregate totals only</strong>. We assign no persistent identifier, so we cannot identify a person, follow them over time, or build a profile. Memo text, audio, and location are never included.</p>
 
   <p>This policy describes how Floatline (“the app”) handles information.</p>
 
   <h2>1. Information we collect</h2>
-  <p>The app <strong>does not collect or store personally identifying information</strong>. No account is required, and there are no third-party advertising or analytics SDKs. Memo text, audio, images, and journal entries are stored <strong>only on your device</strong> (and, if you enable it, in your own iCloud).</p>
+  <p>No account is required. There are no third-party advertising or analytics SDKs (Google Analytics, Firebase, Meta, etc.). Memo text, audio, images, and journal entries are stored <strong>only on your device</strong> (and, if you enable it, in your own iCloud). The only data that leaves the device is the <strong>anonymous usage statistics</strong> described in Section 2 (operation counts that cannot be linked to a person).</p>
   <ul>
     <li>Voice transcriptions, typed memos, and scanned text</li>
     <li>Reminder settings (time, place, and similar)</li>
@@ -40,10 +43,24 @@
     <li>App settings (lock, notification time, and similar)</li>
   </ul>
 
-  <h2>2. On-device processing</h2>
+  <h2>2. Anonymous usage statistics</h2>
+  <p>To improve the app, we send <strong>anonymous operation counts</strong> to a server we operate (<code>collect.appline.app</code>). We count the following as <strong>totals only</strong>:</p>
+  <ul>
+    <li><strong>App launches</strong></li>
+    <li><strong>Which features or screens were used</strong> (for example opening Schedule or Weekly Review)</li>
+    <li><strong>Memo save and notification responses</strong> (saved / opened from a notification / completed — never the content or audio)</li>
+    <li><strong>Capture entry points</strong> (in-app, Siri/Shortcuts, widget, and similar — never the content)</li>
+    <li><strong>Floatline Pro funnel</strong> (shown, purchase tapped, purchase completed, restored)</li>
+  </ul>
+  <p><strong>What we send (only this):</strong> a fixed event name from a allow-list plus the app version number.</p>
+  <p><strong>What we never send:</strong> name, email, account data, device identifiers (IDFA / IDFV, etc.), advertising IDs, location, memo text, audio, images, journal content, or any other personally identifying information.</p>
+  <p><strong>We cannot identify or track you:</strong> the app assigns <strong>no persistent identifier</strong>. We only learn how many times an action happened in total. Distinct-user metrics such as DAU or retention are not built here; those come only from Apple’s App Store Connect analytics.</p>
+  <p><strong>Destination:</strong> only a server we operate (on Cloudflare). We do not share with third parties. We do <strong>not record, store, or use IP addresses</strong>, and we do not join them to the anonymous counts.</p>
+
+  <h2>3. On-device processing</h2>
   <p>Speech recognition, OCR, context estimation, and journal polishing (on supported devices via Apple Intelligence / Foundation Models) all run <strong>on device</strong>. Memo content, audio, and images are never sent to a developer-operated server.</p>
 
-  <h2>3. Device permissions</h2>
+  <h2>4. Device permissions</h2>
   <ul>
     <li><strong>Microphone &amp; speech recognition</strong> — to turn speech into memos. Recognition stays on device.</li>
     <li><strong>Camera</strong> — to capture scenes or scan text (such as tickets) into a memo. Images are processed on device only.</li>
@@ -53,19 +70,25 @@
     <li><strong>Calendar / Reminders</strong> — only when you explicitly export. The app does not read existing events otherwise.</li>
   </ul>
 
-  <h2>4. Weather data (WeatherKit)</h2>
+  <h2>5. Weather data (WeatherKit)</h2>
   <p>The app may use Apple WeatherKit to show weather on journal and schedule screens. Weather requests go through Apple’s services under Apple’s privacy policy. Floatline does not send memo content with those requests. Screens that show weather include Apple Weather attribution.</p>
 
-  <h2>5. Network use</h2>
-  <p>Core memo processing does not require a network. Network use occurs only for Apple services such as WeatherKit or optional iCloud sync you enable. Memo content is not uploaded to a developer-operated server.</p>
+  <h2>6. Network use</h2>
+  <p>Core memo processing does not require a network. Network use occurs for the anonymous counts in Section 2, and for Apple services such as WeatherKit or optional iCloud sync you enable. Memo content is not uploaded to a developer-operated server.</p>
 
-  <h2>6. Children’s privacy</h2>
-  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13.</p>
+  <h2>7. User tracking</h2>
+  <p>The app does not embed third-party analytics or tracking SDKs. No advertisements are displayed. The anonymous counts in Section 2 go only to our own server, are not linked to your identity, and are not used to track you across other companies’ apps or websites. They therefore do not constitute tracking under App Tracking Transparency (ATT), and no ATT prompt is issued.</p>
 
-  <h2>7. Changes</h2>
+  <h2>8. In-app purchase (Floatline Pro)</h2>
+  <p>Floatline Pro is a one-time in-app purchase. Purchases go through Apple StoreKit under Apple’s privacy policy. We do not receive payment details; we only learn whether Pro is unlocked.</p>
+
+  <h2>9. Children’s privacy</h2>
+  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13. The anonymous counts in Section 2 are aggregate totals only and cannot identify or profile anyone.</p>
+
+  <h2>10. Changes</h2>
   <p>If this policy changes, we will update the “Last updated” date on this page.</p>
 
-  <h2>8. Contact</h2>
+  <h2>11. Contact</h2>
   <p>For questions, use the contact method listed on the app’s App Store page.</p>
 
   <p class="last">© 2026 Floatline</p>
