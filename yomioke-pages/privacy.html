@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ヨミオケ — プライバシーポリシー</title>
+<style>
+  body {
+    font-family: "Hiragino Sans", "Yu Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F6F1E4; color: #1B1B18;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 26px; letter-spacing: 1px; }
+  h2 { color: #1B1B18; margin-top: 34px; font-size: 18px; }
+  p, li { color: rgba(27,27,24,0.82); }
+  a { color: #8A6A28; }
+  .nav { margin: 12px 0 28px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(27,27,24,0.4); font-size: 12px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  code { background: rgba(138,106,40,0.10); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="privacy-en.html">English</a></div>
+  <h1>ヨミオケ — プライバシーポリシー</h1>
+  <div class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="support.html">サポート</a>
+  </div>
+  <p>最終更新: 2026年7月28日</p>
+
+  <p>本ポリシーは、ヨミオケ（英語名: Read-OK、以下「本アプリ」）における情報の取り扱いを説明します。</p>
+
+  <h2>1. 収集する情報</h2>
+  <p>本アプリは<strong>個人を特定する情報を収集・保存しません</strong>。アカウント登録は不要で、第三者の分析（アナリティクス）や広告の SDK は含まれていません。端末外へ送信されるのは、セクション2で説明する匿名の利用統計（個人と結び付かない操作カウント）と、あなたが Game Center にサインインしている場合のスコア送信（セクション6）のみです。</p>
+  <p>以下のデータは<strong>お使いの端末上</strong>にのみ保存されます。</p>
+  <ul>
+    <li>測定結果のスコア・読み取りメモ・（任意で）波形の要約</li>
+    <li>個人ベストや設定（録音前確認の表示など）</li>
+    <li>Pro 購入済みかどうかの事実（StoreKit 経由）</li>
+    <li>持ち込み文の測定履歴（Pro。本文は端末内のみ）</li>
+  </ul>
+
+  <h2>2. 匿名の利用統計</h2>
+  <p>本アプリをよりよくするため、<strong>匿名の操作カウント</strong>を開発者自身のサーバー（<code>collect.appline.app</code>、Cloudflare 上）に送信します。数えるのは次の種類で、いずれも<strong>合計値（集計）のみ</strong>です:</p>
+  <ul>
+    <li><strong>アプリが起動された回数</strong></li>
+    <li><strong>収録文学の課題が測定された回数</strong>（あらかじめ決められた課題 ID のみ。持ち込み文の ID や本文は送りません）</li>
+    <li><strong>ランキング画面の表示</strong></li>
+    <li><strong>ヨミオケ Pro の案内・購入まわり</strong>（表示・購入タップ・購入完了・復元）</li>
+  </ul>
+  <p><strong>送信する内容（これだけです）:</strong> あらかじめ決められた固定のイベント名・課題 ID ＋ アプリのバージョン番号のみ。</p>
+  <p><strong>送信しないもの:</strong> 氏名・メールアドレス・端末識別子（IDFA / IDFV など）・広告 ID・位置情報・朗読の音声・持ち込み文の本文・その他あらゆる個人を特定できる情報。</p>
+  <p><strong>個人を特定・追跡することはできません:</strong> 本アプリは端末やユーザーに<strong>永続的な識別子を一切割り当てません</strong>。送られるのは「ある操作が合計で何回起きたか」だけで、特定の個人を識別したり、同一人物を時系列で追いかけたり、プロファイルを作ったりすることは構造的に不可能です。</p>
+  <p><strong>送信先:</strong> 開発者自身が管理するサーバーのみです。Google・Firebase・Meta などの第三者には渡しません。あなたの IP アドレスを記録・保存・利用することはなく、匿名カウントと結び付けることもありません。</p>
+  <p>ホームの「最近人気の朗読」は、上記の課題測定カウントの<strong>公開集計</strong>（課題 ID ごとの合計のみ）を同じサーバーから取得して表示します。</p>
+
+  <h2>3. 端末内での処理</h2>
+  <p>マイクで取り込んだ音声の分析（存在感・抑揚・間・強弱・語尾など）は、すべて<strong>お使いの端末内</strong>で実行されます。録音データは分析後に端末上の一時ファイルから削除され、開発者のサーバーに送信されることはありません。</p>
+
+  <h2>4. 端末の権限</h2>
+  <ul>
+    <li><strong>マイク</strong> — 朗読の声の表現を端末内で測定するために使用します。録音は外部へ送信されません。</li>
+  </ul>
+
+  <h2>5. ネットワーク通信</h2>
+  <p>セクション2の匿名カウント送信・人気集計の取得のほか、Game Center（セクション6）やアプリ内課金（セクション7）で Apple のサービスと通信することがあります。朗読の音声や持ち込み文の本文を開発者のサーバーへ送ることはありません。</p>
+
+  <h2>6. Game Center</h2>
+  <p>あなたが Game Center にサインインしている場合、収録文学の測定スコア（点数のみ。音声は含みません）を Apple の Game Center リーダーボードに送信することがあります。持ち込み文（Pro）のスコアはリーダーボードに入りません。Game Center の扱いは Apple のプライバシーポリシーが適用されます。</p>
+
+  <h2>7. アプリ内課金（ヨミオケ Pro）</h2>
+  <p>本アプリは、自分の文を貼って測定するための買い切り型アプリ内課金「ヨミオケ Pro」を提供しています。収録文学の測定は無料のままです。購入処理はすべて Apple の StoreKit を通じて行われ、Apple のプライバシーポリシーが適用されます。開発者がクレジットカード番号などの決済情報を受け取ることはなく、App Store から購入済みかどうかの事実のみを取得します。</p>
+
+  <h2>8. ユーザートラッキング</h2>
+  <p>本アプリは第三者アナリティクス・トラッキング SDK を組み込んでいません。広告も表示しません。セクション2の匿名カウントは開発者自身のサーバーにのみ送られ、個人と結び付かず、他社のアプリやウェブサイトをまたいで追跡する用途には使いません。そのため App Tracking Transparency (ATT) の対象となるトラッキングには該当せず、ATT のリクエストも行いません。</p>
+
+  <h2>9. 子どものプライバシー</h2>
+  <p>本アプリは 4+ 向けです。13 歳未満から意図的に個人情報を収集することはありません。セクション2の匿名利用統計は識別子を持たない合計値のみで、個人（子どもを含む）を特定する情報を一切含みません。</p>
+
+  <h2>10. 改定について</h2>
+  <p>本ポリシーを更新する場合は、本ページの「最終更新」を改訂します。</p>
+
+  <h2>11. お問い合わせ</h2>
+  <p>ご質問は、App Store のアプリページに記載のお問い合わせ方法をご利用ください。</p>
+
+  <p class="last">© 2026 ヨミオケ</p>
+</body>
+</html>
