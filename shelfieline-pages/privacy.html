@@ -37,20 +37,27 @@
 
 <!-- ===================== Japanese ===================== -->
 <h1 id="ja">Shelfieline — プライバシーポリシー</h1>
-<p class="last">最終更新: 2026-05-09 (v1.0)</p>
+<p class="last">最終更新: 2026-08-01 (v1.1)</p>
 
-<p>Shelfieline (以下「本アプリ」) は個人開発者が提供するアプリです。本ポリシーは、本アプリがユーザー情報をどのように扱うかを説明します。</p>
+<p>本ポリシーは、Shelfieline (以下「本アプリ」) が本アプリがユーザー情報をどのように扱うかを説明します。</p>
 
 <h2>1. データ収集</h2>
-<p>本アプリは、ユーザーの個人データを開発者のサーバーに送信・収集することはありません。蔵書情報・読書ステータス・読書日記・表紙画像など、すべてのデータは iOS 標準の SwiftData によって <strong>お使いの端末内にのみ</strong> 保存されます。</p>
+<p>本アプリは、ユーザーの個人データを収集しません。蔵書情報・読書ステータス・読書日記・表紙画像など、作成した内容はすべて iOS 標準の SwiftData によって <strong>お使いの端末内にのみ</strong> 保存され、端末外に出ることはありません。開発者のサーバーに送られるのは、第2節に記載する匿名の利用統計だけです。</p>
 
-<h2>2. アカウント登録</h2>
+<h2>2. 匿名の利用統計</h2>
+<p>アプリ改善のため、開発者が運用するサーバー (Cloudflare 上の <code>collect.appline.app</code>) に <strong>匿名の利用回数</strong> を送信します。数えているのは、アプリの起動回数、本が追加された回数 (うちバーコード経由の回数)、棚が作られた回数、読書メモが作られた回数、共有機能からの取り込み回数、テーマ・壁紙が変更された回数、Pro 画面の表示・購入・復元の回数で、いずれも <strong>合計値のみ</strong> です。</p>
+<p><strong>送信するもの (これだけ):</strong> あらかじめ決められた固定のイベント名と、アプリのバージョン番号のみです。</p>
+<p><strong>送信しないもの:</strong> 氏名・メールアドレス・アカウント情報・端末識別子 (IDFA / IDFV)・広告ID・位置情報は送信しません。<strong>書名・著者・ISBN・読書メモの本文・表紙画像も一切送信しません。</strong></p>
+<p><strong>個人の識別・追跡はできません:</strong> 本アプリは端末やユーザーに <strong>永続的な識別子を一切割り当てません</strong> (端末ID・セッションIDなし)。保存されるのは「何回起きたかの合計」だけで、それらを結び付ける鍵が存在しないため、特定の利用者を識別すること・同一人物を追跡すること・プロファイルを作ることは構造上不可能です。</p>
+<p><strong>送信先:</strong> 開発者自身のサーバーのみです。Google・Firebase・Meta などの第三者に渡すことはありません。IPアドレスは記録・保存・利用しません。</p>
+
+<h2>3. アカウント登録</h2>
 <p>本アプリはアカウント登録機能を持ちません。メールアドレス・電話番号・氏名などの登録は不要です。</p>
 
-<h2>3. ユーザートラッキング</h2>
-<p>本アプリは Google Analytics や Facebook SDK 等の第三者アナリティクス・トラッキング SDK を組み込んでいません。広告も表示しません。App Tracking Transparency (ATT) のリクエストも行いません。</p>
+<h2>4. ユーザートラッキング</h2>
+<p>本アプリは Google Analytics や Facebook SDK 等の <strong>第三者</strong> アナリティクス・トラッキング SDK を組み込んでいません。広告も表示しません。第2節の匿名カウントは開発者自身のサーバーにのみ送られ、誰の identity とも結び付いていないため ATT でいう「トラッキング」には該当せず、ATT のリクエストも行いません。</p>
 
-<h2>4. 外部 API への通信</h2>
+<h2>5. 外部 API への通信</h2>
 <p>書誌情報 (タイトル・著者・出版社など) を取得するため、ユーザーがバーコードスキャン等で本を追加した際に、以下の公式 API へ ISBN を送信します:</p>
 <ul>
   <li><strong>openBD</strong> (<a href="https://openbd.jp/">https://openbd.jp/</a>) — 書誌情報の自動取得</li>
@@ -58,7 +65,7 @@
 </ul>
 <p>これらのリクエストには ISBN 番号のみが含まれ、ユーザー識別子・端末識別子などの個人情報は一切送信されません。</p>
 
-<h2>5. カメラ・写真ライブラリの使用</h2>
+<h2>6. カメラ・写真ライブラリの使用</h2>
 <p>本アプリは以下の用途で iOS のカメラ・写真ライブラリへのアクセスを求めます:</p>
 <ul>
   <li><strong>カメラ:</strong> 本のバーコード読み取り (Vision フレームワーク)、本の表紙をユーザー自身で撮影する用途</li>
@@ -66,39 +73,46 @@
 </ul>
 <p>取得された画像はすべて端末内 (SwiftData の external storage) にのみ保存され、外部へ送信されることはありません。</p>
 
-<h2>6. Share Extension</h2>
+<h2>7. Share Extension</h2>
 <p>本アプリには Share Extension (BookshelflineShare) が含まれます。Safari など他アプリから「画像」または「URL」を共有した際、共有データは App Group 経由でメインアプリの inbox に一時保存され、ユーザーが本に紐付けるまで保持されます。inbox の内容は端末内のみで、外部へ送信されません。</p>
 
-<h2>7. データの削除</h2>
+<h2>8. データの削除</h2>
 <p>本アプリで作成したすべてのデータは、本アプリを iPhone / iPad からアンインストールすることで完全に削除されます。開発者がデータを保持することはありません。</p>
 
-<h2>8. 子どもの利用</h2>
+<h2>9. 子どもの利用</h2>
 <p>本アプリは全年齢 (4+) 対象です。13 歳未満の子どもからの個人データを意図的に収集することはありません。</p>
 
-<h2>9. ポリシーの変更</h2>
+<h2>10. ポリシーの変更</h2>
 <p>本ポリシーは予告なく改訂される場合があります。重要な変更がある場合は、本ページに改訂日を記載してお知らせします。</p>
 
-<h2>10. お問い合わせ</h2>
+<h2>11. お問い合わせ</h2>
 <p>本ポリシーに関するご質問は <a href="mailto:trim.hoist.6b@icloud.com">trim.hoist.6b@icloud.com</a> までお寄せください。</p>
 
 <hr class="divider">
 
 <!-- ===================== English ===================== -->
 <h1 id="en">Shelfieline — Privacy Policy</h1>
-<p class="last">Last updated: 2026-05-09 (v1.0)</p>
+<p class="last">Last updated: 2026-08-01 (v1.1)</p>
 
-<p>Shelfieline ("the App") is an iOS / iPadOS application provided by an independent developer. This Privacy Policy explains how the App handles user information.</p>
+<p>This Privacy Policy explains how Shelfieline ("the App") handles user information.</p>
 
 <h2>1. Data Collection</h2>
-<p>The App does not transmit or collect any personal data to the Developer's servers. All data including library entries, reading status, reading notes, and cover images is stored <strong>solely on your device</strong> using Apple's SwiftData framework.</p>
+<p>The App collects no personal data. Everything you create — library entries, reading status, reading notes, and cover images — is stored <strong>solely on your device</strong> using Apple's SwiftData framework and never leaves it. The only thing sent to the developer's server is the anonymous usage statistics described in section 2.</p>
 
-<h2>2. Account Registration</h2>
+<h2>2. Anonymous Usage Statistics</h2>
+<p>To improve the App, it sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, a book is added (and how many of those came from a barcode scan), a shelf is created, a reading note is written, a share import is consumed, a theme or wallpaper is changed, and the Pro screen is shown, purchased, or restored.</p>
+<p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+<p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, or location — and <strong>never a book title, author, ISBN, reading-note text, or cover image</strong>.</p>
+<p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, which makes it structurally impossible to identify a reader, follow the same person over time, or build a profile.</p>
+<p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. Your IP address is not logged, stored, or used.</p>
+
+<h2>3. Account Registration</h2>
 <p>The App has no account registration feature. No email address, phone number, or personal identifiers are required.</p>
 
-<h2>3. User Tracking</h2>
-<p>The App contains no third-party analytics or tracking SDKs (no Google Analytics, no Facebook SDK, etc.). No advertisements are shown. The App does not present an App Tracking Transparency (ATT) prompt.</p>
+<h2>4. User Tracking</h2>
+<p>The App contains no <strong>third-party</strong> analytics or tracking SDKs (no Google Analytics, no Facebook SDK, etc.). No advertisements are shown. The anonymous counts in section 2 go only to the developer's own server and are not linked to anyone's identity, so they do not constitute tracking under App Tracking Transparency (ATT); the App does not present an ATT prompt.</p>
 
-<h2>4. External API Communication</h2>
+<h2>5. External API Communication</h2>
 <p>When you add a book via barcode scan or ISBN entry, the App queries the following official APIs by sending only the ISBN number:</p>
 <ul>
   <li><strong>openBD</strong> (<a href="https://openbd.jp/">https://openbd.jp/</a>) — bibliographic information lookup</li>
@@ -106,7 +120,7 @@
 </ul>
 <p>These requests contain only the ISBN. No user identifiers, device identifiers, or any other personal information are sent.</p>
 
-<h2>5. Camera and Photo Library Use</h2>
+<h2>6. Camera and Photo Library Use</h2>
 <p>The App requests access to the iOS camera and photo library for the following purposes:</p>
 <ul>
   <li><strong>Camera:</strong> reading book barcodes (via the Vision framework), and letting the user capture a book cover photo themselves.</li>
@@ -114,19 +128,19 @@
 </ul>
 <p>All captured images are stored only on your device (in SwiftData's external storage) and are never transmitted externally.</p>
 
-<h2>6. Share Extension</h2>
+<h2>7. Share Extension</h2>
 <p>The App includes a Share Extension (BookshelflineShare). When you share an image or URL from another app such as Safari, the shared data is temporarily stored in the main app's inbox via App Group and held until you assign it to a book. The inbox content stays on the device and is not transmitted externally.</p>
 
-<h2>7. Data Deletion</h2>
+<h2>8. Data Deletion</h2>
 <p>All data created by the App is completely removed when you uninstall the App from your iPhone or iPad. The Developer retains no data.</p>
 
-<h2>8. Children's Use</h2>
+<h2>9. Children's Use</h2>
 <p>The App is rated for all ages (4+). It does not knowingly collect personal data from children under 13.</p>
 
-<h2>9. Changes to This Policy</h2>
+<h2>10. Changes to This Policy</h2>
 <p>This Policy may be updated without prior notice. Material changes will be indicated by updating the date at the top of this page.</p>
 
-<h2>10. Contact</h2>
+<h2>11. Contact</h2>
 <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:trim.hoist.6b@icloud.com">trim.hoist.6b@icloud.com</a>.</p>
 
 </body>
