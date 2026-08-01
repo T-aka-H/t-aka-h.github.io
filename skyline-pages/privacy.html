@@ -43,8 +43,11 @@
 <p class="last">Last updated: 2026-08-01 (v1.0.0)</p>
 
 <div class="langtoggle">
-  <a href="#en">English</a>
   <a href="#ja">日本語</a>
+  <a href="#en">English</a>
+  <a href="#fr">Français</a>
+  <a href="#es">Español</a>
+  <a href="#it">Italiano</a>
 </div>
 
 <section id="en">
@@ -188,6 +191,129 @@
 <h2>お問い合わせ</h2>
 <p>本プライバシーポリシーについてご質問がある場合は、<a href="mailto:trim.hoist.6b@icloud.com">こちらまで</a>ご連絡ください。</p>
 
+</section>
+
+<hr>
+
+<section id="fr">
+<h1 style="font-size:26px">Skyline Widget — Politique de confidentialité</h1>
+<p>Skyline Widget (« l'App ») est développée par un développeur indépendant. Cette politique décrit le traitement des informations des utilisateurs.</p>
+
+<h2>En résumé</h2>
+<ul>
+  <li>L'App ne collecte <strong>aucune donnée personnelle</strong> et ne vous attribue <strong>aucun identifiant</strong> — ni identifiant d'appareil, ni identifiant publicitaire, ni UUID, ni jeton de session.</li>
+  <li>Aucun SDK tiers d'analyse, de suivi ou de publicité. Des comptages anonymes sont envoyés au serveur du développeur.</li>
+  <li>Votre <strong>position exacte ne quitte jamais l'appareil</strong>. Seule une zone arrondie et grossière figure dans les statistiques anonymes.</li>
+  <li>Aucune publicité. Vos réglages sont stockés localement sur l'appareil.</li>
+</ul>
+
+<h2>Statistiques d'utilisation anonymes</h2>
+<p>Pour décider quelles parties de l'App méritent d'être maintenues, des <strong>comptages anonymes</strong> sont envoyés à un serveur exploité par le développeur (<code>collect.appline.app</code>, sur Cloudflare). Chaque message contient exactement quatre champs : le nom de l'app, un nom d'événement issu d'une liste fixe, la version de l'app, et — pour certains événements — une valeur de détail issue d'un vocabulaire fixe.</p>
+<p>Sont comptés : l'ouverture de l'app, l'ouverture de l'écran « Le ciel du jour », le changement de paysage, le paysage choisi (parmi 12 noms fixes), le pays et le fuseau horaire du lieu affiché, sa zone approximative, ainsi que le pays et le fuseau horaire réglés sur votre appareil.</p>
+<p><strong>Ce sont uniquement des totaux.</strong> L'App ne détenant aucun identifiant, aucune clé ne permet de relier ces événements entre eux. Il est donc techniquement impossible de reconstituer l'activité d'une personne, de compter des utilisateurs distincts ou de suivre quelqu'un dans le temps. Le serveur applique la même liste fixe : tout ce qui n'y figure pas, y compris du texte libre, est écarté et jamais conservé.</p>
+
+<h2>Localisation</h2>
+<p>L'App peut calculer les heures de lever et de coucher du soleil là où vous êtes. Les services de localisation d'Apple ne sont utilisés que <strong>si vous appuyez sur « Utiliser la position actuelle »</strong> et donnez votre autorisation. L'App demande une <strong>précision réduite</strong> et ne réclame jamais votre position précise.</p>
+<p>Vos coordonnées restent sur l'appareil. Ce qui figure dans les statistiques est une <strong>cellule arrondie</strong>, jamais une coordonnée brute :</p>
+<ul>
+  <li>Lieu recherché ou choisi dans la liste : arrondi à environ <strong>5 km</strong> (une cellule d'environ 25 km²). Cela décrit la vue choisie, pas l'endroit où vous êtes.</li>
+  <li>Lieu obtenu via « Utiliser la position actuelle » : arrondi à environ <strong>50 km</strong>, volontairement plus grossier, car la coordonnée décrit alors approximativement où vous êtes.</li>
+</ul>
+<p>Le serveur rejette toute valeur non arrondie : une coordonnée brute ne peut donc pas être enregistrée, même par erreur. Aucune rue, adresse ou position précise n'est jamais transmise. Vous pouvez utiliser l'App entièrement sans autoriser la localisation.</p>
+
+<h2>Recherche de lieu</h2>
+<p>Lorsque vous recherchez un lieu par son nom, le texte saisi est envoyé au <strong>service de géocodage d'Apple</strong> pour être converti en coordonnées et fuseau horaire. Il s'agit du service d'Apple, régi par sa propre politique de confidentialité. Le développeur ne reçoit pas votre texte de recherche, qui ne figure jamais dans les statistiques.</p>
+
+<h2>Notifications, widget, services tiers</h2>
+<p>Les rappels de coucher de soleil sont programmés <strong>entièrement sur votre appareil</strong> ; aucun serveur de notification n'intervient. Le widget n'effectue <strong>aucune requête réseau</strong> : tout est calculé sur l'appareil. L'App n'intègre <strong>aucun</strong> SDK tiers, service d'analyse, régie publicitaire ou courtier en données ; elle n'utilise que les frameworks d'Apple.</p>
+
+<h2>Suivi et enfants</h2>
+<p>L'App ne vous <strong>suit pas</strong> : aucune donnée n'est liée à vous ou à votre appareil, aucune donnée n'est combinée avec celle d'autres entreprises ni partagée avec des courtiers. Elle convient à tous les âges (4+) et ne collecte sciemment aucune donnée d'enfants.</p>
+
+<h2>Modifications et contact</h2>
+<p>En cas de modification, la date « Last updated » en haut de page sera mise à jour. Pour toute question : <a href="mailto:trim.hoist.6b@icloud.com">nous écrire</a>.</p>
+</section>
+
+<hr>
+
+<section id="es">
+<h1 style="font-size:26px">Skyline Widget — Política de privacidad</h1>
+<p>Skyline Widget («la App») está desarrollada por un desarrollador independiente. Esta política describe cómo se tratan los datos de los usuarios.</p>
+
+<h2>Resumen</h2>
+<ul>
+  <li>La App <strong>no recopila datos personales</strong> ni te asigna <strong>ningún identificador</strong>: ni ID de dispositivo, ni ID publicitario, ni UUID, ni token de sesión.</li>
+  <li>No incluye SDK de terceros de análisis, seguimiento ni publicidad. Solo envía recuentos anónimos al servidor del desarrollador.</li>
+  <li>Tu <strong>ubicación exacta nunca sale del dispositivo</strong>. En las estadísticas anónimas solo se incluye una zona redondeada y aproximada.</li>
+  <li>No hay anuncios. Tus ajustes se guardan localmente en el dispositivo.</li>
+</ul>
+
+<h2>Estadísticas de uso anónimas</h2>
+<p>Para decidir qué partes de la App merece la pena mantener, se envían <strong>recuentos anónimos</strong> a un servidor gestionado por el desarrollador (<code>collect.appline.app</code>, en Cloudflare). Cada mensaje contiene exactamente cuatro campos: el nombre de la app, un nombre de evento de una lista fija, la versión de la app y —en algunos eventos— un valor de detalle de un vocabulario fijo.</p>
+<p>Se cuentan: la apertura de la app, la apertura de «El cielo de hoy», el cambio de paisaje, el paisaje elegido (entre 12 nombres fijos), el país y la zona horaria del lugar mostrado, su zona aproximada, y el país y la zona horaria configurados en tu dispositivo.</p>
+<p><strong>Son solo totales.</strong> Como la App no guarda ningún identificador, no existe ninguna clave que permita relacionar estos eventos entre sí. Por tanto es técnicamente imposible reconstruir la actividad de una persona, contar usuarios distintos o seguir a alguien a lo largo del tiempo. El servidor aplica la misma lista fija: todo lo que no figura en ella, incluido el texto libre, se descarta y nunca se almacena.</p>
+
+<h2>Ubicación</h2>
+<p>La App puede calcular las horas de amanecer y atardecer donde estás. Los servicios de ubicación de Apple se usan <strong>solo si pulsas «Usar ubicación actual»</strong> y das permiso. La App solicita <strong>precisión reducida</strong> y nunca pide tu posición precisa.</p>
+<p>Tus coordenadas se quedan en el dispositivo. En las estadísticas se incluye una <strong>celda redondeada</strong>, nunca una coordenada en bruto:</p>
+<ul>
+  <li>Lugar buscado o elegido de la lista: redondeado a unos <strong>5 km</strong> (una celda de unos 25 km²). Describe la vista elegida, no dónde estás.</li>
+  <li>Lugar obtenido con «Usar ubicación actual»: redondeado a unos <strong>50 km</strong>, deliberadamente más grueso, porque en ese caso la coordenada sí describe aproximadamente dónde estás.</li>
+</ul>
+<p>El servidor rechaza cualquier valor sin redondear, así que una coordenada en bruto no puede almacenarse ni por error. Nunca se transmite ninguna calle, dirección ni posición precisa. Puedes usar la App por completo sin conceder acceso a la ubicación.</p>
+
+<h2>Búsqueda de lugares</h2>
+<p>Al buscar un lugar por su nombre, el texto que escribes se envía al <strong>servicio de geocodificación de Apple</strong> para convertirlo en coordenadas y zona horaria. Es un servicio de Apple, regido por su propia política de privacidad. El desarrollador no recibe tu texto de búsqueda, que tampoco aparece nunca en las estadísticas.</p>
+
+<h2>Notificaciones, widget y servicios de terceros</h2>
+<p>Los avisos de atardecer se programan <strong>íntegramente en tu dispositivo</strong>; no interviene ningún servidor de notificaciones. El widget <strong>no hace ninguna petición de red</strong>: todo se calcula en el dispositivo. La App <strong>no</strong> integra SDK de terceros, servicios de análisis, redes publicitarias ni intermediarios de datos; solo usa frameworks de Apple.</p>
+
+<h2>Seguimiento y menores</h2>
+<p>La App <strong>no te rastrea</strong>: no vincula datos contigo ni con tu dispositivo, no los combina con información de otras empresas ni los comparte con intermediarios. Es apta para todas las edades (4+) y no recopila conscientemente datos de menores.</p>
+
+<h2>Cambios y contacto</h2>
+<p>Si esta política cambia, se actualizará la fecha «Last updated» de la parte superior. Para cualquier consulta: <a href="mailto:trim.hoist.6b@icloud.com">escríbenos</a>.</p>
+</section>
+
+<hr>
+
+<section id="it">
+<h1 style="font-size:26px">Skyline Widget — Informativa sulla privacy</h1>
+<p>Skyline Widget («l'App») è sviluppata da uno sviluppatore indipendente. Questa informativa descrive come vengono trattate le informazioni degli utenti.</p>
+
+<h2>In breve</h2>
+<ul>
+  <li>L'App <strong>non raccoglie dati personali</strong> e non ti assegna <strong>alcun identificatore</strong>: né ID dispositivo, né ID pubblicitario, né UUID, né token di sessione.</li>
+  <li>Nessun SDK di terze parti per analisi, tracciamento o pubblicità. Vengono inviati solo conteggi anonimi al server dello sviluppatore.</li>
+  <li>La tua <strong>posizione esatta non lascia mai il dispositivo</strong>. Nelle statistiche anonime compare solo un'area arrotondata e approssimativa.</li>
+  <li>Nessuna pubblicità. Le tue impostazioni sono salvate localmente sul dispositivo.</li>
+</ul>
+
+<h2>Statistiche d'uso anonime</h2>
+<p>Per decidere quali parti dell'App valga la pena mantenere, vengono inviati <strong>conteggi anonimi</strong> a un server gestito dallo sviluppatore (<code>collect.appline.app</code>, su Cloudflare). Ogni messaggio contiene esattamente quattro campi: il nome dell'app, un nome di evento da un elenco fisso, la versione dell'app e — per alcuni eventi — un valore di dettaglio da un vocabolario fisso.</p>
+<p>Vengono contati: l'apertura dell'app, l'apertura di «Il cielo di oggi», il cambio di paesaggio, il paesaggio scelto (tra 12 nomi fissi), il paese e il fuso orario del luogo mostrato, la sua area approssimativa, e il paese e il fuso orario impostati sul tuo dispositivo.</p>
+<p><strong>Sono solo totali.</strong> Poiché l'App non conserva alcun identificatore, non esiste una chiave che colleghi questi eventi tra loro. È quindi tecnicamente impossibile ricostruire l'attività di una persona, contare utenti distinti o seguire qualcuno nel tempo. Il server applica lo stesso elenco fisso: tutto ciò che non vi rientra, testo libero compreso, viene scartato e mai memorizzato.</p>
+
+<h2>Posizione</h2>
+<p>L'App può calcolare gli orari di alba e tramonto nel luogo in cui ti trovi. I servizi di localizzazione di Apple vengono usati <strong>solo se tocchi «Usa posizione attuale»</strong> e concedi l'autorizzazione. L'App richiede una <strong>precisione ridotta</strong> e non chiede mai la posizione precisa.</p>
+<p>Le tue coordinate restano sul dispositivo. Nelle statistiche compare una <strong>cella arrotondata</strong>, mai una coordinata grezza:</p>
+<ul>
+  <li>Luogo cercato o scelto dall'elenco: arrotondato a circa <strong>5 km</strong> (una cella di circa 25 km²). Descrive la vista scelta, non dove ti trovi.</li>
+  <li>Luogo ottenuto con «Usa posizione attuale»: arrotondato a circa <strong>50 km</strong>, volutamente più grossolano, perché in quel caso la coordinata descrive all'incirca dove ti trovi.</li>
+</ul>
+<p>Il server rifiuta qualsiasi valore non arrotondato, quindi una coordinata grezza non può essere memorizzata nemmeno per errore. Non vengono mai trasmessi vie, indirizzi o posizioni precise. Puoi usare l'App completamente senza concedere l'accesso alla posizione.</p>
+
+<h2>Ricerca di luoghi</h2>
+<p>Quando cerchi un luogo per nome, il testo digitato viene inviato al <strong>servizio di geocodifica di Apple</strong> per essere convertito in coordinate e fuso orario. È un servizio di Apple, regolato dalla sua informativa. Lo sviluppatore non riceve il testo di ricerca, che non compare mai nelle statistiche.</p>
+
+<h2>Notifiche, widget e servizi di terze parti</h2>
+<p>Gli avvisi di tramonto vengono programmati <strong>interamente sul tuo dispositivo</strong>; nessun server di notifiche è coinvolto. Il widget <strong>non effettua alcuna richiesta di rete</strong>: tutto è calcolato sul dispositivo. L'App <strong>non</strong> integra SDK di terze parti, servizi di analisi, reti pubblicitarie o broker di dati; usa solo framework di Apple.</p>
+
+<h2>Tracciamento e minori</h2>
+<p>L'App <strong>non ti traccia</strong>: non collega dati a te o al tuo dispositivo, non li combina con informazioni di altre aziende né li condivide con broker. È adatta a tutte le età (4+) e non raccoglie consapevolmente dati di minori.</p>
+
+<h2>Modifiche e contatti</h2>
+<p>Se questa informativa cambia, verrà aggiornata la data «Last updated» in alto. Per domande: <a href="mailto:trim.hoist.6b@icloud.com">scrivici</a>.</p>
 </section>
 
 </body>
