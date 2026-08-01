@@ -24,12 +24,19 @@
 <body>
 
 <h1>Foldline — Privacy Policy</h1>
-<p class="last">Last updated: 2026-06-05 (v1.0.0 — initial release)</p>
+<p class="last">Last updated: 2026-08-01 (v1.0.2 — added Anonymous Usage Statistics section)</p>
 
-<p>Foldline ("the App") is developed and operated by an independent developer. This Privacy Policy describes how the App handles user information.</p>
+<p>This Privacy Policy describes how Foldline ("the App") handles user information.</p>
 
 <h2>Data Collection</h2>
-<p>The App itself does not collect personal data on developer servers. Local game state — best score, total play time, settings — is stored on your device using iOS UserDefaults.</p>
+<p>The App collects no personal data. Local game state — best score, total play time, settings — is stored on your device using iOS UserDefaults and never leaves it. The only thing the developer receives is the anonymous usage counts described under "Anonymous Usage Statistics" below.</p>
+
+<h2>Anonymous Usage Statistics</h2>
+<p>To decide which parts of the game are worth maintaining, the App sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, a game is started, a game-over is reached, a mini-game is triggered, the leaderboard is opened, and an interstitial ad is requested.</p>
+<p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+<p><strong>What is never sent:</strong> no name, email, device identifier (IDFA / IDFV), advertising ID, location, scores, play time, or which mini-game you got.</p>
+<p><strong>No individual can be identified or tracked through these counts:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user for this purpose (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, so they cannot become a per-player log or profile. Your IP address is not logged, stored, or used.</p>
+<p><strong>These counts are separate from advertising.</strong> They go only to the developer's own server and are <strong>never combined with anything Google AdMob collects</strong>, nor shared with Google, Firebase, Meta, or any other third party. The ATT prompt described below concerns AdMob only; these anonymous counts do not depend on your answer to it and are not tracking under ATT.</p>
 <p>The App displays advertisements via Google AdMob. Google AdMob may collect device identifiers (e.g., IDFA when granted via App Tracking Transparency, or anonymous identifiers when not granted) to serve and attribute ads. Please see "Advertising (AdMob)" below for details.</p>
 
 <h2>Advertising (AdMob)</h2>
@@ -49,6 +56,7 @@
 <p>The App integrates with the following third-party services:</p>
 <ul>
 <li><strong>Google AdMob</strong> — interstitial advertising. PG-rated content only. See "Advertising" section above.</li>
+<li>The developer's own endpoint (<code>collect.appline.app</code>) for the anonymous counts described above — not a third party, and no analytics SDK is involved.</li>
 <li>Apple's own frameworks (SwiftUI, Core Haptics, GameKit, AVFoundation, App Tracking Transparency) — these are not third parties.</li>
 </ul>
 
