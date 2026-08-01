@@ -13,20 +13,38 @@
     .contact-footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: 13px; }
     .contact-footer a { color: #9ca3af; }
     .ja { color: #6b7280; }
+    .changenote { background: #f0fdfa; border-left: 4px solid #0f766e; padding: 12px 16px; margin: 20px 0; font-size: 14px; }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: May 5, 2026</p>
+  <p class="muted">Last updated: August 1, 2026</p>
 
   <p>DoubleTap 10 ("the App") respects your privacy. This policy explains what data the App handles.</p>
   <p class="ja">DoubleTap 10（以下「本アプリ」）は、ユーザーのプライバシーを尊重します。本ポリシーでは、本アプリが取り扱うデータについて説明します。</p>
 
-  <h2>1. Information We Collect / 収集する情報</h2>
-  <p>The App does not collect, transmit, or store your personal information on developer servers. All game records (elapsed times, scores, streaks) are stored locally on your Apple Watch.</p>
-  <p class="ja">本アプリは、ユーザーの個人情報を開発者サーバーに収集・送信・保存しません。すべてのゲーム記録（計測時間、スコア、ストリーク）はApple Watch上にローカル保存されます。</p>
+  <div class="changenote">
+    <p style="margin:0 0 8px;"><strong>What changed:</strong> To improve the App, it now sends <strong>anonymous usage counts</strong> (see "Anonymous Usage Statistics" below) — totals such as how many times the app is launched or a round is completed. Because the App holds <strong>no identifier of any kind</strong>, it cannot identify a specific player, follow an individual over time, or build a profile. No name, email, device identifier, or location is included. This note is here to be transparent about the change.</p>
+    <p class="ja" style="margin:0;"><strong>変更点:</strong> アプリ改善のため、<strong>匿名の利用回数</strong>（下記「匿名の利用統計」参照）の送信を追加しました。送るのは「起動された合計回数」「ラウンドが完了した合計回数」といった合計値のみです。本アプリは<strong>いかなる識別子も保持しない</strong>ため、特定のプレイヤーを識別すること・同一人物を時系列で追うこと・プロファイルを作ることは構造上できません。氏名・メールアドレス・端末識別子・位置情報は一切含まれません。</p>
+  </div>
 
-  <h2>2. Game Center / ゲームセンター</h2>
+  <h2>1. Information We Collect / 収集する情報</h2>
+  <p>The App has no account system and collects no personal information. All game records (elapsed times, scores, streaks) are stored locally on your device. The only thing that leaves your device — apart from Game Center, described below — is the anonymous usage statistics (identity-free event counts) described in section 2.</p>
+  <p class="ja">本アプリにアカウント機能はなく、個人情報を収集しません。すべてのゲーム記録（計測時間、スコア、ストリーク）はお使いのデバイス上にローカル保存されます。端末外に出るのは、下記のGame Centerを除けば、第2節に記載する匿名の利用統計（識別子を持たないイベント回数）だけです。</p>
+
+  <h2>2. Anonymous Usage Statistics / 匿名の利用統計</h2>
+  <p>To make the App better, it sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is launched, a round is started or completed, the daily challenge is cleared, and the leaderboard screen is opened.</p>
+  <p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+  <p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, location, game times or scores, or any other information that could identify a person.</p>
+  <p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, which makes it structurally impossible to identify a specific player, follow the same person over time, or build a profile.</p>
+  <p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. Your IP address is not logged, stored, or used, and is never associated with the anonymous counts above.</p>
+  <p class="ja">アプリ改善のため、開発者が運用するサーバー（Cloudflare 上の <code>collect.appline.app</code>）に<strong>匿名の利用回数</strong>を送信します。数えているのは、起動回数、ラウンドの開始・完了回数、デイリーチャレンジのクリア回数、リーダーボード画面を開いた回数で、いずれも<strong>合計値のみ</strong>です。</p>
+  <p class="ja"><strong>送信するもの（これだけ）:</strong> あらかじめ決められた固定のイベント名と、アプリのバージョン番号のみです。</p>
+  <p class="ja"><strong>送信しないもの:</strong> 氏名・メールアドレス・アカウント情報・端末識別子（IDFA / IDFV）・広告ID・位置情報・計測タイムやスコア、その他個人を特定しうる情報は一切送信しません。</p>
+  <p class="ja"><strong>個人の識別・追跡はできません:</strong> 本アプリは端末やユーザーに<strong>永続的な識別子を一切割り当てません</strong>（端末ID・セッションIDなし）。保存されるのは「何回起きたかの合計」だけで、それらを結び付ける鍵が存在しないため、特定のプレイヤーを識別すること・同一人物を追跡すること・プロファイルを作ることは構造上不可能です。</p>
+  <p class="ja"><strong>送信先:</strong> 開発者自身のサーバーのみです。Google・Firebase・Meta などの第三者に渡すことはありません。IPアドレスは記録・保存・利用せず、上記の匿名カウントと関連付けられることもありません。</p>
+
+  <h2>3. Game Center / ゲームセンター</h2>
   <p>The App uses Apple's Game Center service for leaderboards and achievements. When you are signed in to Game Center, the following data is sent to Apple's servers:</p>
   <ul>
     <li>Your game scores (time deviation in milliseconds)</li>
@@ -40,34 +58,34 @@
   </ul>
   <p class="ja">これらのデータはあなたのGame Centerアカウントに関連付けられ、Appleによって管理されます。開発者はあなたのApple IDやGame Centerのプロフィール情報にアクセスできません。Game Centerはオプションであり、未使用でも本アプリは完全に動作します。</p>
 
-  <h2>3. Data Storage / データ保存</h2>
+  <h2>4. Data Storage / データ保存</h2>
   <p>Game records and preferences are stored locally using UserDefaults and App Groups on your device. Widget data is shared between the App and its widget extension via a shared App Group container.</p>
   <p class="ja">ゲーム記録と設定は、デバイス上のUserDefaultsおよびApp Groupsを使用してローカルに保存されます。ウィジェットデータは共有App Groupコンテナを介してアプリとウィジェット拡張の間で共有されます。</p>
 
-  <h2>4. Third-Party Services / 外部サービス</h2>
-  <p>The App does not use any third-party analytics, advertising, or tracking services. The only external service used is Apple Game Center, as described above.</p>
-  <p class="ja">本アプリは、サードパーティの分析・広告・トラッキングサービスを一切使用しません。使用する唯一の外部サービスは上記のApple Game Centerです。</p>
+  <h2>5. Third-Party Services, No Advertising, No Tracking / 外部サービス・広告なし・トラッキングなし</h2>
+  <p>The App contains <strong>no third-party advertising</strong> and uses <strong>no third-party analytics or tracking SDK</strong> (no Google, Firebase, or Meta). The only external services are Apple Game Center, as described above, and the developer's own endpoint for the anonymous counts in section 2. Those counts are not linked to your identity and therefore do not constitute tracking under App Tracking Transparency (ATT); the App does not request ATT permission and does not use the advertising identifier (IDFA).</p>
+  <p class="ja">本アプリに<strong>第三者の広告は一切ありません</strong>。また<strong>サードパーティの分析・トラッキングSDK（Google・Firebase・Meta等）も使用しません</strong>。外部サービスは上記のApple Game Centerと、第2節の匿名カウントの送信先である開発者自身のエンドポイントのみです。これらのカウントは個人と結び付いていないため、App Tracking Transparency（ATT）でいう「トラッキング」には該当しません。本アプリはATTの許可を求めず、広告識別子（IDFA）も使用しません。</p>
 
-  <h2>5. Children's Privacy / お子様のプライバシー</h2>
-  <p>The App does not knowingly collect personal information from children under 13. Since no personal data is collected or transmitted by the developer, the App is suitable for all ages.</p>
-  <p class="ja">本アプリは13歳未満のお子様の個人情報を故意に収集することはありません。開発者による個人データの収集・送信を行わないため、全年齢に適しています。</p>
+  <h2>6. Children's Privacy / お子様のプライバシー</h2>
+  <p>The App does not knowingly collect personal information from children under 13. It collects no personal data from anyone; the anonymous usage statistics in section 2 are identifier-free totals that cannot identify any person, including children. The App is suitable for all ages.</p>
+  <p class="ja">本アプリは13歳未満のお子様の個人情報を故意に収集することはありません。どなたについても個人データを収集せず、第2節の匿名の利用統計は識別子を持たない合計値であり、お子様を含めていかなる個人も特定できません。全年齢に適しています。</p>
 
-  <h2>6. Data Deletion / データの削除</h2>
-  <p>All local data is stored on your device. To delete all app data, simply uninstall the App from your Apple Watch. Game Center data can be managed through your Apple ID settings. For any data-related requests, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
-  <p class="ja">すべてのローカルデータはデバイス上に保存されています。アプリのデータをすべて削除するには、Apple Watchからアプリをアンインストールしてください。Game CenterのデータはApple IDの設定から管理できます。データに関するご要望は<a href="mailto:trim.hoist.6b@icloud.com">こちらまで</a>ご連絡ください。</p>
+  <h2>7. Data Deletion / データの削除</h2>
+  <p>All local data is stored on your device. To delete all app data, simply uninstall the App from your device. Game Center data can be managed through your Apple ID settings. For any data-related requests, please contact us via the App’s App Store page.</p>
+  <p class="ja">すべてのローカルデータはデバイス上に保存されています。アプリのデータをすべて削除するには、お使いのデバイスからアプリをアンインストールしてください。Game CenterのデータはApple IDの設定から管理できます。データに関するご要望は、App Store のアプリページ経由でご連絡ください。</p>
 
-  <h2>7. Changes / 変更</h2>
+  <h2>8. Changes / 変更</h2>
   <p>This Privacy Policy may be updated from time to time. We encourage you to review this page periodically.</p>
   <p class="ja">本プライバシーポリシーは随時更新される場合があります。定期的にこのページをご確認ください。</p>
 
-  <h2>8. Contact / お問い合わせ</h2>
-  <p>If you have any questions about this Privacy Policy, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
-  <p class="ja">本プライバシーポリシーに関するご質問は<a href="mailto:trim.hoist.6b@icloud.com">こちらまで</a>お問い合わせください。</p>
+  <h2>9. Contact / お問い合わせ</h2>
+  <p>If you have any questions about this Privacy Policy, please contact us via the App’s App Store page.</p>
+  <p class="ja">本プライバシーポリシーに関するご質問は、App Store のアプリページ経由でお問い合わせください。</p>
 
   <p style="margin-top: 24px;"><a href="./index.html">Back to top</a></p>
 
   <div class="contact-footer">
-    <p>Contact / お問い合わせ: <a href="mailto:trim.hoist.6b@icloud.com">こちらまで / here</a> · <a href="https://github.com/T-aka-H/doubletap10-pages/issues">GitHub Issues</a></p>
+    <p>Contact / お問い合わせ: App Store のアプリページ経由 / via the App’s App Store page · <a href="https://github.com/T-aka-H/doubletap10-pages/issues">GitHub Issues</a></p>
   </div>
 </body>
 </html>
