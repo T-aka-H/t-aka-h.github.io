@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyline Widget — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(#101a2e 0%, #23283f 55%, #4a3a44 100%);
+    background-attachment: fixed;
+    color: #f2efe9;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    line-height: 1.7;
+  }
+  h1 { color: #f2efe9; font-weight: 300; letter-spacing: 0.06em; }
+  h2 { color: rgba(242,239,233,0.88); margin-top: 30px; font-weight: 400; }
+  p, li { color: rgba(242,239,233,0.76); }
+  a { color: #9fc4e8; }
+  code {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    background: rgba(159, 196, 232, 0.12);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #c8dcf2;
+  }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid rgba(242,239,233,0.12); }
+  th { color: rgba(242,239,233,0.55); font-weight: 500; }
+  td { color: rgba(242,239,233,0.76); vertical-align: top; }
+  .last { color: rgba(242,239,233,0.40); font-size: 12px; }
+  .langtoggle { margin: 8px 0 24px; font-size: 13px; color: rgba(242,239,233,0.55); }
+  .langtoggle a { margin-right: 12px; }
+  hr { border: none; border-top: 1px solid rgba(242,239,233,0.14); margin: 48px 0 24px; }
+</style>
+</head>
+<body>
+
+<h1>Skyline Widget — Privacy Policy</h1>
+<p class="last">Last updated: 2026-08-01 (v1.0.0)</p>
+
+<div class="langtoggle">
+  <a href="#en">English</a>
+  <a href="#ja">日本語</a>
+</div>
+
+<section id="en">
+
+<p>Skyline Widget ("the App") is developed and operated by an independent developer. This Privacy Policy describes how the App handles user information.</p>
+
+<h2>Summary</h2>
+<ul>
+  <li>The App collects <strong>no personal data</strong> and assigns you <strong>no identifier</strong> of any kind — no device ID, no advertising ID, no UUID, no session token.</li>
+  <li>The App contains <strong>no third-party analytics, tracking or advertising SDKs</strong>. It sends anonymous counts to the developer's own server — see "Anonymous Usage Statistics".</li>
+  <li>Your <strong>exact location never leaves your device</strong>. Only a rounded, coarse area is included in the anonymous statistics.</li>
+  <li>The App displays <strong>no advertisements</strong>.</li>
+  <li>Your settings (chosen place, scenery, frame colour) are stored locally on your device.</li>
+</ul>
+
+<h2>Data Collection</h2>
+<p>The App collects no personal data. Your settings — the place you picked, the scenery, the window frame colour, the twinkle setting — are stored on your device using iOS standard storage (UserDefaults, in an App Group shared with the widget) and never leave it in that form.</p>
+
+<h2>Anonymous Usage Statistics</h2>
+<p>To decide which parts of the App are worth maintaining, it sends <strong>anonymous counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). Each message contains exactly four fields: the app name, an event name from a fixed list, the app version, and — for some events — one detail value drawn from a fixed vocabulary.</p>
+
+<table>
+  <tr><th>What is counted</th><th>Detail sent</th></tr>
+  <tr><td>The app was opened</td><td>—</td></tr>
+  <tr><td>The "Today's Sky" screen was opened</td><td>—</td></tr>
+  <tr><td>The scenery was changed</td><td>—</td></tr>
+  <tr><td>Which scenery was moved to</td><td>One of 12 fixed names (e.g. <code>ocean</code>)</td></tr>
+  <tr><td>Country of the place being viewed</td><td>Two-letter country code</td></tr>
+  <tr><td>Time zone of the place being viewed</td><td>IANA time zone name</td></tr>
+  <tr><td>Approximate area of the place being viewed</td><td>A rounded grid cell — see "Location"</td></tr>
+  <tr><td>Country and time zone of your device</td><td>From your device's Region and Time Zone settings</td></tr>
+  <tr><td>Which country picks which scenery / which place</td><td>Country code paired with the above</td></tr>
+</table>
+
+<p><strong>These are totals only.</strong> Because the App holds no identifier of any kind, there is no key that could join these events together. It is therefore not technically possible to reconstruct one person's activity, to count distinct users, or to follow anyone over time. The server independently enforces the fixed list: anything outside it — including free text — is discarded and never stored.</p>
+
+<h2>Location</h2>
+<p>The App can calculate sunrise and sunset times for where you are. This uses Apple's location services <strong>only if you tap "Use current location"</strong> and grant permission. The App requests <strong>reduced accuracy</strong> — it never asks for your precise position.</p>
+<p>Your coordinates stay on your device. What is included in the anonymous statistics is a <strong>rounded grid cell</strong>, never a raw coordinate:</p>
+<ul>
+  <li>A place you searched for or picked from the list: rounded to about <strong>5 km</strong> (a cell of roughly 25 km²). This describes the view you chose, not where you are.</li>
+  <li>A place obtained from "Use current location": rounded to about <strong>50 km</strong>. This is deliberately coarser, because in that case the coordinate does describe roughly where you are.</li>
+</ul>
+<p>The server rejects any value that has not been rounded, so a raw coordinate cannot be stored even by mistake. No street, address, or precise position is ever transmitted.</p>
+<p>You can use the App fully without granting location access — simply search for a city instead.</p>
+
+<h2>Place Search</h2>
+<p>When you search for a place by name, the text you type is sent to <strong>Apple's geocoding service</strong> so it can be resolved into coordinates and a time zone. This is Apple's own service, governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. The developer does not receive your search text, and it is never included in the anonymous statistics.</p>
+
+<h2>Notifications</h2>
+<p>If you turn on the sunset reminder, notifications are scheduled <strong>entirely on your device</strong>. No push server is involved and nothing is sent anywhere.</p>
+
+<h2>The Widget</h2>
+<p>The widget makes <strong>no network requests at all</strong>. Everything it draws — the sky colour, the sun and moon position, the stars — is computed on the device from the date and the place you chose.</p>
+
+<h2>Third-Party Services</h2>
+<p>The App integrates <strong>no</strong> third-party SDKs, analytics services, advertising networks, or data brokers. It uses only Apple's own frameworks (SwiftUI, WidgetKit, CoreLocation, UserNotifications). The only non-Apple destination is the developer's own endpoint <code>collect.appline.app</code>, described above; it is operated by the developer, not a third party, and involves no analytics SDK.</p>
+
+<h2>Tracking</h2>
+<p>The App does <strong>not</strong> track you. It does not link data to you or your device, does not combine data with information from other companies, and does not share data with data brokers. It does not present the App Tracking Transparency prompt because it has nothing to ask for.</p>
+
+<h2>Children</h2>
+<p>The App is suitable for all ages (Apple Age Rating 4+). It does not knowingly collect data from children. Since it collects no personal data and assigns no identifier, this holds for every user equally.</p>
+
+<h2>Changes to this Policy</h2>
+<p>If we change this Privacy Policy, we will update the "Last updated" date above. Material changes will be communicated through the App's release notes.</p>
+
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
+
+</section>
+
+<hr>
+
+<section id="ja">
+
+<h1>Skyline Widget — プライバシーポリシー</h1>
+<p>本ポリシーは、Skyline Widget（以下「本アプリ」）におけるユーザー情報の取扱いを説明します。</p>
+
+<h2>概要</h2>
+<ul>
+  <li>本アプリは<strong>個人情報を一切収集せず</strong>、<strong>いかなる識別子も割り当てません</strong>（端末ID・広告ID・UUID・セッションIDのいずれも持ちません）。</li>
+  <li>サードパーティの分析・トラッキング・広告 SDK を<strong>一切含みません</strong>。開発者自身のサーバーへ匿名の回数のみを送信します（下記「匿名の利用統計」参照）。</li>
+  <li><strong>正確な位置が端末の外に出ることはありません。</strong>匿名の統計に含まれるのは、丸めたおおよその地域だけです。</li>
+  <li>広告は<strong>表示しません</strong>。</li>
+  <li>設定（選んだ場所・景色・窓枠の色）は端末内にローカル保存されます。</li>
+</ul>
+
+<h2>データの収集</h2>
+<p>本アプリは個人情報を一切収集しません。設定（選んだ場所、景色、窓枠の色、星の瞬きの頻度）は、iOS 標準のストレージ（UserDefaults。ウィジェットと共有する App Group 内）に端末上で保存され、その形で端末を離れることはありません。</p>
+
+<h2>匿名の利用統計</h2>
+<p>アプリのどの部分を維持する価値があるかを判断するため、開発者が運用するサーバー（Cloudflare 上の <code>collect.appline.app</code>）へ<strong>匿名の回数</strong>を送信します。1回の送信に含まれるのは、アプリ名・固定リストにあるイベント名・アプリのバージョン・（一部のイベントのみ）固定語彙から選ばれた詳細値1つの、計4項目だけです。</p>
+
+<table>
+  <tr><th>数えているもの</th><th>送られる詳細</th></tr>
+  <tr><td>アプリが起動された</td><td>—</td></tr>
+  <tr><td>「今日の空」が開かれた</td><td>—</td></tr>
+  <tr><td>景色が切り替えられた</td><td>—</td></tr>
+  <tr><td>どの景色に切り替えたか</td><td>12種の固定名のいずれか（例: <code>ocean</code>）</td></tr>
+  <tr><td>見ている場所の国</td><td>2文字の国コード</td></tr>
+  <tr><td>見ている場所の時間帯</td><td>IANA のタイムゾーン名</td></tr>
+  <tr><td>見ている場所のおおよその地域</td><td>丸めた升目（下記「位置情報」参照）</td></tr>
+  <tr><td>お使いの端末の国と時間帯</td><td>端末の「地域」「時間帯」設定から</td></tr>
+  <tr><td>どの国の人がどの景色・どの場所を選んでいるか</td><td>国コードと上記の組み合わせ</td></tr>
+</table>
+
+<p><strong>いずれも合計値のみです。</strong>本アプリはいかなる識別子も持たないため、これらのイベントを結び付ける鍵が存在しません。したがって、特定の一人の行動を復元することも、実利用者数を数えることも、誰かを時系列で追うことも、技術的に不可能です。サーバー側でも固定リストによる検証を行い、リストに無いもの（自由文を含む）は保存せずに破棄します。</p>
+
+<h2>位置情報</h2>
+<p>本アプリは、現在地の日の出・日の入り時刻を計算できます。Apple の位置情報サービスを使うのは、<strong>「現在地を使う」を押して許可した場合のみ</strong>です。取得は<strong>低精度（reduced accuracy）</strong>で要求しており、精密な位置を求めることはありません。</p>
+<p>座標は端末内に留まります。匿名の統計に含まれるのは<strong>丸めた升目</strong>だけで、生の座標が送られることはありません。</p>
+<ul>
+  <li>検索または一覧から選んだ場所: 約<strong>5km</strong>に丸めます（およそ25km²の区画）。これは「選んだ眺め」であって、あなたの居場所ではありません。</li>
+  <li>「現在地を使う」で取得した場所: 約<strong>50km</strong>に丸めます。この場合の座標はあなたのおおよその居場所を表すため、意図的に粗くしています。</li>
+</ul>
+<p>サーバーは丸められていない値を受け付けないため、誤って生の座標が保存されることもありません。番地・住所・精密な位置が送信されることは一切ありません。</p>
+<p>位置情報を許可しなくても、都市を検索して選べば本アプリのすべての機能を利用できます。</p>
+
+<h2>場所の検索</h2>
+<p>場所を名前で検索すると、入力された文字列は座標と時間帯に解決するため <strong>Apple のジオコーディングサービス</strong>へ送信されます。これは Apple 自身のサービスであり、<a href="https://www.apple.com/legal/privacy/">Apple のプライバシーポリシー</a>に従います。開発者が検索文字列を受け取ることはなく、匿名の統計に含まれることもありません。</p>
+
+<h2>通知</h2>
+<p>日の入りの通知を有効にした場合、通知は<strong>すべて端末内で予約</strong>されます。プッシュ通知サーバーは介在せず、どこにも何も送信されません。</p>
+
+<h2>ウィジェットについて</h2>
+<p>ウィジェットは<strong>ネットワーク通信を一切行いません</strong>。空の色も、太陽・月の位置も、星も、すべて日付と選ばれた場所から端末上で計算しています。</p>
+
+<h2>第三者サービス</h2>
+<p>本アプリはサードパーティの SDK・分析サービス・広告ネットワーク・データブローカーを<strong>一切</strong>使用していません。使用しているのは Apple 自身のフレームワーク（SwiftUI、WidgetKit、CoreLocation、UserNotifications）のみです。Apple 以外の唯一の送信先は、上記の匿名カウントを送る開発者自身のエンドポイント <code>collect.appline.app</code> です。第三者ではなく開発者が運用しており、分析 SDK は介在しません。</p>
+
+<h2>トラッキング</h2>
+<p>本アプリはトラッキングを<strong>行いません</strong>。データをあなたや端末に結び付けることはなく、他社の情報と突き合わせることもなく、データブローカーへ提供することもありません。求めるものが無いため、App Tracking Transparency の許諾ダイアログも表示しません。</p>
+
+<h2>お子様の利用について</h2>
+<p>本アプリは全年齢を対象としています（Apple の年齢制限 4+）。お子様から意図的にデータを収集することはありません。そもそも個人情報を収集せず識別子も割り当てないため、これはすべての利用者について等しく成り立ちます。</p>
+
+<h2>本ポリシーの変更</h2>
+<p>本ポリシーを変更する場合は、上部の「Last updated」日付を更新します。重要な変更はアプリのリリースノートでもお知らせします。</p>
+
+<h2>お問い合わせ</h2>
+<p>本プライバシーポリシーについてご質問がある場合は、<a href="mailto:trim.hoist.6b@icloud.com">こちらまで</a>ご連絡ください。</p>
+
+</section>
+
+</body>
+</html>
