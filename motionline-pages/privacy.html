@@ -13,20 +13,38 @@
     .contact-footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: 13px; }
     .contact-footer a { color: #9ca3af; }
     .ja { color: #6b7280; }
+      .changenote { background: #f0fdfa; border-left: 4px solid #0f766e; padding: 12px 16px; margin: 20px 0; font-size: 14px; }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: February 11, 2026</p>
+  <p class="muted">Last updated: August 1, 2026</p>
 
   <p>Motionline ("the App") respects your privacy.</p>
   <p class="ja">Motionline（以下「本アプリ」）は、ユーザーのプライバシーを尊重します。</p>
 
-  <h2>1. Information We Collect / 収集する情報</h2>
-  <p>The App does not send or store your personal information on developer servers. Video processing is performed on-device.</p>
-  <p class="ja">本アプリは、ユーザーの個人情報を開発者サーバーに送信・保存しません。動画処理はデバイス上で実行されます。</p>
+  <div class="changenote">
+    <p style="margin:0 0 8px;"><strong>What changed:</strong> To improve the App, it now sends <strong>anonymous usage counts</strong> (see section 2) — totals such as how many times the app is opened or an export is saved. <strong>Your videos, frames, drawings, and exported images never leave the device</strong> and are not part of these counts. Because the App holds <strong>no identifier of any kind</strong>, it cannot identify you or build a profile.</p>
+    <p class="ja" style="margin:0;"><strong>変更点:</strong> アプリ改善のため、<strong>匿名の利用回数</strong>（第2節参照）の送信を追加しました。送るのは「起動された合計回数」「書き出しが保存された合計回数」といった合計値のみです。<strong>動画・フレーム・描き込み・書き出した画像は端末外に出ず</strong>、このカウントにも含まれません。本アプリは<strong>いかなる識別子も保持しない</strong>ため、利用者を特定することもプロファイルを作ることもできません。</p>
+  </div>
 
-  <h2>2. Access to Photos and Camera / 写真・動画へのアクセス</h2>
+  <h2>1. Information We Collect / 収集する情報</h2>
+  <p>The App collects no personal information. Video processing is performed entirely on-device and your media never leaves it. The only thing sent anywhere is the anonymous usage statistics described in section 2.</p>
+  <p class="ja">本アプリは個人情報を一切収集しません。動画処理はすべてデバイス上で実行され、メディアが端末外に出ることはありません。外部に送信されるのは、第2節に記載する匿名の利用統計だけです。</p>
+
+  <h2>2. Anonymous Usage Statistics / 匿名の利用統計</h2>
+  <p>To make the App better, it sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, a video is imported (and how many of those were filmed in-app), frame extraction completes, a composite image is saved or shared, onboarding is completed, and the subscription screen is shown, purchased, or restored.</p>
+  <p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+  <p><strong>What is never sent:</strong> no name, email, account information, device identifier (IDFA / IDFV), advertising ID, location — and <strong>never your video, extracted frames, drawings, annotations, or exported images</strong>. Not even their file names, durations, or sizes.</p>
+  <p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, which makes it structurally impossible to identify a user, follow the same person over time, or build a profile. Your IP address is not logged, stored, or used.</p>
+  <p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. The App contains no advertising and no third-party analytics or tracking SDK, and does not request App Tracking Transparency (ATT) permission.</p>
+  <p class="ja">アプリ改善のため、開発者が運用するサーバー（Cloudflare 上の <code>collect.appline.app</code>）に<strong>匿名の利用回数</strong>を送信します。数えているのは、アプリの起動回数、動画が取り込まれた回数（うちアプリ内で撮影した回数）、コマ分解が完了した回数、コマ割り画像を保存・共有した回数、オンボーディングの完了回数、購読画面の表示・購入・復元の回数で、いずれも<strong>合計値のみ</strong>です。</p>
+  <p class="ja"><strong>送信するもの（これだけ）:</strong> あらかじめ決められた固定のイベント名と、アプリのバージョン番号のみです。</p>
+  <p class="ja"><strong>送信しないもの:</strong> 氏名・メールアドレス・アカウント情報・端末識別子（IDFA / IDFV）・広告ID・位置情報は送信しません。<strong>動画・抽出したフレーム・描き込み・注釈・書き出した画像も一切送信しません。</strong>ファイル名・長さ・サイズも送りません。</p>
+  <p class="ja"><strong>個人の識別・追跡はできません:</strong> 本アプリは端末やユーザーに<strong>永続的な識別子を一切割り当てません</strong>（端末ID・セッションIDなし）。保存されるのは「何回起きたかの合計」だけで、それらを結び付ける鍵が存在しないため、利用者を識別すること・同一人物を追跡すること・プロファイルを作ることは構造上不可能です。IPアドレスは記録・保存・利用しません。</p>
+  <p class="ja"><strong>送信先:</strong> 開発者自身のサーバーのみです。Google・Firebase・Meta などの第三者に渡すことはありません。本アプリに広告はなく、サードパーティの分析・トラッキングSDKも使用せず、App Tracking Transparency（ATT）の許可も求めません。</p>
+
+  <h2>3. Access to Photos and Camera / 写真・動画へのアクセス</h2>
   <p>The App requests access to your photo library and camera for the following purposes:</p>
   <ul>
     <li>Importing videos for analysis</li>
@@ -40,7 +58,7 @@
     <li>ユーザーによる動画撮影</li>
   </ul>
 
-  <h2>3. Subscriptions and Payments / サブスクリプションと決済</h2>
+  <h2>4. Subscriptions and Payments / サブスクリプションと決済</h2>
   <p>Subscriptions are processed by Apple through the App Store. The developer does not collect or store credit card information.</p>
   <p class="ja">サブスクリプション課金は Apple の App Store を通じて処理されます。開発者はクレジットカード情報を取得・保存しません。</p>
 
