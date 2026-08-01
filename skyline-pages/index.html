@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyline Widget — サポート</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(#101a2e 0%, #23283f 55%, #4a3a44 100%);
+    background-attachment: fixed;
+    color: #f2efe9;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 20px 90px;
+    line-height: 1.75;
+  }
+  h1 {
+    font-weight: 300; letter-spacing: 0.16em; font-size: 34px;
+    margin: 0 0 6px; color: #f2efe9;
+  }
+  .tag { color: rgba(242,239,233,0.55); font-size: 15px; margin: 0 0 40px; letter-spacing: 0.04em; }
+  h2 { color: rgba(242,239,233,0.9); margin-top: 40px; font-weight: 400; font-size: 21px; }
+  h3 { color: rgba(242,239,233,0.8); margin-top: 26px; font-weight: 500; font-size: 16px; }
+  p, li { color: rgba(242,239,233,0.76); }
+  a { color: #9fc4e8; }
+  ol, ul { padding-left: 1.3em; }
+  li { margin: 6px 0; }
+  .card {
+    border: 1px solid rgba(242,239,233,0.14);
+    border-radius: 14px; padding: 4px 22px 18px; margin: 22px 0;
+    background: rgba(255,255,255,0.03);
+  }
+  code {
+    font-family: "SF Mono", Menlo, monospace; font-size: 13px;
+    background: rgba(159,196,232,0.12); padding: 2px 6px; border-radius: 4px; color: #c8dcf2;
+  }
+  hr { border: none; border-top: 1px solid rgba(242,239,233,0.14); margin: 52px 0 26px; }
+  .foot { color: rgba(242,239,233,0.45); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>Skyline</h1>
+<p class="tag">窓のむこうは、世界のいまの空</p>
+
+<p>ホーム画面のウィジェットを「窓」に変えるアプリです。窓のむこうには景色があり、その空の色は、選んだ街の<strong>現地の時刻</strong>に合わせて一日じゅう変わり続けます。</p>
+
+<h2>ウィジェットの置き方</h2>
+<div class="card">
+<ol>
+  <li>ホーム画面の何もないところを長押しします</li>
+  <li>左上の「＋」を押します</li>
+  <li>「Skyline」を探して選びます</li>
+  <li>「Skyline」を選んで「ウィジェットを追加」を押します</li>
+</ol>
+<p>景色・場所・窓枠の色は、アプリ本体で変えると<strong>すぐにウィジェットへ反映されます</strong>。</p>
+</div>
+
+<h2>StandBy（充電中の待機画面）で使う</h2>
+<div class="card">
+<ol>
+  <li>設定 → StandBy をオンにします</li>
+  <li>iPhone を<strong>横向きに立てて</strong>充電します</li>
+  <li>左端のウィジェット画面へスワイプします</li>
+  <li>左の枠を長押しして「<strong>Skyline 左</strong>」を追加します</li>
+  <li>右の枠も同じように「<strong>Skyline 右</strong>」にします</li>
+</ol>
+<p>左右がひと続きの景色として繋がり、<strong>横長のひとつの窓</strong>になります。継ぎ目の合わせ具合はアプリの「StandBy」から微調整できます。</p>
+</div>
+
+<h2>よくある質問</h2>
+
+<h3>ウィジェットが動いていないように見えます</h3>
+<p>星の瞬きや雨の雫は、ホーム画面のウィジェットが更新できる範囲で動きます。iOS はウィジェットの更新回数に上限を設けているため、<strong>常に動き続けるわけではありません</strong>。しばらく見ていると、星がふっと光ったり、雫がつっと下がったりします。派手に動かないのは意図した設計です。</p>
+
+<h3>色が変わりません</h3>
+<p>空の色は時刻とともに<strong>ゆっくり</strong>変わります。いちばん変化が大きいのは日の出前と日の入り後の30分ほどです。アプリの「今日の空」で時刻を動かすと、その場で一日ぶんの移り変わりを確認できます。</p>
+
+<h3>位置情報を許可しないと使えませんか</h3>
+<p>いいえ。都市を検索して選べば、位置情報を許可しなくてもすべての機能が使えます。「現在地を使う」を押したときだけ位置情報を使い、精密な位置は要求していません。</p>
+
+<h3>選んだ街が夜なのに、ウィジェットが昼のままです</h3>
+<p>逆のことが起きているかもしれません。ウィジェットは<strong>選んだ街の現地時刻</strong>で描かれます。あなたが夜でも、選んだ街が昼ならウィジェットは昼です。夏のレイキャビクなら、22時でもまだ明るいままです。</p>
+
+<h3>通信は発生しますか</h3>
+<p>ウィジェットは通信を一切しません。空も太陽も星も、日付と場所からすべて端末の中で計算しています。街を名前で検索するときだけ、Apple の地名解決サービスに問い合わせます。</p>
+
+<h3>購入したものを別の端末でも使いたい</h3>
+<p>同じ Apple Account でサインインしていれば引き継がれます。反映されないときは、アプリ内の購入画面にある「購入を復元」を押してください。</p>
+
+<h2>お問い合わせ</h2>
+<p>不具合のご報告やご要望は <a href="mailto:trim.hoist.6b@icloud.com">こちら</a> までお願いします。返信は日本語または英語で行います。</p>
+
+<hr>
+
+<h1 style="font-size:26px">Skyline — Support</h1>
+<p class="tag">A sky beyond the Home Screen</p>
+
+<p>Skyline turns a Home Screen widget into a window. Beyond it lies a landscape whose sky changes colour all day, following the <strong>local time of the city you choose</strong>.</p>
+
+<h2>Adding the widget</h2>
+<div class="card">
+<ol>
+  <li>Touch and hold an empty area of the Home Screen</li>
+  <li>Tap the “+” in the upper left</li>
+  <li>Find and select “Skyline”</li>
+  <li>Choose “Skyline” and tap “Add Widget”</li>
+</ol>
+<p>Changing the view, place or frame colour in the app updates the widget right away.</p>
+</div>
+
+<h2>Using it in StandBy</h2>
+<div class="card">
+<ol>
+  <li>Turn on Settings → StandBy</li>
+  <li>Stand your iPhone <strong>sideways</strong> on a charger</li>
+  <li>Swipe to the leftmost widget screen</li>
+  <li>Touch and hold the left slot and add “<strong>Skyline Left</strong>”</li>
+  <li>Do the same on the right with “<strong>Skyline Right</strong>”</li>
+</ol>
+<p>The two panes join into a single wide window. Fine-tune the seam from “StandBy” in the app.</p>
+</div>
+
+<h2>FAQ</h2>
+
+<h3>The widget doesn’t seem to move</h3>
+<p>Stars flicker and raindrops slide within what iOS allows a widget to refresh. There is a daily limit on widget updates, so it does <strong>not</strong> move continuously. Watch for a while and a star will flare, or a drop will run. The restraint is intentional.</p>
+
+<h3>The colour isn’t changing</h3>
+<p>The sky changes <strong>slowly</strong>. The biggest shift happens in the half hour around sunrise and sunset. Use the time slider in “Today’s Sky” to see a whole day at once.</p>
+
+<h3>Do I have to allow location access?</h3>
+<p>No. Search for a city and everything works without it. Location is used only when you tap “Use current location”, and the app never requests precise location.</p>
+
+<h3>The city I picked is at night, but the widget shows daytime</h3>
+<p>That is expected. The widget follows the <strong>local time of the place you chose</strong>, not yours. In Reykjavík in summer, 10 p.m. is still bright.</p>
+
+<h3>Does it use the network?</h3>
+<p>The widget makes no network requests at all. Only searching for a city by name queries Apple’s geocoding service.</p>
+
+<h3>Restoring a purchase on another device</h3>
+<p>Purchases carry over when signed in with the same Apple Account. If not, tap “Restore Purchases” on the purchase screen in the app.</p>
+
+<h2>Contact</h2>
+<p>Please send bug reports and requests <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
+
+<hr>
+<p class="foot"><a href="privacy.html">プライバシーポリシー / Privacy Policy</a></p>
+
+</body>
+</html>
