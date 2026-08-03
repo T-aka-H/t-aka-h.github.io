@@ -23,14 +23,17 @@
   <div class="lang"><a href="privacy.html">日本語</a></div>
   <h1>Air Chokin — Privacy Policy</h1>
   <div class="nav"><a href="index-en.html">Home</a><a href="support-en.html">Support</a></div>
-  <p>Last updated: 3 August 2026</p>
+  <p>Last updated: 3 August 2026 (v1.1)</p>
+
+  <p class="note"><strong>Changed in v1.1:</strong> the app now sends anonymous usage counts — totals of how often each feature is used. Nothing records who used it. See section 4.</p>
 
   <p class="note">Air Chokin records the discounts printed on your receipts as a virtual saving. No money is moved and nothing is deposited into any bank account. There is no connection to any financial institution and no transfer function.</p>
 
   <p>This policy explains how information is handled in Air Chokin (the app).</p>
 
   <h2>1. Information collected</h2>
-  <p>The app <strong>collects and stores no personally identifying information</strong>. No account is required. It contains no third-party analytics or advertising SDKs.</p>
+  <p>The app <strong>collects and stores no personally identifying information</strong>. No account is required. It contains no advertising and no third-party analytics SDKs (no Google, Firebase or Meta).</p>
+  <p>Anonymous usage counts are the only thing sent off the device (section 4). Receipt images, figures and shop names are never sent.</p>
   <p>The following is stored <strong>on your device only</strong>:</p>
   <ul>
     <li>Photographs of receipts you take or import</li>
@@ -48,11 +51,20 @@
   </ul>
   <p>Choosing a receipt from Photos uses the system picker, so full photo-library access is not required.</p>
 
-  <h2>4. Network</h2>
-  <p>The app <strong>makes no network requests</strong>. Recording, reading and totalling all happen on the device, and no data leaves it.</p>
+  <h2>4. Anonymous usage statistics</h2>
+  <p>To know which features are actually used, the app sends <strong>anonymous counts of actions</strong>. Exactly three fields are sent:</p>
+  <ul>
+    <li>the app name (<code>chariline</code>)</li>
+    <li>an event name <strong>from a fixed allow-list</strong> (for example <code>receipt_recorded</code> — a receipt was recorded, or <code>paywall_shown</code> — the Pro screen was shown)</li>
+    <li>the app version string</li>
+  </ul>
+  <p>They go <strong>only to the developer's own server</strong> (<code>collect.appline.app</code>) and are never shared with any third party.</p>
+  <p><strong>There is no persistent identifier.</strong> No device ID, no IDFA, no user ID is sent, so there is no key on which events could be joined. Identifying an individual, following them over time or building a profile is therefore <strong>structurally impossible</strong>: what the server holds is "this action happened N times in total".</p>
+  <p>IP addresses are not recorded, stored or used. Audience figures such as active users are left to Apple's App Store Connect analytics.</p>
+  <p><strong>Receipt images, recognised text, amounts, shop names and goal contents are never sent</strong>, and no free-form text can be sent (the server discards anything outside the allow-list).</p>
 
   <h2>5. Third-party services</h2>
-  <p>No advertising, analytics or crash-reporting services are used.</p>
+  <p>No advertising, crash-reporting or third-party analytics services are used. The usage counts described above go directly to the developer's own server; no third-party SDK is embedded.</p>
 
   <h2>6. Export and deletion</h2>
   <p>Settings lets you export your recorded figures to a file and import them again. Where you keep that file is up to you.</p>
