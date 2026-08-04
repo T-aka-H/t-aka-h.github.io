@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meettap — プライバシーポリシー</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #0B0E14; color: #E8EBF0;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #3D9DF2; }
+  p, li { color: rgba(232,235,240,0.80); }
+  a { color: #3D9DF2; }
+  strong { color: #E8EBF0; }
+  .sub { color: rgba(232,235,240,0.55); font-size: 15px; margin-top: -6px; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(232,235,240,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  .answer { color: rgba(232,235,240,0.80); margin: 0 0 18px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="privacy-en.html">English</a></div>
+  <h1>Meettap — プライバシーポリシー</h1>
+  <div class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="support.html">サポート</a>
+    <a href="privacy.html">プライバシー</a>
+  </div>
+  <p>最終更新: 2026年8月4日</p>
+  <p>本ポリシーは、Meettap（以下「本アプリ」）における情報の取り扱いを説明します。本アプリは、合流に必要な最小限の情報だけを、合流している相手とだけ、合流している間だけ共有します。</p>
+
+  <h2>1. 収集する情報</h2>
+  <p>本アプリは<strong>個人を特定する情報を収集・保存しません</strong>。アカウント登録は不要で、氏名・メールアドレス・電話番号・SNS アカウントのいずれも登録も収集もしません。第三者の分析（アナリティクス）や広告の SDK も含まれていません。</p>
+
+  <h2>2. 合流中に共有される情報</h2>
+  <p>合流セッションが有効な間、次の情報が<strong>合流相手とのみ</strong>共有されます。</p>
+  <ul>
+    <li><strong>おおまかな位置</strong>: 実際の座標ではなく、約100メートル四方の区画に丸めた位置。遠距離での方角と距離の目安にのみ使用します</li>
+    <li><strong>端末の向き</strong>: 矢印を正しい方向に向けるための方位</li>
+    <li><strong>使い捨ての近接測位トークン</strong>: 端末どうしが直接距離を測るための識別子。セッションごとに新しく作られ、他の用途には使えません</li>
+  </ul>
+  <p>共有は常に<strong>双方向</strong>です。片方だけが相手を見られる状態にはなりません。共有はアプリを開いている間だけ行われ、<strong>バックグラウンドでの位置取得や追跡は行いません</strong>。</p>
+
+  <h2>3. 端末内での処理</h2>
+  <p>近距離での正確な距離と方向は、端末どうしが直接やり取りして計算します。この情報が外部のサーバーへ送られることはありません。カメラは方向表示の精度を上げるためだけに使用し、<strong>映像の保存も送信も行いません</strong>。Bluetooth は相手との近さの検知にのみ使用します。</p>
+
+  <h2>4. サーバーでの取り扱い</h2>
+  <p>セクション2の情報は、合流を成立させるために当方のサーバー（<code>meettap.appline.app</code>、Cloudflare 上）を経由します。</p>
+  <ul>
+    <li>保存するのは丸めた位置・方位・使い捨てトークン・進行状態のみで、個人を特定できる情報は含みません</li>
+    <li>合流が成立したとき、どちらかが終了したときは<strong>即座に削除</strong>されます</li>
+    <li>そのいずれも起きなかった場合も、リンクの発行から<strong>3時間で自動的に消滅</strong>します</li>
+    <li>アクセスログや IP アドレスの記録は行いません</li>
+  </ul>
+  <p>合流の履歴は、サーバーにも端末にも残りません。</p>
+
+  <h2>5. 端末の権限</h2>
+  <ul>
+    <li><strong>位置情報（使用中のみ）</strong>: 相手との距離と方角を表示するため</li>
+    <li><strong>近くのデバイスとの通信</strong>: 相手との正確な距離と方向を測るため</li>
+    <li><strong>Bluetooth</strong>: 相手との接近を検知するため</li>
+    <li><strong>カメラ</strong>: 方向表示の精度を上げるため（映像は保存・送信しません）</li>
+    <li><strong>モーション</strong>: 矢印の向きを安定させるため</li>
+  </ul>
+  <p>いずれも合流画面を開いている間のみ使用します。</p>
+
+  <h2>6. 子どものプライバシー</h2>
+  <p>本アプリは子ども向けに設計されていません。児童から意図的に情報を収集することはありません。</p>
+
+  <h2>7. 改定について</h2>
+  <p>本ポリシーを変更する場合は、本ページの最終更新日を改めて掲載します。</p>
+
+  <h2>8. お問い合わせ</h2>
+  <p>本ポリシーに関するお問い合わせは、App Store のアプリページからお願いいたします。テスト版をご利用中の場合は TestFlight のフィードバック機能もご利用いただけます。</p>
+  <p class="last">© 2026 Meettap</p>
+</body>
+</html>

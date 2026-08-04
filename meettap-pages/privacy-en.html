@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meettap — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #0B0E14; color: #E8EBF0;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #3D9DF2; }
+  p, li { color: rgba(232,235,240,0.80); }
+  a { color: #3D9DF2; }
+  strong { color: #E8EBF0; }
+  .sub { color: rgba(232,235,240,0.55); font-size: 15px; margin-top: -6px; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(232,235,240,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  .answer { color: rgba(232,235,240,0.80); margin: 0 0 18px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="privacy.html">日本語</a></div>
+  <h1>Meettap — Privacy Policy</h1>
+  <div class="nav">
+    <a href="index-en.html">Home</a>
+    <a href="support-en.html">Support</a>
+    <a href="privacy-en.html">Privacy</a>
+  </div>
+  <p>Last updated: August 4, 2026</p>
+  <p>This policy explains how Meettap handles information. The app shares the minimum needed to meet up, only with the person you are meeting, and only while you are meeting.</p>
+
+  <h2>1. Information we collect</h2>
+  <p>The app <strong>does not collect or store personally identifying information</strong>. There is no account to create, and we never register or collect your name, email address, phone number, or social accounts. No third-party analytics or advertising SDKs are included.</p>
+
+  <h2>2. Information shared during a meet-up</h2>
+  <p>While a meet-up session is active, the following is shared <strong>only with the person you are meeting</strong>.</p>
+  <ul>
+    <li><strong>Approximate location</strong>: not your exact coordinates, but a position rounded to a roughly 100-meter grid, used only for direction and rough distance</li>
+    <li><strong>Device heading</strong>: so the arrow points the right way</li>
+    <li><strong>A single-use ranging token</strong>: an identifier that lets the two devices measure distance directly. It is created fresh for each session and cannot be used for anything else</li>
+  </ul>
+  <p>Sharing is always <strong>mutual</strong>. There is no state in which only one side can see the other. Sharing happens only while the app is open, and there is <strong>no background location access or tracking</strong>.</p>
+
+  <h2>3. Processed on device only</h2>
+  <p>Precise close-range distance and direction are computed directly between the two devices and never sent to a server. The camera is used solely to improve directional accuracy, and <strong>no video is stored or transmitted</strong>. Bluetooth is used only to sense proximity.</p>
+
+  <h2>4. Handling on our server</h2>
+  <p>The information in section 2 passes through our server (<code>meettap.appline.app</code>, on Cloudflare) to make the meet-up work.</p>
+  <ul>
+    <li>Only the rounded position, heading, single-use token, and session state are stored — nothing that identifies a person</li>
+    <li>It is <strong>deleted immediately</strong> when you meet, or when either side ends the session</li>
+    <li>If neither happens, it <strong>disappears automatically three hours</strong> after the link was created</li>
+    <li>We do not record access logs or IP addresses</li>
+  </ul>
+  <p>No meet-up history remains on the server or on your device.</p>
+
+  <h2>5. Device permissions</h2>
+  <ul>
+    <li><strong>Location (while in use)</strong>: to show distance and direction to the other person</li>
+    <li><strong>Nearby device interaction</strong>: to measure precise distance and direction</li>
+    <li><strong>Bluetooth</strong>: to sense proximity</li>
+    <li><strong>Camera</strong>: to improve directional accuracy (no video is stored or sent)</li>
+    <li><strong>Motion</strong>: to keep the arrow steady</li>
+  </ul>
+  <p>All are used only while the meet-up screen is open.</p>
+
+  <h2>6. Children's privacy</h2>
+  <p>The app is not designed for children and does not knowingly collect information from them.</p>
+
+  <h2>7. Changes</h2>
+  <p>If this policy changes, the updated date at the top of this page will be revised.</p>
+
+  <h2>8. Contact</h2>
+  <p>For questions about this policy, please use the contact method on the app's App Store page. If you are using a beta build, you can also use TestFlight's feedback feature.</p>
+  <p class="last">© 2026 Meettap</p>
+</body>
+</html>
