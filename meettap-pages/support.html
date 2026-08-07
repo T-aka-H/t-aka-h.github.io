@@ -32,7 +32,45 @@
     <a href="privacy.html">プライバシー</a>
   </div>
   <h2>お問い合わせ</h2>
-  <p>ご質問・不具合のご報告は、App Store のアプリページからお問い合わせください。テスト版をご利用中の場合は TestFlight のフィードバック機能もご利用いただけます。</p>
+  <p>ご質問・不具合のご報告は、下のフォームからお送りください。</p>
+  <form id="contact-form">
+    <textarea id="cf-message" rows="5" maxlength="2000" required
+      placeholder="ご質問・不具合の内容"
+      style="width:100%;box-sizing:border-box;background:#151B28;color:#E8EBF0;border:1px solid rgba(232,235,240,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit"></textarea>
+    <input id="cf-contact" type="text" maxlength="200"
+      placeholder="返信用の連絡先（任意）"
+      style="width:100%;box-sizing:border-box;margin-top:10px;background:#151B28;color:#E8EBF0;border:1px solid rgba(232,235,240,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit">
+    <input id="cf-website" type="text" tabindex="-1" autocomplete="off"
+      style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit"
+      style="margin-top:12px;background:#3D9DF2;color:#fff;border:none;border-radius:10px;padding:12px 26px;font-size:15px;font-weight:700;cursor:pointer">送信</button>
+    <p id="cf-result" style="font-size:14px"></p>
+  </form>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const result = document.getElementById("cf-result");
+      result.textContent = "送信中…";
+      try {
+        const res = await fetch("https://meettap.appline.app/contact", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            message: document.getElementById("cf-message").value,
+            contact: document.getElementById("cf-contact").value,
+            website: document.getElementById("cf-website").value,
+            lang: "ja",
+          }),
+        });
+        if (!res.ok) throw new Error();
+        result.textContent = "送信しました。ありがとうございます。";
+        document.getElementById("cf-message").value = "";
+      } catch {
+        result.textContent = "送信できませんでした。時間をおいてお試しください。";
+      }
+    });
+  </script>
+  <p>テスト版をご利用中の場合は TestFlight のフィードバック機能もご利用いただけます。</p>
 
   <h1 style="font-size:22px;margin-top:44px">よくある質問</h1>
   <h2>相手にも Meettap が必要ですか？</h2>
