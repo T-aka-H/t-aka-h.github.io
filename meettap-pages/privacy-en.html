@@ -47,7 +47,7 @@
   <p>Sharing is always <strong>mutual</strong>. There is no state in which only one side can see the other. Sharing happens only while the app is open, and there is <strong>no background location access or tracking</strong>.</p>
 
   <h2>3. Processed on device only</h2>
-  <p>Precise close-range distance and direction are computed directly between the two devices and never sent to a server. The camera is used solely to improve directional accuracy, and <strong>no video is stored or transmitted</strong>. Bluetooth is used only to sense proximity.</p>
+  <p>Precise close-range distance and direction are computed directly between the two devices and never sent to a server. The camera is used solely to improve directional accuracy, and <strong>no video is stored or transmitted</strong>. Bluetooth is used only to sense proximity. Barometric pressure readings are <strong>exchanged, encrypted, only with the person you are meeting</strong> to detect a floor difference, and are never stored on a server.</p>
 
   <h2>4. Handling on our server</h2>
   <p>The information in section 2 passes through our server (<code>meettap.appline.app</code>, on Cloudflare) to make the meet-up work.</p>
@@ -64,6 +64,7 @@
     <li><strong>Location (while in use)</strong>: to show distance and direction to the other person</li>
     <li><strong>Nearby device interaction</strong>: to measure precise distance and direction</li>
     <li><strong>Bluetooth</strong>: to sense proximity</li>
+    <li><strong>Motion (barometer)</strong>: to detect a floor difference</li>
     <li><strong>Camera</strong>: to improve directional accuracy (no video is stored or sent)</li>
   </ul>
   <p>All are used only while the meet-up screen is open.</p>
