@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UnderCover Zero — Support</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    background: #06090E; color: #E0F6FF;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #35D6F2; }
+  p, li { color: rgba(224,246,255,0.80); }
+  a { color: #35D6F2; }
+  strong { color: #E0F6FF; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(224,246,255,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  .answer { color: rgba(224,246,255,0.80); margin: 0 0 18px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="support.html">日本語</a></div>
+  <h1>UnderCover Zero — Support</h1>
+  <div class="nav">
+    <a href="index-en.html">Home</a>
+    <a href="support-en.html">Support</a>
+    <a href="privacy-en.html">Privacy</a>
+  </div>
+  <h2>Contact</h2>
+  <p>For questions or bug reports, please use the form below.</p>
+  <form id="contact-form">
+    <textarea id="cf-message" rows="5" maxlength="2000" required
+      placeholder="Your question or the problem you hit"
+      style="width:100%;box-sizing:border-box;background:#0F1922;color:#E0F6FF;border:1px solid rgba(224,246,255,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit"></textarea>
+    <input id="cf-contact" type="text" maxlength="200"
+      placeholder="How to reach you (optional)"
+      style="width:100%;box-sizing:border-box;margin-top:10px;background:#0F1922;color:#E0F6FF;border:1px solid rgba(224,246,255,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit">
+    <input id="cf-website" type="text" tabindex="-1" autocomplete="off"
+      style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit"
+      style="margin-top:12px;background:#35D6F2;color:#06090E;border:none;border-radius:10px;padding:12px 26px;font-size:15px;font-weight:700;cursor:pointer">Send</button>
+    <p id="cf-result" style="font-size:14px"></p>
+  </form>
+  <p>If the form does not work, please <a href="mailto:trim.hoist.6b@icloud.com">get in touch</a>.</p>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const result = document.getElementById("cf-result");
+      result.textContent = "Sending…";
+      try {
+        const res = await fetch("https://uczero.appline.app/contact", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            message: document.getElementById("cf-message").value,
+            contact: document.getElementById("cf-contact").value,
+            website: document.getElementById("cf-website").value,
+            lang: "en",
+          }),
+        });
+        if (!res.ok) throw new Error();
+        result.textContent = "Sent. Thank you.";
+        document.getElementById("cf-message").value = "";
+      } catch {
+        result.textContent = "Could not send. Please try again later.";
+      }
+    });
+  </script>
+  <p>If you are on the beta, you can also use TestFlight's feedback feature.</p>
+
+  <h1 style="font-size:22px;margin-top:44px">FAQ</h1>
+
+  <h2>How do we play?</h2>
+  <p class="answer">Whoever creates the link is the <strong>hider</strong>; whoever opens it is the <strong>seeker</strong>. Once the other player joins, a 60-second hiding countdown begins and the seeker's radar stays dark. When it ends the hunt starts: find the hider before the clock runs out and the seeker wins; survive and the hider wins.</p>
+
+  <h2>Does the other person need UnderCover Zero too?</h2>
+  <p class="answer">Yes. Both players install it from the App Store. One of you creates a link and sends it to the other.</p>
+
+  <h2>Can we change the time limit?</h2>
+  <p class="answer">Yes — pick 5, 10, 15, or 30 minutes when you create the link. The choice travels with the link, so the other player gets the same setting automatically.</p>
+
+  <h2>Can the hider see the seeker's position?</h2>
+  <p class="answer">No. The hider's screen shows neither direction nor distance — only a five-level warning of how close the seeker is. The data exchange itself stays symmetric, though: it is never one-way.</p>
+
+  <h2>How much of my location can the other player see?</h2>
+  <p class="answer">While you are far apart, only a position rounded to a grid roughly 100 metres across is shared. Your exact address is never transmitted. Once you are close, precise distance and direction are computed directly between the two devices and never reach a server.</p>
+
+  <h2>How does a catch happen?</h2>
+  <p class="answer">When the seeker gets close enough, a "Found you" button appears. It is disabled during the hiding countdown, and also when the two of you are on clearly different floors — so that someone directly upstairs is never counted as found.</p>
+
+  <h2>Does it work indoors?</h2>
+  <p class="answer">Yes. GPS gets coarse indoors, but as you close in the app switches to Bluetooth and then to ultra-wideband, getting sharper as it goes. The barometer detects floor differences too, so multi-storey buildings make for the best games.</p>
+
+  <h2>How long does a link last?</h2>
+  <p class="answer">It stops working when the game ends, when either player quits, or three hours after it was created. A dead link reveals nothing.</p>
+
+  <h2>What is kept in my records?</h2>
+  <p class="answer">Date and time, the outcome, your role, how long it took, and the farthest distance during the game. <strong>Location itself is never recorded.</strong> The app does not know who the other player is, so any label is one you type yourself. Records stay on this device only — never a server, never iCloud. Delete them one at a time or all at once from the list.</p>
+
+  <h2>What does Apple Watch do?</h2>
+  <p class="answer">Start a game on iPhone and your wrist shows distance and direction. The Watch only mirrors the iPhone — it never obtains location or communicates on its own. Keep the iPhone app open during a game (in your pocket is fine).</p>
+
+  <h2>Nothing appears on the radar</h2>
+  <p class="answer">Check that location access is allowed (Settings → UnderCover Zero → Location → While Using the App), and keep the app open — it does not run in the background. Note that the radar is intentionally dark during the hiding countdown.</p>
+
+  <h2>The direction will not settle</h2>
+  <p class="answer">Direction cannot be read when the phone is lying flat. Hold the iPhone upright and move it in a small figure-eight and it will settle.</p>
+
+  <h2>I do not get the 0.1 m readout</h2>
+  <p class="answer">Precise ranging needs ultra-wideband on both devices. iPhone 11 and later support it, except iPhone SE and iPhone 16e. If either side lacks it, you get direction and approximate distance instead.</p>
+
+  <h2>The other player is on Android</h2>
+  <p class="answer">Right now the game works between iPhones only.</p>
+
+  <h2>Playing safely</h2>
+  <p class="answer">Do not stare at the screen while walking. Stay out of roadways, railways, private property, and restricted areas. Be considerate of people around you, especially at night or in crowded places.</p>
+
+  <p class="last">© 2026 UnderCover Zero</p>
+</body>
+</html>

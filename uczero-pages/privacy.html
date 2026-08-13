@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UnderCover Zero — プライバシーポリシー</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #06090E; color: #E0F6FF;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #35D6F2; }
+  p, li { color: rgba(224,246,255,0.80); }
+  a { color: #35D6F2; }
+  strong { color: #E0F6FF; }
+  code { color: rgba(224,246,255,0.9); font-size: 14px; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(224,246,255,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="privacy-en.html">English</a></div>
+  <h1>UnderCover Zero — プライバシーポリシー</h1>
+  <div class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="support.html">サポート</a>
+    <a href="privacy.html">プライバシー</a>
+  </div>
+  <p>最終更新: 2026年8月14日</p>
+  <p>本ポリシーは、UnderCover Zero（以下「本アプリ」）における情報の取り扱いを説明します。本アプリは、ゲームの進行に必要な最小限の情報だけを、一緒に遊んでいる相手とだけ、遊んでいる間だけ共有します。</p>
+
+  <h2>1. 収集する情報</h2>
+  <p>本アプリは<strong>個人を特定する情報を収集・保存しません</strong>。アカウント登録は不要で、氏名・メールアドレス・電話番号・SNS アカウントのいずれも登録も収集もしません。第三者の分析（アナリティクス）や広告の SDK も含まれていません。アプリの改善のために匿名の利用回数だけを記録していますが、個人を識別する情報は含みません（第6節）。</p>
+
+  <h2>2. ゲーム中に共有される情報</h2>
+  <p>ゲームが有効な間、次の情報が<strong>一緒に遊んでいる相手とのみ</strong>共有されます。</p>
+  <ul>
+    <li><strong>おおまかな位置</strong>: 実際の座標ではなく、約100メートル四方の区画に丸めた位置。距離と方角の目安にのみ使用します</li>
+    <li><strong>端末の向き</strong>: レーダーを正しい方向に向けるための方位</li>
+    <li><strong>使い捨ての近接測位トークン</strong>: 端末どうしが直接距離を測るための識別子。ゲームごとに新しく作られ、他の用途には使えません</li>
+  </ul>
+  <p>共有は常に<strong>双方向</strong>です。片方だけが相手の位置を送る状態にはなりません。ゲームの役割によって画面の表示は変わり、探す側にはレーダーと距離が、かくれる側には近さの警告だけが表示されますが、<strong>データのやり取り自体は対等</strong>です。共有はアプリを開いている間だけ行われ、<strong>バックグラウンドでの位置取得や追跡は行いません</strong>。</p>
+
+  <h2>3. 端末内での処理</h2>
+  <p>近距離での正確な距離と方向は、端末どうしが直接やり取りして計算します。この情報が外部のサーバーへ送られることはありません。カメラは方向表示の精度を上げるためだけに使用し、<strong>映像の保存も送信も行いません</strong>。Bluetooth は相手との近さの検知にのみ使用します。気圧センサーの情報は、相手とのフロアの違い（上下の差）を検知するために<strong>相手とのみ暗号化して交換</strong>し、サーバーには保存されません。</p>
+
+  <h2>4. サーバーでの取り扱い</h2>
+  <p>セクション2の情報は、ゲームを成立させるために当方のサーバー（<code>uczero.appline.app</code>、Cloudflare 上）を経由します。</p>
+  <ul>
+    <li>保存するのは丸めた位置・方位・使い捨てトークン・進行状態のみで、個人を特定できる情報は含みません</li>
+    <li>ゲームが終わったとき、どちらかが終了したときは<strong>即座に削除</strong>されます</li>
+    <li>そのいずれも起きなかった場合も、リンクの発行から<strong>3時間で自動的に消滅</strong>します</li>
+    <li>アクセスログや IP アドレスの記録は行いません</li>
+  </ul>
+  <p>プレイの履歴が<strong>サーバーに残ることはありません</strong>。端末側については第7節をご覧ください。</p>
+
+  <h2>5. 端末の権限</h2>
+  <ul>
+    <li><strong>位置情報（使用中のみ）</strong>: 相手との距離と方角を表示するため</li>
+    <li><strong>近くのデバイスとの通信</strong>: 相手との正確な距離と方向を測るため</li>
+    <li><strong>Bluetooth</strong>: 相手との接近を検知するため</li>
+    <li><strong>モーション（気圧センサー）</strong>: 相手とのフロアの違いを検知するため</li>
+    <li><strong>カメラ</strong>: 方向表示の精度を上げるため（映像は保存・送信しません）</li>
+  </ul>
+  <p>いずれもゲーム画面を開いている間のみ使用します。</p>
+
+  <h2>6. 匿名の利用統計</h2>
+  <p>アプリの改善のために、<strong>操作の合計回数だけ</strong>を記録しています。送信するのは「アプリ名」「操作の名前」「アプリのバージョン」の 3 つだけです。</p>
+  <ul>
+    <li>記録するのは「アプリが起動された」「リンクが作られた」「相手がリンクを開いた」「精密な測位に入った」「見つかった」「見つからずに終わった」の合計回数です</li>
+    <li><strong>端末やユーザーを識別する情報を一切持ちません</strong>。アカウント ID も端末 ID も広告 ID も、独自の識別子も付けていません。結び付ける鍵が無いため、<strong>「誰が」「いつ」「どこで」はデータとして存在しません</strong>。個人の行動履歴やプロファイルを作ることは構造的にできません</li>
+    <li>位置情報・自由入力の文字列・戦績の中身は送信しません</li>
+    <li>送信先は当方の Cloudflare サーバー（<code>collect.appline.app</code>）のみです。第三者の分析サービスや広告会社に渡すことはありません</li>
+    <li>サーバー側は<strong>あらかじめ決めた操作名しか受け付けません</strong>。それ以外は記録せずに捨てます</li>
+    <li>IP アドレスの記録・保存・利用は行いません</li>
+  </ul>
+
+  <h2>7. 戦績（この端末の中だけ）</h2>
+  <p>ゲームの結果を手元に残せます。残るのは<strong>この端末の中だけ</strong>です。</p>
+  <ul>
+    <li>残るのは、遊んだ日時・勝敗・自分の役割・かかった時間・最も離れていた距離です</li>
+    <li><strong>位置そのものは記録しません</strong>。どこで遊んだかは戦績から分かりません</li>
+    <li>相手が誰であるかは本アプリには分かりません。<strong>呼び名を付ける場合はご自身で入力</strong>いただくもので、相手の情報を取得することはありません</li>
+    <li>保存先はこの端末の中だけです。サーバーにも iCloud にも送信されず、端末のバックアップからも除外されます</li>
+    <li>一覧画面からいつでも 1 件ずつ、またはまとめて削除できます</li>
+  </ul>
+
+  <h2>8. Apple Watch</h2>
+  <p>Apple Watch では、iPhone が表示している内容を<strong>そのまま映しているだけ</strong>です。Watch が独自に位置を取得したり通信したりすることはなく、iPhone から Watch へ渡すのは距離・向き・進行状態だけで、<strong>位置そのものは渡していません</strong>。</p>
+
+  <h2>9. 子どものプライバシー</h2>
+  <p>本アプリは子ども向けに設計されていません。児童から意図的に情報を収集することはありません。</p>
+
+  <h2>10. 改定について</h2>
+  <p>本ポリシーを変更する場合は、本ページの最終更新日を改めて掲載します。</p>
+
+  <h2>11. お問い合わせ</h2>
+  <p>ご質問・不具合のご報告は<a href="mailto:trim.hoist.6b@icloud.com">こちら</a>までご連絡ください。</p>
+  <p class="last">© 2026 UnderCover Zero</p>
+</body>
+</html>

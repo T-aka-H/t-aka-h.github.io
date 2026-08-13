@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UnderCover Zero — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    background: #06090E; color: #E0F6FF;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #35D6F2; }
+  p, li { color: rgba(224,246,255,0.80); }
+  a { color: #35D6F2; }
+  strong { color: #E0F6FF; }
+  code { color: rgba(224,246,255,0.9); font-size: 14px; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(224,246,255,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="privacy.html">日本語</a></div>
+  <h1>UnderCover Zero — Privacy Policy</h1>
+  <div class="nav">
+    <a href="index-en.html">Home</a>
+    <a href="support-en.html">Support</a>
+    <a href="privacy-en.html">Privacy</a>
+  </div>
+  <p>Last updated: August 14, 2026</p>
+  <p>This policy explains how UnderCover Zero (the "app") handles information. The app shares only what a game needs, only with the person you are playing with, and only while you are playing.</p>
+
+  <h2>1. Information we collect</h2>
+  <p>The app <strong>does not collect or store personally identifying information</strong>. No account is required. We do not register or collect your name, email address, phone number, or any social account. There are no third-party analytics or advertising SDKs. We record anonymous usage counts to improve the app, and those counts contain nothing that identifies a person (Section 6).</p>
+
+  <h2>2. What is shared during a game</h2>
+  <p>While a game is active, the following is shared <strong>only with the person you are playing with</strong>.</p>
+  <ul>
+    <li><strong>Coarse location</strong>: not your actual coordinates, but a position rounded to a grid roughly 100 metres across. Used only for approximate distance and direction</li>
+    <li><strong>Device heading</strong>: so the radar points the right way</li>
+    <li><strong>A disposable ranging token</strong>: an identifier the two devices use to measure distance directly. A new one is created for every game and it cannot be used for anything else</li>
+  </ul>
+  <p>Sharing is always <strong>mutual</strong>. It is never possible for only one side to send their position. What each player sees differs by role — the seeker gets a radar and distance, the hider gets only a proximity warning — but the <strong>data exchange itself is symmetric</strong>. Sharing happens only while the app is open; the app <strong>never tracks or collects location in the background</strong>.</p>
+
+  <h2>3. Processing on the device</h2>
+  <p>Precise close-range distance and direction are computed by the two devices talking to each other directly. That information never reaches any server. The camera is used only to improve direction accuracy, and <strong>no image is ever stored or transmitted</strong>. Bluetooth is used only to detect proximity. Barometric readings are <strong>exchanged only with the other player, encrypted</strong>, to detect a floor difference, and are never stored on the server.</p>
+
+  <h2>4. What the server handles</h2>
+  <p>The information in Section 2 passes through our server (<code>uczero.appline.app</code>, on Cloudflare) to make the game work.</p>
+  <ul>
+    <li>It stores only the rounded position, heading, disposable token, and game state — nothing that identifies a person</li>
+    <li>It is <strong>deleted immediately</strong> when the game ends or either player quits</li>
+    <li>If neither happens, the link <strong>expires automatically three hours</strong> after it was created</li>
+    <li>We do not keep access logs or IP addresses</li>
+  </ul>
+  <p>No play history <strong>remains on the server</strong>. For what stays on your device, see Section 7.</p>
+
+  <h2>5. Device permissions</h2>
+  <ul>
+    <li><strong>Location (while in use)</strong>: to show distance and direction to the other player</li>
+    <li><strong>Nearby device interaction</strong>: to measure precise distance and direction</li>
+    <li><strong>Bluetooth</strong>: to detect proximity</li>
+    <li><strong>Motion (barometer)</strong>: to detect a floor difference</li>
+    <li><strong>Camera</strong>: to improve direction accuracy (no image is stored or sent)</li>
+  </ul>
+  <p>All of these are used only while the game screen is open.</p>
+
+  <h2>6. Anonymous usage counts</h2>
+  <p>To improve the app we record <strong>counts of actions and nothing else</strong>. Each record contains exactly three fields: app name, action name, and app version.</p>
+  <ul>
+    <li>We count: app opened, link created, the other player opened the link, precise ranging engaged, the hider was found, and the game ended without a catch</li>
+    <li>There is <strong>no identifier of any kind</strong> — no account ID, no device ID, no advertising ID, no identifier of our own. With no key to join records, <strong>"who", "when" and "where" simply do not exist in the data</strong>. Building a profile or a behaviour history is structurally impossible</li>
+    <li>Location, free-text input, and the contents of your records are never sent</li>
+    <li>The only destination is our own Cloudflare server (<code>collect.appline.app</code>). Nothing is shared with third-party analytics or advertising companies</li>
+    <li>The server <strong>accepts only a fixed list of action names</strong> and silently discards anything else</li>
+    <li>IP addresses are not logged, stored, or used</li>
+  </ul>
+
+  <h2>7. Game records (on this device only)</h2>
+  <p>You can keep your results. They stay <strong>on this device only</strong>.</p>
+  <ul>
+    <li>A record holds the date and time, the outcome, your role, how long it took, and the farthest distance during the game</li>
+    <li><strong>Location itself is never recorded.</strong> A record cannot tell anyone where you played</li>
+    <li>The app has no idea who the other player is. If you want a label, <strong>you type it yourself</strong>; nothing about the other person is retrieved</li>
+    <li>Records live only on this device. They are never sent to a server or to iCloud, and they are excluded from device backups</li>
+    <li>You can delete them one at a time, or all at once, from the list</li>
+  </ul>
+
+  <h2>8. Apple Watch</h2>
+  <p>Apple Watch simply <strong>mirrors what the iPhone is showing</strong>. The Watch never obtains location or communicates on its own. The iPhone sends it only distance, direction, and game state — <strong>never the location itself</strong>.</p>
+
+  <h2>9. Children's privacy</h2>
+  <p>This app is not designed for children. We do not knowingly collect information from children.</p>
+
+  <h2>10. Changes</h2>
+  <p>If this policy changes, we will update the "last updated" date on this page.</p>
+
+  <h2>11. Contact</h2>
+  <p>For questions or bug reports, please <a href="mailto:trim.hoist.6b@icloud.com">get in touch</a>.</p>
+  <p class="last">© 2026 UnderCover Zero</p>
+</body>
+</html>

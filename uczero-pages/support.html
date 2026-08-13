@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UnderCover Zero — サポート</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #06090E; color: #E0F6FF;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #35D6F2; }
+  p, li { color: rgba(224,246,255,0.80); }
+  a { color: #35D6F2; }
+  strong { color: #E0F6FF; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(224,246,255,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  .answer { color: rgba(224,246,255,0.80); margin: 0 0 18px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="support-en.html">English</a></div>
+  <h1>UnderCover Zero — サポート</h1>
+  <div class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="support.html">サポート</a>
+    <a href="privacy.html">プライバシー</a>
+  </div>
+  <h2>お問い合わせ</h2>
+  <p>ご質問・不具合のご報告は、下のフォームからお送りください。</p>
+  <form id="contact-form">
+    <textarea id="cf-message" rows="5" maxlength="2000" required
+      placeholder="ご質問・不具合の内容"
+      style="width:100%;box-sizing:border-box;background:#0F1922;color:#E0F6FF;border:1px solid rgba(224,246,255,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit"></textarea>
+    <input id="cf-contact" type="text" maxlength="200"
+      placeholder="返信用の連絡先（任意）"
+      style="width:100%;box-sizing:border-box;margin-top:10px;background:#0F1922;color:#E0F6FF;border:1px solid rgba(224,246,255,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit">
+    <input id="cf-website" type="text" tabindex="-1" autocomplete="off"
+      style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit"
+      style="margin-top:12px;background:#35D6F2;color:#06090E;border:none;border-radius:10px;padding:12px 26px;font-size:15px;font-weight:700;cursor:pointer">送信</button>
+    <p id="cf-result" style="font-size:14px"></p>
+  </form>
+  <p>フォームが使えない場合は<a href="mailto:trim.hoist.6b@icloud.com">こちら</a>までご連絡ください。</p>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const result = document.getElementById("cf-result");
+      result.textContent = "送信中…";
+      try {
+        const res = await fetch("https://uczero.appline.app/contact", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            message: document.getElementById("cf-message").value,
+            contact: document.getElementById("cf-contact").value,
+            website: document.getElementById("cf-website").value,
+            lang: "ja",
+          }),
+        });
+        if (!res.ok) throw new Error();
+        result.textContent = "送信しました。ありがとうございます。";
+        document.getElementById("cf-message").value = "";
+      } catch {
+        result.textContent = "送信できませんでした。時間をおいてお試しください。";
+      }
+    });
+  </script>
+  <p>テスト版をご利用中の場合は TestFlight のフィードバック機能もご利用いただけます。</p>
+
+  <h1 style="font-size:22px;margin-top:44px">よくある質問</h1>
+
+  <h2>どうやって遊びますか？</h2>
+  <p class="answer">リンクを作った人が<strong>かくれる側</strong>、リンクを開いた人が<strong>オニ</strong>です。相手が参加すると60秒のかくれタイムが始まり、その間オニのレーダーは動きません。時間になるとオニが動きはじめ、制限時間内に見つけられればオニの勝ち、逃げ切ればかくれる側の勝ちです。</p>
+
+  <h2>相手にも UnderCover Zero が必要ですか？</h2>
+  <p class="answer">はい。おふたりとも App Store からインストールしてください。片方がインストールして、そこから作ったリンクを相手に送る形になります。</p>
+
+  <h2>制限時間は変えられますか？</h2>
+  <p class="answer">リンクを作る画面で 5 / 10 / 15 / 30 分から選べます。選んだ時間はリンクに含まれるので、相手側にも自動で同じ設定が伝わります。</p>
+
+  <h2>かくれる側にも相手の位置は見えますか？</h2>
+  <p class="answer">見えません。かくれる側の画面には方向も距離も表示されず、「どれくらい近づかれているか」の 5 段階の警告だけが出ます。ただしデータのやり取り自体は対等で、どちらか一方だけが送る状態にはなりません。</p>
+
+  <h2>相手にはどこまで位置が見えますか？</h2>
+  <p class="answer">遠く離れている間は、約100メートル四方の区画に丸めた位置だけが共有されます。正確な番地が伝わることはありません。近づいてからの精密な距離と方向は、端末どうしが直接やり取りして計算するもので、サーバーには送られません。</p>
+
+  <h2>「みつけた」はどうやって成立しますか？</h2>
+  <p class="answer">相手にじゅうぶん近づくと、オニの画面に「みつけた」ボタンが出ます。かくれタイム中は押せません。また、上下の階が離れているときも押せないようになっています（真上の階にいる相手を誤って「見つけた」ことにしないため）。</p>
+
+  <h2>屋内でも遊べますか？</h2>
+  <p class="answer">遊べます。屋内では GPS が粗くなりますが、近づくにつれて Bluetooth、さらに超広帯域無線（UWB）へと切り替わり、精度が上がっていきます。気圧センサーで上下のフロア差も検知するので、立体的な建物ほどゲームとして面白くなります。</p>
+
+  <h2>リンクはいつまで使えますか？</h2>
+  <p class="answer">ゲームが終わったとき、どちらかが「ゲームを終了」したとき、または発行から3時間が過ぎたときに使えなくなります。使えなくなったリンクからは何も分かりません。</p>
+
+  <h2>戦績には何が残りますか？</h2>
+  <p class="answer">日時・勝敗・自分の役割・かかった時間・最も離れていた距離です。<strong>位置そのものは記録されません</strong>。相手が誰かはアプリには分からないため、呼び名を付ける場合はご自身で入力いただきます。保存先はこの端末の中だけで、サーバーにも iCloud にも送られません。一覧画面から 1 件ずつ、またはまとめて削除できます。</p>
+
+  <h2>Apple Watch では何ができますか？</h2>
+  <p class="answer">iPhone でゲームを始めると、手首に距離と向きが出ます。Watch は iPhone の表示を映しているだけなので、Watch 自身が位置を取得したり通信したりすることはありません。ゲーム中は iPhone のアプリを開いたままにしてください（ポケットに入れたままで大丈夫です）。</p>
+
+  <h2>レーダーに何も出ません</h2>
+  <p class="answer">位置情報の使用を許可しているかご確認ください（設定 → UnderCover Zero → 位置情報 → このAppの使用中のみ許可）。また、アプリを開いたままにしてください。バックグラウンドでは動作しません。かくれタイム中はレーダーが動かない仕様です。</p>
+
+  <h2>方向が定まりません</h2>
+  <p class="answer">端末を寝かせていると方向が取得できません。iPhone を立てて持ち、軽く8の字を描くように動かすと方向が定まります。</p>
+
+  <h2>0.1メートル単位の精密な表示になりません</h2>
+  <p class="answer">精密表示には、双方の端末が超広帯域無線（UWB）に対応している必要があります。iPhone 11 以降のモデルが対応していますが、iPhone SE と iPhone 16e は対応していません。片方が非対応の場合は、方角と距離の目安による案内になります。</p>
+
+  <h2>相手が Android です</h2>
+  <p class="answer">現在は iPhone どうしのプレイにのみ対応しています。</p>
+
+  <h2>安全に遊ぶために</h2>
+  <p class="answer">歩きながら画面を見続けないでください。車道・線路・私有地・立入禁止区域には入らないでください。夜間や人の多い場所では周囲の迷惑にならないようご配慮ください。</p>
+
+  <p class="last">© 2026 UnderCover Zero</p>
+</body>
+</html>
