@@ -30,7 +30,8 @@
   <p>This policy explains how LEVEL FIELD (the App) handles information.</p>
 
   <h2>1. What is collected</h2>
-  <p>The App <strong>does not collect or store personally identifying information</strong>. There is no account to create, and no third-party analytics or advertising SDK is included.</p>
+  <p>The App <strong>does not collect or store personally identifying information</strong>. There is no account to create, and <strong>no third-party analytics or advertising SDK is included</strong> — no Google, Firebase or Meta SDK of any kind.</p>
+  <p>To understand which parts of the App are used, <strong>anonymous counts</strong> are sent to a server run by the developer (<code>collect.appline.app</code>). Section 5 sets out exactly what those are.</p>
 
   <h2>2. Kept on your device</h2>
   <p>The following is stored <strong>only on your device</strong> and never leaves it:</p>
@@ -52,16 +53,35 @@
     <li><strong>App Store</strong> — purchasing and restoring Pro. Payment is handled by Apple; the App never receives card or payment details.</li>
   </ul>
 
-  <h2>5. In-app purchase</h2>
+  <h2>5. Anonymous usage counts</h2>
+  <p>Exactly <strong>three fields</strong> are sent, and nothing else:</p>
+  <ul>
+    <li>the app name (<code>levelfield</code>)</li>
+    <li>an <strong>event name from a fixed list</strong> (below)</li>
+    <li>the app version</li>
+  </ul>
+  <p>The complete list of events is:</p>
+  <ul>
+    <li>the tutorial (stage 000) was finished, or dismissed part way</li>
+    <li>the last free stage was solved</li>
+    <li>the daily puzzle was solved</li>
+    <li>a move between screens (e.g. "menu to board"; the screen names are a fixed set of eight)</li>
+    <li>the purchase screen was shown; the purchase button was pressed; a purchase completed; a purchase was restored</li>
+  </ul>
+  <p><strong>There is no identifier of any kind.</strong> No device ID, IDFA/IDFV, UUID or session token is generated or sent, so there is no key on which events could be joined. Identifying a person, following them over time, or building a profile is therefore <strong>not possible in principle</strong> — what is recorded is only how many times something happened in total.</p>
+  <p>Nothing about the puzzles you solve is sent: not the board, your taps, your times, your scores, your location, or any free text. The server independently discards anything outside the list above rather than storing it.</p>
+  <p>These counts are read only by the developer and are never provided or sold to anyone else.</p>
+
+  <h2>6. In-app purchase</h2>
   <p>Pro is a one-off purchase. Entitlement is held against your Apple Account, and the App only ever reads whether it has been bought. No purchase history or payment information is stored by the App.</p>
 
-  <h2>6. Children's privacy</h2>
+  <h2>7. Children's privacy</h2>
   <p>Because no personal information is collected, the App is safe to use at any age. There is no messaging or communication between players.</p>
 
-  <h2>7. Changes</h2>
+  <h2>8. Changes</h2>
   <p>If this policy changes, this page is updated and the date at the top revised.</p>
 
-  <h2>8. Contact</h2>
+  <h2>9. Contact</h2>
   <p>For questions or to report a problem, please get in touch <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
   <p class="last">© 2026 LEVEL FIELD</p>
 </body>
