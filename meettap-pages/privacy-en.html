@@ -56,6 +56,7 @@
     <li>It is <strong>deleted immediately</strong> when you meet, or when either side ends the session</li>
     <li>If neither happens, it <strong>disappears automatically three hours</strong> after the link was created</li>
     <li>We do not record access logs or IP addresses</li>
+    <li>To prevent misuse and runaway costs, we cap how many links can be created. For that count we derive a <strong>one-way, non-reversible value (a salted hash)</strong> from the connecting IP address and use it only as a key for counting. The <strong>IP address itself is never stored</strong>, and the count is deleted automatically after a set period. While a cap is reached you cannot create a new link, but meet-ups already in progress are unaffected</li>
   </ul>
   <p>No meet-up history is kept <strong>on our server</strong>. For what may be kept on your device, see section 6.</p>
 
