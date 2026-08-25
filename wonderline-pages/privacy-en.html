@@ -30,14 +30,14 @@
     <a href="index-en.html">Home</a>
     <a href="support-en.html">Support</a>
   </div>
-  <p>Last updated: July 16, 2026</p>
+  <p>Last updated: August 25, 2026</p>
 
-  <p class="changenote">What changed in this update: To improve the app, we added the sending of <strong>anonymous usage counts</strong> (see Section 2 below). We count only <strong>totals</strong> of which features are used — never the content of what you read, your words, audio, or URLs. Because the app holds <strong>no identifier of any kind</strong>, it cannot identify a specific person, track an individual over time, or build a profile. We include this note to be transparent about the change.</p>
+  <p class="changenote">What changed in this update: We added "Look up in detail (online dictionary)" to English-English mode (see Section 3 below). <strong>This only happens when you tap the button — it is off by default.</strong> Tapping it sends the word you're looking up and its context (one sentence) to a third-party dictionary/translation service, and returns multiple senses, examples, and Japanese translations. We never send information that could identify you, such as your name or email address. We include this note to be transparent about the change.</p>
 
   <p>This policy explains how Wonderline (the "app") handles information.</p>
 
   <h2>1. Information we collect</h2>
-  <p>The app <strong>does not collect or store personally identifiable information</strong>. No account is required, and it contains no third-party analytics or advertising SDKs. The only thing that leaves your device is the anonymous usage statistics (identity-free event counts) described in Section 2.</p>
+  <p>The app <strong>does not collect or store personally identifiable information</strong>. No account is required, and it contains no third-party analytics or advertising SDKs. The only things that leave your device are the anonymous usage statistics described in Section 2, and the optional online dictionary lookup described in Section 3 (which only runs when you explicitly choose it in English-English mode).</p>
   <p>The following data is stored <strong>only on your device</strong>:</p>
   <ul>
     <li>Imported text (photos, PDFs, web articles, pasted text, transcription results)</li>
@@ -57,8 +57,9 @@
   <p><strong>No individual can be identified or tracked:</strong> the app assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "how many times, in total, an action happened" — there is no key to join these counts on, which makes it structurally impossible to identify a specific person, follow the same person over time, or build a profile.</p>
   <p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. Your IP address is not logged, stored, or used, and is never associated with the anonymous counts above.</p>
 
-  <h2>3. On-device processing</h2>
+  <h2>3. On-device processing &amp; optional online dictionary</h2>
   <p>Text recognition (OCR), audio transcription and speech recognition, and text translation all run <strong>on your device</strong>. Your text and audio are not sent to the developer's servers for these purposes.</p>
+  <p>As an exception, if you <strong>explicitly tap</strong> "Look up in detail (online dictionary)" on the word lookup screen in English-English mode, the <strong>word you're looking up and its context (the one sentence containing it)</strong> are sent to third-party dictionary/translation services (<a href="https://dictionaryapi.dev/" target="_blank" rel="noopener">dictionaryapi.dev</a> and <a href="https://mymemory.translated.net/" target="_blank" rel="noopener">MyMemory Translated</a>) to retrieve multiple senses, examples, synonyms, and their Japanese translations. No network request happens unless you tap this button. We never send information that could identify you, such as your name, email address, or device identifier.</p>
 
   <h2>4. Device permissions</h2>
   <ul>
