@@ -1,73 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PrimeTimeline - Privacy Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrimeTimeline — 読んだものが、そのまま記録になる</title>
 <style>
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 40px auto; max-width: 860px; line-height: 1.8; padding: 0 16px; color: #1f2937; }
-h1,h2 { margin-bottom: 8px; }
-a { color: #c2410c; }
-.muted { color: #6b7280; }
-.divider { margin: 28px 0; border: 0; border-top: 1px solid #e5e7eb; }
-.contact-footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: 13px; }
-.contact-footer a { color: #9ca3af; }
-.ja { color: #6b7280; }
-.changenote { background: #f0fdfa; border-left: 4px solid #0f766e; padding: 12px 16px; margin: 20px 0; font-size: 14px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #F4F1EC; color: #1C1917;
+    max-width: 720px; margin: 0 auto; padding: 56px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 30px; letter-spacing: 1px; margin-bottom: 4px; }
+  h2 { font-size: 17px; letter-spacing: 0.6px; margin-top: 40px; }
+  p { color: rgba(28,25,23,0.82); }
+  a { color: #B45309; }
+  .sub { color: rgba(28,25,23,0.55); font-size: 14px; margin-top: 0; }
+  .rule { width: 40px; height: 3px; background: #B45309; border-radius: 2px; margin: 18px 0 26px; }
+  .nav { margin: 24px 0 8px; }
+  .nav a { margin-right: 18px; }
+  ul { color: rgba(28,25,23,0.82); padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .last { color: rgba(28,25,23,0.4); font-size: 12px; margin-top: 48px; }
 </style>
 </head>
 <body>
+  <h1>PrimeTimeline</h1>
+  <p class="sub">読んだものが、そのまま記録になる。</p>
+  <div class="rule"></div>
 
-<h1>Privacy Policy</h1>
-<p class="muted">Last updated: August 1, 2026</p>
+  <div class="nav">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="support.html">サポート</a>
+  </div>
 
-<p>PrimeTimeline ("the App") respects your privacy.</p>
-<p class="ja">PrimeTimeline（以下「本アプリ」）は、ユーザーのプライバシーを尊重します。</p>
+  <h2>できること</h2>
+  <ul>
+    <li>Safariでの閲覧を自動で記録し、時系列とセッションの2つの粒度で振り返れます</li>
+    <li>Apple Intelligence（Foundation Models）がカテゴリ分類と要約を行います。処理はすべて端末内で完結します</li>
+    <li>よく行くドメインを直近7日で集計します</li>
+    <li>ショートカットから閲覧記録を取り出し、自分のメモや日記の自動化に組み込めます</li>
+    <li>PrimeTimeline Pro（買い切り）で、サイトごとに1日あたりの時間の上限を決められます</li>
+  </ul>
 
-<div class="changenote">
-<p style="margin:0 0 8px;"><strong>What changed:</strong> To improve the App, it now sends <strong>anonymous usage counts</strong> (see section 2) — only which screens were opened. <strong>Nothing about your browsing is ever sent</strong>: no URL, domain, page title, category, keyword, or even a count of pages visited. Because the App holds <strong>no identifier of any kind</strong>, it cannot identify you, follow you over time, or build a profile.</p>
-<p class="ja" style="margin:0;"><strong>変更点:</strong> アプリ改善のため、<strong>匿名の利用回数</strong>（第2節参照）の送信を追加しました。送るのは「どの画面が開かれたか」の合計回数だけです。<strong>閲覧に関するものは一切送信しません</strong> — URL・ドメイン・ページ名・カテゴリ・キーワードはもちろん、閲覧件数すら送りません。本アプリは<strong>いかなる識別子も保持しない</strong>ため、利用者を特定すること・時系列で追うこと・プロファイルを作ることは構造上できません。</p>
-</div>
+  <h2>データの扱い</h2>
+  <p>閲覧履歴・カテゴリ分類・AIが生成した要約は、すべて端末内にのみ保存されます。URL・ドメイン・ページ名・キーワードが外部に送信されることはありません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
 
-<h2>1. Information We Collect / 収集する情報</h2>
-<p>The App collects no personal information and requires no account. All browsing history data, category classifications, and AI-generated insights are stored locally on your device and never leave it. The only thing sent anywhere is the anonymous screen-reach counts described in section 2.</p>
-<p class="ja">本アプリは個人情報を一切収集せず、アカウント登録も不要です。すべての閲覧履歴データ、カテゴリ分類、AI生成インサイトはお使いの端末内にのみ保存され、端末外に出ることはありません。外部に送信されるのは、第2節に記載する匿名の画面到達回数だけです。</p>
-
-<h2>2. Anonymous Usage Statistics / 匿名の利用統計</h2>
-<p>To decide which analysis screens are worth maintaining, the App sends <strong>anonymous counts of which screens were opened</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, each tab (timeline, journey, discover, search) is reached, the weekly report / topic map / keyword view / AI chat is opened, and onboarding is completed.</p>
-<p><strong>What is sent (only this):</strong> a fixed, predefined screen-event name plus the app version number. Nothing else.</p>
-<p><strong>What is never sent — this is the line we do not cross:</strong> no URL, domain, page title, category, keyword, AI-generated text, or <strong>even the number of pages you visited</strong>. A browsing volume figure would describe your browsing, and it would not tell us anything the screen counts do not, so it is not collected. No name, email, device identifier (IDFA / IDFV), advertising ID, or location either.</p>
-<p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "this screen was opened N times in total" — there is no key to join these counts on, which makes it structurally impossible to identify a user, follow the same person over time, or build a profile. Your IP address is not logged, stored, or used.</p>
-<p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta.</p>
-<p class="ja">どの分析画面を維持する価値があるかを判断するため、開発者が運用するサーバー（Cloudflare 上の <code>collect.appline.app</code>）に<strong>どの画面が開かれたかの匿名の回数</strong>を送信します。数えているのは、アプリの起動回数、各タブ（タイムライン・ジャーニー・ディスカバー・検索）への到達回数、週次レポート・トピックマップ・キーワード・AIチャットを開いた回数、オンボーディングの完了回数で、いずれも<strong>合計値のみ</strong>です。</p>
-<p class="ja"><strong>送信するもの（これだけ）:</strong> あらかじめ決められた固定の画面イベント名と、アプリのバージョン番号のみです。</p>
-<p class="ja"><strong>送信しないもの — ここが越えない一線です:</strong> URL・ドメイン・ページ名・カテゴリ・キーワード・AI が生成した文章はもちろん、<strong>閲覧したページ数すら送信しません</strong>。閲覧量の数字はあなたの閲覧そのものを記述してしまう上、画面到達回数以上のことを教えてくれないため、収集しません。氏名・メールアドレス・端末識別子（IDFA / IDFV）・広告ID・位置情報も送信しません。</p>
-<p class="ja"><strong>個人の識別・追跡はできません:</strong> 本アプリは端末やユーザーに<strong>永続的な識別子を一切割り当てません</strong>（端末ID・セッションIDなし）。保存されるのは「この画面が合計N回開かれた」だけで、それらを結び付ける鍵が存在しないため、利用者を識別すること・同一人物を追跡すること・プロファイルを作ることは構造上不可能です。IPアドレスは記録・保存・利用しません。</p>
-<p class="ja"><strong>送信先:</strong> 開発者自身のサーバーのみです。Google・Firebase・Meta などの第三者に渡すことはありません。</p>
-
-<h2>3. Safari Web Extension / Safari Web拡張機能</h2>
-<p>The App includes a Safari Web Extension that records the URLs and page titles of websites you visit. This data is used solely to provide browsing history visualization and insights within the App. The data is never transmitted to external servers — it is processed and stored entirely on your device.</p>
-<p class="ja">本アプリにはSafari Web拡張機能が含まれており、訪問したウェブサイトのURLとページタイトルを記録します。このデータはアプリ内での閲覧履歴の可視化とインサイト提供のみに使用されます。データは外部サーバーに送信されることはなく、すべてお使いの端末上で処理・保存されます。</p>
-
-<h2>4. AI Processing / AI処理</h2>
-<p>The App uses Apple's on-device Foundation Models (Apple Intelligence) for category classification and content summarization. All AI processing happens entirely on your device. No browsing data is sent to any cloud service or third-party API.</p>
-<p class="ja">本アプリはAppleのオンデバイスFoundation Models（Apple Intelligence）を使用し、カテゴリ分類やコンテンツ要約を行います。すべてのAI処理は完全にお使いの端末上で行われます。閲覧データがクラウドサービスやサードパーティAPIに送信されることはありません。</p>
-
-<h2>5. Data Storage and Deletion / データの保存と削除</h2>
-<p>All data is stored locally using Apple's SwiftData framework. You can delete individual records, purge data older than 90 days, or reset all data from the Settings screen. Deleting the app removes all data from your device.</p>
-<p class="ja">すべてのデータはAppleのSwiftDataフレームワークを使用してローカルに保存されます。個別の記録の削除、90日以上前のデータの消去、全データのリセットが設定画面から可能です。アプリを削除するとすべてのデータが端末から削除されます。</p>
-
-<h2>6. Advertising / 広告</h2>
-<p>The App does not display advertisements. No advertising SDK and no third-party analytics or tracking SDK (such as Google, Firebase, or Meta) are included. The anonymous screen counts in section 2 go only to the developer's own server, are not linked to anyone's identity, and therefore do not constitute tracking under App Tracking Transparency (ATT); the App does not request ATT permission and does not use the advertising identifier (IDFA).</p>
-<p class="ja">本アプリには広告は表示されません。広告SDKも、サードパーティの分析・トラッキングSDK（Google・Firebase・Meta等）も組み込まれていません。第2節の匿名の画面カウントは開発者自身のサーバーにのみ送られ、誰の identity とも結び付いていないため、App Tracking Transparency（ATT）でいう「トラッキング」には該当しません。本アプリはATTの許可を求めず、広告識別子（IDFA）も使用しません。</p>
-
-<h2>7. Changes / 変更について</h2>
-<p>This privacy policy may be updated from time to time. Any changes will be posted on this page.</p>
-<p class="ja">本プライバシーポリシーは必要に応じて更新されることがあります。変更はこのページにて通知いたします。</p>
-
-<div class="contact-footer">
-<p>Contact / お問い合わせ: <a href="mailto:trim.hoist.6b@icloud.com">こちらまで / here</a></p>
-</div>
-
+  <p class="last">© 2026 PrimeTimeline</p>
 </body>
 </html>
