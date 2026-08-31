@@ -19,19 +19,19 @@ a { color: #c2410c; }
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated: August 29, 2026</p>
+<p class="muted">Last updated: August 31, 2026</p>
 
 <p>PrimeTimeline ("the App") respects your privacy.</p>
 <p class="ja">PrimeTimeline（以下「本アプリ」）は、ユーザーのプライバシーを尊重します。</p>
 
 <div class="changenote">
-<p style="margin:0 0 8px;"><strong>What changed (v1.1.0):</strong> The App now offers a one-time in-app purchase, <strong>PrimeTimeline Pro</strong>, which unlocks per-domain daily time limits (see section 7). Purchases are handled entirely by Apple — the developer never receives your payment details. <strong>Nothing about your browsing is sent anywhere</strong>, and that has not changed.</p>
-<p class="ja" style="margin:0;"><strong>変更点 (v1.1.0):</strong> 買い切りのアプリ内課金<strong>「PrimeTimeline Pro」</strong>を追加しました（第7節参照）。ドメイン別の1日あたりの時間上限を設定できるようになります。購入処理はすべて Apple が行い、開発者が支払い情報を受け取ることはありません。<strong>閲覧に関するものを外部に送信しない</strong>という点は変わっていません。</p>
+<p style="margin:0 0 8px;"><strong>What changed (v1.2.0):</strong> With your permission, the App can now read your device's Screen Time data to show how long each app was used and when (see section 4). <strong>This data is displayed only — it is never sent anywhere</strong>, and the same is still true of your browsing.</p>
+<p class="ja" style="margin:0;"><strong>変更点 (v1.2.0):</strong> 許可をいただいた場合に限り、端末のスクリーンタイムのデータを読み取り、どのアプリをどれだけ・いつ使っていたかを表示できるようになりました（第4節参照）。<strong>表示するだけで、外部に送信することはありません。</strong>閲覧に関するものを送信しない点も、これまでどおりです。</p>
 </div>
 
 <h2>1. Information We Collect / 収集する情報</h2>
-<p>The App collects no personal information and requires no account. All browsing history data, category classifications, and AI-generated insights are stored locally on your device and never leave it. The only thing sent anywhere is the anonymous screen-reach counts described in section 2.</p>
-<p class="ja">本アプリは個人情報を一切収集せず、アカウント登録も不要です。すべての閲覧履歴データ、カテゴリ分類、AI生成インサイトはお使いの端末内にのみ保存され、端末外に出ることはありません。外部に送信されるのは、第2節に記載する匿名の画面到達回数だけです。</p>
+<p>The App collects no personal information and requires no account. All browsing history data, category classifications, and AI-generated insights are stored locally on your device and never leave it, unless you export them yourself through the Shortcuts app (see section 3). The only thing sent anywhere is the anonymous screen-reach counts described in section 2.</p>
+<p class="ja">本アプリは個人情報を一切収集せず、アカウント登録も不要です。すべての閲覧履歴データ、カテゴリ分類、AI生成インサイトはお使いの端末内にのみ保存され、ご自身がショートカットApp から書き出さない限り端末外に出ることはありません（第3節参照）。外部に送信されるのは、第2節に記載する匿名の画面到達回数だけです。</p>
 
 <h2>2. Anonymous Usage Statistics / 匿名の利用統計</h2>
 <p>To decide which analysis screens are worth maintaining, the App sends <strong>anonymous counts of which screens were opened</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, each tab (timeline, journey, discover, search) is reached, the weekly report / topic map / keyword view / AI chat is opened, and onboarding is completed.</p>
@@ -49,19 +49,32 @@ a { color: #c2410c; }
 <p>The App includes a Safari Web Extension that records the URLs and page titles of websites you visit. This data is used solely to provide browsing history visualization and insights within the App. The data is never transmitted to external servers — it is processed and stored entirely on your device.</p>
 <p class="ja">本アプリにはSafari Web拡張機能が含まれており、訪問したウェブサイトのURLとページタイトルを記録します。このデータはアプリ内での閲覧履歴の可視化とインサイト提供のみに使用されます。データは外部サーバーに送信されることはなく、すべてお使いの端末上で処理・保存されます。</p>
 
-<h2>4. AI Processing / AI処理</h2>
+<p><strong>Shortcuts and App Intents — you decide where it goes.</strong> The App offers App Intents ("Get browsing records for a day", "Today's summary") so that you can use your own records in the Shortcuts app — for example to build a personal journal. The Intent hands the records to your shortcut and nothing more; where they go from there is entirely determined by the shortcut <em>you</em> wrote. If your shortcut writes them to iCloud Drive, they are stored in <strong>your</strong> iCloud, not the developer's. The App has no shortcut of its own and sends nothing on its own.</p>
+<p class="ja"><strong>ショートカットとApp Intent — 行き先を決めるのはご自身です。</strong> 本アプリは App Intent（「指定日の閲覧記録を取得」「今日のまとめ」）を提供しており、ショートカットApp からご自身の記録を利用できます（たとえば個人的な日記を組み立てるなど）。Intent は記録をショートカットへ渡すだけで、その先どこへ行くかは<em>ご自身が書いた</em>ショートカットが決めます。ショートカットが iCloud Drive へ書き出す場合、保存先は<strong>ご自身の</strong> iCloud であり、開発者のものではありません。本アプリ自身がショートカットを持つことも、独自に何かを送信することもありません。</p>
+
+<h2>4. Screen Time / App Usage / スクリーンタイム・アプリ利用時間</h2>
+<p>If you turn this feature on, the App asks for Screen Time authorization (Apple's Family Controls framework) so it can show how long each app was used and when. The authorization is <strong>individual</strong> — it covers the person using this device only. The App does not manage, restrict, or observe anyone else's device.</p>
+<p>This data is <strong>read on your device and displayed there</strong>. It is never transmitted to the developer or to any third party. The exact totals are drawn by a view that Apple itself renders, and that view is sealed: it cannot make network requests or write files, by Apple's design. The App also records, in its own storage on your device, that an app has passed a given amount of time, so it can show when each app was in use.</p>
+<p><strong>Export is yours to start.</strong> The App can write these records to a folder you choose (for example in your own iCloud Drive) so that you can use them in your own notes or automations. Nothing is written anywhere until you pick that folder yourself, and the file goes to your storage — not to the developer.</p>
+<p>The App never receives the name of an app you did not select, and it cannot read the contents of any other app. Apple provides only durations. You can withdraw the authorization at any time in iOS Settings, and deleting the App removes the records it kept.</p>
+<p class="ja">この機能を有効にした場合、本アプリはスクリーンタイムの利用許可（Apple の Family Controls）を求め、どのアプリをどれだけ・いつ使っていたかを表示します。許可は<strong>個人単位</strong>で、この端末を使っているご本人のみが対象です。他の方の端末を管理・制限・観察することはありません。</p>
+<p>このデータは<strong>端末内で読み取り、端末内で表示する</strong>だけです。開発者にも第三者にも送信されません。正確な合計時間は Apple 自身が描画する画面で表示され、その画面は Apple の設計上、通信もファイル書き込みもできないようになっています。また「あるアプリが一定の時間を超えた」ことを端末内に記録し、いつ使っていたかの表示に用います。</p>
+<p><strong>書き出しはご自身の操作で始まります。</strong> これらの記録を、お選びいただいたフォルダ（たとえばご自身の iCloud Drive）へ書き出すことができます。ご自身でフォルダを指定するまで、どこにも書き出されません。書き出し先はご自身の保存領域であり、開発者に渡るものではありません。</p>
+<p>選んでいないアプリの名前を本アプリが受け取ることはなく、他のアプリの中身を読むこともできません。Apple から得られるのは時間だけです。許可は iOS の設定からいつでも取り消せます。アプリを削除すると、保持していた記録も削除されます。</p>
+
+<h2>5. AI Processing / AI処理</h2>
 <p>The App uses Apple's on-device Foundation Models (Apple Intelligence) for category classification and content summarization. All AI processing happens entirely on your device. No browsing data is sent to any cloud service or third-party API.</p>
 <p class="ja">本アプリはAppleのオンデバイスFoundation Models（Apple Intelligence）を使用し、カテゴリ分類やコンテンツ要約を行います。すべてのAI処理は完全にお使いの端末上で行われます。閲覧データがクラウドサービスやサードパーティAPIに送信されることはありません。</p>
 
-<h2>5. Data Storage and Deletion / データの保存と削除</h2>
+<h2>6. Data Storage and Deletion / データの保存と削除</h2>
 <p>All data is stored locally using Apple's SwiftData framework. You can delete individual records, purge data older than 90 days, or reset all data from the Settings screen. Deleting the app removes all data from your device.</p>
 <p class="ja">すべてのデータはAppleのSwiftDataフレームワークを使用してローカルに保存されます。個別の記録の削除、90日以上前のデータの消去、全データのリセットが設定画面から可能です。アプリを削除するとすべてのデータが端末から削除されます。</p>
 
-<h2>6. Advertising / 広告</h2>
+<h2>7. Advertising / 広告</h2>
 <p>The App does not display advertisements. No advertising SDK and no third-party analytics or tracking SDK (such as Google, Firebase, or Meta) are included. The anonymous screen counts in section 2 go only to the developer's own server, are not linked to anyone's identity, and therefore do not constitute tracking under App Tracking Transparency (ATT); the App does not request ATT permission and does not use the advertising identifier (IDFA).</p>
 <p class="ja">本アプリには広告は表示されません。広告SDKも、サードパーティの分析・トラッキングSDK（Google・Firebase・Meta等）も組み込まれていません。第2節の匿名の画面カウントは開発者自身のサーバーにのみ送られ、誰の identity とも結び付いていないため、App Tracking Transparency（ATT）でいう「トラッキング」には該当しません。本アプリはATTの許可を求めず、広告識別子（IDFA）も使用しません。</p>
 
-<h2>7. In-App Purchase / アプリ内課金</h2>
+<h2>8. In-App Purchase / アプリ内課金</h2>
 <p>The App offers a single, one-time (non-consumable) in-app purchase, <strong>PrimeTimeline Pro</strong>, which unlocks per-domain daily time limits. It is not a subscription and does not renew.</p>
 <p>The purchase is processed entirely by Apple through the App Store. The developer does not receive, see, or store your name, payment card, or any other billing information. The App keeps only a local flag indicating whether the purchase is active, together with the receipt that Apple issues to your device. No account is required.</p>
 <p>Because the purchase is tied to your Apple Account, it can be restored on your other devices with the <em>Restore Purchase</em> button on the purchase screen.</p>
@@ -71,7 +84,7 @@ a { color: #c2410c; }
 <p class="ja">購入は Apple アカウントに紐づくため、購入画面の「購入を復元」から他の端末でも復元できます。</p>
 <p class="ja"><strong>通知について:</strong> 時間上限の機能は、上限を超えたことをローカル通知でお知らせします。通知は端末内で生成され、サーバーを経由しません。通知を許可しない場合でも上限の設定自体は可能ですが、超過のお知らせは届きません。</p>
 
-<h2>8. Changes / 変更について</h2>
+<h2>9. Changes / 変更について</h2>
 <p>This privacy policy may be updated from time to time. Any changes will be posted on this page.</p>
 <p class="ja">本プライバシーポリシーは必要に応じて更新されることがあります。変更はこのページにて通知いたします。</p>
 
