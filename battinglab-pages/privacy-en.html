@@ -28,14 +28,27 @@
     <a href="index-en.html">Home</a>
     <a href="support-en.html">Support</a>
   </div>
-  <p>Last updated: September 18, 2026</p>
+  <p>Last updated: September 19, 2026</p>
 
   <p>This Privacy Policy describes how BattingLab ("the App") handles information.</p>
 
   <h2>1. Information We Collect</h2>
-  <p>The App <strong>collects and stores no personally identifiable information</strong>. No account is required, and the App contains <strong>no analytics SDK and no advertising SDK</strong>. The App itself never transmits your gameplay or usage to any server.</p>
+  <p>The App <strong>collects and stores no personally identifiable information</strong>. No account is required, and the App contains <strong>no third-party analytics SDK and no advertising SDK</strong>. Your session records — the numbers for each batted ball, ballparks you build, personal bests — are never sent to any server.</p>
+  <p>The only thing that leaves your device is the <strong>two anonymous counts</strong> described in Section 2.</p>
 
-  <h2>2. Data Stored on Your Device</h2>
+  <h2>2. Anonymous Usage Counts</h2>
+  <p>To know how much the App is used, it sends <strong>anonymous counts</strong> to <code>collect.appline.app</code>. Exactly two things are counted, both as <strong>totals only</strong>:</p>
+  <ul>
+    <li><strong>How many times the App is launched</strong></li>
+    <li><strong>How many games are played to the end</strong></li>
+  </ul>
+  <p><strong>What is sent (this is all):</strong> a fixed, predefined event name (<code>app_open</code> or <code>game_finished</code>) and the app version string (e.g. 1.0).</p>
+  <p><strong>What is never sent:</strong> name, email, account information, device identifiers (IDFA / IDFV), advertising ID, location, scores, distances, ballparks you build, or anything else that could identify you.</p>
+  <p><strong>You cannot be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> of any kind (no device ID, no session ID). What arrives is only "this action happened N times in total", with no key to join those events on, so identifying a user, following the same person over time, or building a profile is <strong>structurally impossible</strong>. Per-user metrics such as active users or retention cannot be derived from this either; those come only from the anonymous aggregates Apple provides in App Store Connect.</p>
+  <p><strong>Enforced on the receiving side:</strong> the server records only the two event names above and stores nothing else, even if it receives it.</p>
+  <p><strong>Where it goes:</strong> only to a server on Cloudflare. It is never shared with third parties such as Google, Firebase or Meta. The request travels through Cloudflare, but <strong>your IP address is not recorded, stored or used</strong>, and is never associated with these anonymous counts.</p>
+
+  <h2>3. Data Stored on Your Device</h2>
   <p>The following data is stored <strong>only on your device</strong>:</p>
   <ul>
     <li>Your session history — exit velocity, launch angle, distance and landing point for each batted ball — written to a file (<code>sessions.json</code>) inside the App's own storage</li>
@@ -44,30 +57,30 @@
   </ul>
   <p>None of this leaves your device, and it is not synced through iCloud or any other service. Deleting the App deletes this data with it.</p>
 
-  <h2>3. Device Permissions</h2>
+  <h2>4. Device Permissions</h2>
   <p>The App requests <strong>no iOS permissions at all</strong> — no camera, microphone, photos, location or contacts.</p>
 
-  <h2>4. Network Communication</h2>
-  <p>The App performs no network requests of its own for gameplay. Network communication occurs only through the two Apple services described in sections 5 and 6.</p>
+  <h2>5. Network Communication</h2>
+  <p>The App never sends your gameplay itself. Network communication occurs only for the anonymous counts in Section 2 and through the two Apple services described in Sections 6 and 7.</p>
 
-  <h2>5. Game Center (Apple)</h2>
+  <h2>6. Game Center (Apple)</h2>
   <p>If you are signed in to Game Center, the App <strong>submits your score (home run count and longest distance) to Apple's leaderboards</strong> at the end of a round. Submission is handled by Apple's GameKit framework, and only rounds that qualify for the leaderboards (10 balls or 60 seconds, played without assist) are submitted. The developer has no access to your Game Center identity beyond what is publicly visible on the leaderboard. You can play every mode without signing in.</p>
   <p>Game Center is governed by Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/</a></p>
 
-  <h2>6. In-App Purchase (BattingLab Pro)</h2>
+  <h2>7. In-App Purchase (BattingLab Pro)</h2>
   <p>The App offers a one-time in-app purchase, "BattingLab Pro", which unlocks additional ballparks and record-keeping features. All payment processing is handled by Apple through StoreKit and is governed by Apple's privacy policy. The developer never receives your credit card number or other payment details — only whether the purchase exists on your App Store account.</p>
 
-  <h2>7. Sharing and Export</h2>
+  <h2>8. Sharing and Export</h2>
   <p>The summary image card and the CSV export are created <strong>only when you tap the share button</strong>, and are handed to the standard iOS share sheet. You choose the destination; nothing is sent to the developer's servers.</p>
   <p>Handing a ballpark to someone creates a link (battinglab://) or a file (.blpark) that contains only the fence dimensions, wall heights, colors and the park name. None of your records or device information is included.</p>
 
-  <h2>8. Children's Privacy</h2>
-  <p>The App is rated 4+. It does not knowingly collect personal information from children under 13. Because the App collects no personal information at all, no data is transmitted regardless of the user's age.</p>
+  <h2>9. Children's Privacy</h2>
+  <p>The App is rated 4+. It does not knowingly collect personal information from children under 13. The App collects no personal information at all; the only thing transmitted is the anonymous counts in Section 2, which carry no identifier and cannot be tied to any person, child or adult.</p>
 
-  <h2>9. Changes to This Policy</h2>
+  <h2>10. Changes to This Policy</h2>
   <p>If this policy changes, this page will be updated and the "Last updated" date above will be revised.</p>
 
-  <h2>10. Contact</h2>
+  <h2>11. Contact</h2>
   <p>For questions or bug reports, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
 
   <p class="last">© 2026 BattingLab</p>
