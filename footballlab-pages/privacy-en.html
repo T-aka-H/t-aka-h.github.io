@@ -30,12 +30,12 @@
     <a href="index-en.html">Home</a>
     <a href="support-en.html">Support</a>
   </div>
-  <p>Last updated: September 23, 2026</p>
+  <p>Last updated: September 24, 2026</p>
 
   <p>This policy explains how Football Lab (the "app") handles information.</p>
 
   <h2>1. Information we collect</h2>
-  <p>The app <strong>does not collect or store personally identifiable information</strong>. No account is required, and it contains no third-party analytics or advertising SDKs.</p>
+  <p>The app <strong>does not collect or store personally identifiable information</strong>. No account is required, and it contains no third-party analytics or advertising SDKs. The only thing that leaves your device is the <strong>anonymous usage counts</strong> described in Section 2.</p>
   <p>The following data is stored <strong>only on your device</strong>:</p>
   <ul>
     <li>Your throw log (trajectory, velocity, spin, hit or miss — used for the PASS CHART)</li>
@@ -43,22 +43,39 @@
     <li>In-app settings (throwing arm, camera, team name, control scheme, etc.)</li>
   </ul>
 
-  <h2>2. On-device processing</h2>
+  <h2>2. Anonymous usage counts</h2>
+  <p>To know how much the app is used, it sends <strong>anonymous counts</strong> to <code>collect.appline.app</code>, a server the developer runs on Cloudflare. Exactly two kinds of things are counted, both as <strong>totals only</strong>:</p>
+  <ul>
+    <li>How many times the app was launched (brought to the foreground)</li>
+    <li>Which event (PRECISION PASSING, STRIKE OUT, BUCKET TOSS, CAN ALLEY, LEAD THE RECEIVER, SKILLS SHOWDOWN, 2-MINUTE DRILL) was played to the end, and how many times</li>
+  </ul>
+  <p>Each message contains only three fields: the app name, the event name and the app version. Scores, your throw log, leaderboard contents, your team name and settings are never sent.</p>
+  <p><strong>You cannot be identified or tracked:</strong> the app assigns <strong>no persistent identifier</strong> of any kind (no device ID, no session ID). What arrives is only "this action happened N times in total", with no key to join those events on, so identifying a user, following the same person over time, or building a profile is structurally impossible.</p>
+  <p><strong>Where it goes:</strong> only to a server on Cloudflare. It is never shared with third parties such as Google, Firebase or Meta. Your IP address is not recorded, stored or used, and is never associated with these counts.</p>
+  <p>In Apple's App Privacy labels these counts are declared as usage data collected for analytics, not linked to you and not used for tracking.</p>
+
+  <h2>3. On-device processing</h2>
   <p>Ball physics, hit detection, replays, and the PASS CHART statistics all run <strong>on your device</strong>. None of this data is sent to the developer's servers.</p>
 
-  <h2>3. Device permissions</h2>
+  <h2>4. Device permissions</h2>
   <p>The app does not use the camera, microphone, location, photos, contacts, or any other device permission.</p>
 
-  <h2>4. Network access</h2>
-  <p>The app does not require a network connection and does not transmit data to the developer or to any third party.</p>
+  <h2>5. Network access</h2>
+  <p>The app never sends your gameplay itself. Network communication occurs only for the anonymous counts in Section 2 and through the two Apple services described in Sections 6 and 7. Every event can be played without a network connection.</p>
 
-  <h2>5. Children's privacy</h2>
-  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13.</p>
+  <h2>6. Game Center (leaderboards)</h2>
+  <p>If you are signed in to Game Center, your event results (points, yards, and so on) are submitted to Apple's Game Center leaderboards. This is handled by Apple under Apple's privacy policy; the developer does not receive your Game Center account details. Every event can be played without signing in.</p>
 
-  <h2>6. Changes to this policy</h2>
+  <h2>7. In-app purchase (FootballLab Pro)</h2>
+  <p>The FootballLab Pro one-time purchase is processed by Apple's App Store. The developer does not receive your payment details or name. Whether Pro is active is checked on your device through Apple's StoreKit.</p>
+
+  <h2>8. Children's privacy</h2>
+  <p>The app is rated 4+. We do not knowingly collect personal information from children under 13. The only thing that leaves the device is the anonymous counts in Section 2, which contain no identifier and therefore cannot be linked to any person, child or adult.</p>
+
+  <h2>9. Changes to this policy</h2>
   <p>If this policy changes, we will update this page and the "Last updated" date above. If a new feature changes how information is handled, the change will be described on this page.</p>
 
-  <h2>7. Contact</h2>
+  <h2>10. Contact</h2>
   <p>For questions or bug reports, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
 
   <p class="last">© 2026 Football Lab</p>
