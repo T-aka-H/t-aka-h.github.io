@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playbook — 使い方</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #0B1019; color: #F2F4F7;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 26px; letter-spacing: 1px; }
+  h2 { margin-top: 40px; font-size: 18px; padding-left: 10px; border-left: 4px solid #C7FF3D; }
+  h3 { color: #C7FF3D; margin-top: 22px; font-size: 15px; }
+  p, li { color: rgba(242,244,247,0.82); }
+  a { color: #C7FF3D; }
+  .nav { margin: 12px 0 28px; }
+  .nav a { margin-right: 16px; }
+  .sub { color: rgba(242,244,247,0.6); font-size: 14px; margin-top: -8px; }
+  .answer { padding-left: 14px; border-left: 2px solid rgba(199,255,61,0.4); margin: 8px 0 18px; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; padding: 0; list-style: none; }
+  .toc a { display: inline-block; padding: 4px 12px; border-radius: 6px; background: #1C2533; text-decoration: none; font-size: 14px; }
+  .new { display: inline-block; font-size: 11px; font-weight: bold; color: #0B1019; background: #FF6B1A; border-radius: 4px; padding: 0 6px; margin-left: 6px; vertical-align: 2px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { border-bottom: 1px solid rgba(242,244,247,0.12); padding: 6px 8px; text-align: left; color: rgba(242,244,247,0.82); }
+  .last { color: rgba(242,244,247,0.4); font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+  <h1>Playbook — 使い方</h1>
+  <p class="sub">作る → 説明する → 配る</p>
+  <div class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="support.html">サポート</a>
+    <a href="privacy.html">プライバシー</a>
+  </div>
+
+  <p>作戦ボード（Playbook タブ）の使い方です。作戦ボード・説明モード・PDF は「Playbook Pro」の機能です。選手がコーチの配信を見るだけなら無料で使えます。<span class="new">次のアップデート</span> の印が付いた機能は、次のアップデートで追加されます。</p>
+
+  <ul class="toc">
+    <li><a href="#make">プレーを作る</a></li>
+    <li><a href="#draw">線を描く・動かす</a></li>
+    <li><a href="#info">コール・番号・情報</a></li>
+    <li><a href="#present">説明モード</a></li>
+    <li><a href="#live">選手への配信</a></li>
+    <li><a href="#share">配る（PDF）</a></li>
+    <li><a href="#settings">表示の設定・記号の見方</a></li>
+  </ul>
+
+  <h2 id="make">プレーを作る</h2>
+  <h3>1. 攻撃か守備かを選ぶ</h3>
+  <div class="answer"><p>一覧の上の「攻撃／守備」で、作る側を選びます。攻撃のプレーでは自分のチームが ○、守備のプレーでは × で描かれます（アメリカの作戦図の書き方）。</p></div>
+  <h3>2. 章を選んで追加</h3>
+  <div class="answer"><p>右上の ＋ から章を選ぶと、新しいプレーが開きます。攻撃はラン・パス・RPO・スクリーン・プレーアクション・プロテクション、守備はフロント・カバレッジ・ブリッツ、ほかにスペシャルがあります。</p></div>
+  <h3>3. 隊形を選ぶ</h3>
+  <div class="answer"><p>盤の上の「隊形」を押して、ひな形を選びます。11 人がその隊形に並びます。守備のプレーでは「守備の型」を選びます。</p></div>
+  <h3>4. 相手の守備を置く（攻撃のプレー）</h3>
+  <div class="answer"><p>「相手の守備」でカバレッジを選ぶと、相手が並びます。「割り当て」で、守備それぞれが守る場所の表示を切り替えられます。「表示しない」を選ぶと自分のチームだけになります。</p></div>
+  <h3>5. 並びを直す</h3>
+  <div class="answer"><p>右上の四角 4 つのメニューから、左右反転・選手の追加（攻撃／守備）・線をすべて消す、ができます。選手をタップして選ぶと、記号（WR・TE など）の変更や削除ができます。</p></div>
+
+  <h2 id="draw">線を描く・動かす</h2>
+  <p>盤の下の道具を選んでから、盤の上で操作します。</p>
+  <table>
+    <tr><th>移動</th><td>選手をドラッグして動かす。タップで選ぶと記号の変更・削除ができます</td></tr>
+    <tr><th>ルート</th><td>選手から指でなぞるとルート。描き直すと置き換わります</td></tr>
+    <tr><th>ブロック</th><td>選手から指でなぞるとブロック（先が T の線）</td></tr>
+    <tr><th>モーション</th><td>選手から指でなぞるとスナップ前のモーション（点線）。ルートはその先から始まります</td></tr>
+    <tr><th>読み順</th><td>WR をタップした順に、QB が読む順番が付きます。もう一度タップで外す</td></tr>
+    <tr><th>消す</th><td>消したい線をタップ</td></tr>
+  </table>
+  <p>右上の矢印で 1 つ前に戻ります。盤の右下の「再生」で、描いた通りに選手が動きます。相手の守備を置いていれば、線を描いていない守備は型どおりに動きます。</p>
+
+  <h2 id="info">コール・番号・情報</h2>
+  <h3>コールを組み立てる</h3>
+  <div class="answer"><p>盤の上のコール（最初は「コールを組み立てる」）を押します。攻撃は「隊形＋向き＋プロテクション＋モーション＋コンセプト」、守備は「フロント＋ブリッツ＋カバレッジ」の順です。候補から選ぶか、チームの言葉をそのまま入力します。</p></div>
+  <h3>番号を決める<span class="new">次のアップデート</span></h3>
+  <div class="answer">
+    <p>コールの右の「# 番号」を押して入力します。サイドラインで呼ぶ番号で、コールシートとリストバンドに載ります。同じ番号がほかのプレーにあると知らせます。「空き番号を使う」を押すと、章の範囲で空いている番号が入ります。</p>
+    <p>番号はリストバンドの画面でまとめて振ることもできます（<a href="#share">配る</a>を参照）。</p>
+  </div>
+  <h3>プレーの情報</h3>
+  <div class="answer"><p>ⓘ（iPad では盤の下）で、名前・章・使う状況（3rd & 短 など）・覚える週・メモを付けます。「使う状況」がコールシートの区分になります。</p></div>
+
+  <h2 id="present">説明モード（ミーティング）</h2>
+  <h3>開く</h3>
+  <div class="answer"><p>プレーの画面の「説明モード」を押すと、盤が画面いっぱいになります。左右の矢印で次のプレーへ移ります。</p></div>
+  <h3>書き込む</h3>
+  <div class="answer"><p>指や Apple Pencil でそのまま書けます。ペンの色は 4 色です。消しゴム・「1 画戻す」・「全部消す」も使えます。「書かない」にすると、触っても書かれません。</p></div>
+  <h3>保存・画像で送る</h3>
+  <div class="answer"><p>「保存」を押すと書き込みがプレーに残り、次に開いたときと PDF に入ります。「画像で送る」を押すと、書き込みごと 1 枚の画像にして送れます。</p></div>
+
+  <h2 id="live">選手の iPhone への配信</h2>
+  <div class="answer">
+    <p>説明モードの「配信」→「選手の iPhone に配信する」を押すと、4 桁のコードが出ます。選手は Playbook タブのアンテナのボタン（コーチの説明を見る）を押し、名前とコードを入れて参加します。</p>
+    <p>同じ部屋（Wi-Fi か Bluetooth が届く範囲）で使います。インターネットは使いません。同時に見られるのは <strong>20 人くらいまで</strong>が目安です。選手は無料のまま参加できます。</p>
+    <p>つながらないときは<a href="support.html">サポート</a>の「配信につながらないときは」をご覧ください。</p>
+  </div>
+
+  <h2 id="share">配る（PDF）</h2>
+  <p>一覧の左上の共有ボタンから選びます。</p>
+  <h3>プレイブック</h3>
+  <div class="answer"><p>「プレイブックを送る」を選びます。表紙と目次が付きます。「1 ページに 1 プレー（説明用）」か「1 ページに 4 プレー（一覧・配布用）」を選べます。説明モードの書き込みとメモを入れるかどうかも選べます。AirDrop・LINE・メールなどで選手に送れます。</p></div>
+  <h3>コールシート</h3>
+  <div class="answer"><p>「コールシートを作る」を選びます。プレーの「使う状況」ごとに、番号とコールが並びます（1 ページに 6 区分・A4 横）。対戦相手と試合日を入れられます。□ は試合中のチェック用です。</p></div>
+  <h3>リストバンド</h3>
+  <div class="answer">
+    <p>「リストバンドを作る」を選びます。1 ページ目がコーチ用の一覧、2 ページ目からが手首用のカード（4.5 × 2.5 インチ・1 枚 24 プレー・点線で切り取り）です。印刷は「実際のサイズ（100%）」で行ってください。</p>
+    <p>番号はランが 10〜39、パスが 40〜79、スペシャルが 80〜99 の範囲で振ります。「番号を散らす」をオンにすると、並びから推測されにくくなります。「コールの最初の 1 桁をダミーにする」をオンにすると、サイドラインで「7・24」のように呼び、選手は最初の 1 桁を無視します。</p>
+    <p><span class="new">次のアップデート</span> 「番号の無いプレーに振る」では、手で決めた番号はそのまま残ります。全部を振り直すときは「すべて振り直す」を押します。</p>
+  </div>
+  <h3>作る前に見た目を確かめる<span class="new">次のアップデート</span></h3>
+  <div class="answer"><p>どの画面にも「プレビュー」があり、設定を変えるとすぐに表示が変わります。タップするか「拡大して見る」を押すと、実際の PDF を拡大して確かめられます。</p></div>
+
+  <h2 id="settings">表示の設定・記号の見方</h2>
+  <div class="answer">
+    <p>一覧の左上の歯車で、チーム名（コールシート・リストバンドに印刷）と、守備の記号（× か ■）を変えられます。</p>
+    <p>記号: 攻撃は ○（センターだけ □）、守備は ×（または ■）。線は攻撃が黒、守備が赤です。ルートは矢印、ブロックは先が T、モーションは点線で描きます。青い丸の数字は QB が読む順番です。</p>
+  </div>
+
+  <p class="last">© 2026 Playbook</p>
+</body>
+</html>
