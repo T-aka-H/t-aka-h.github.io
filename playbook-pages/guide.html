@@ -8,22 +8,37 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
     background: #0B1019; color: #F2F4F7;
-    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+    max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
   }
   h1 { font-size: 26px; letter-spacing: 1px; }
-  h2 { margin-top: 40px; font-size: 18px; padding-left: 10px; border-left: 4px solid #C7FF3D; }
-  h3 { color: #C7FF3D; margin-top: 22px; font-size: 15px; }
+  h2 { margin-top: 48px; font-size: 19px; padding-left: 10px; border-left: 4px solid #C7FF3D; }
+  h3 { color: #C7FF3D; margin-top: 24px; font-size: 15px; }
   p, li { color: rgba(242,244,247,0.82); }
   a { color: #C7FF3D; }
   .nav { margin: 12px 0 28px; }
   .nav a { margin-right: 16px; }
   .sub { color: rgba(242,244,247,0.6); font-size: 14px; margin-top: -8px; }
-  .answer { padding-left: 14px; border-left: 2px solid rgba(199,255,61,0.4); margin: 8px 0 18px; }
   .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; padding: 0; list-style: none; }
   .toc a { display: inline-block; padding: 4px 12px; border-radius: 6px; background: #1C2533; text-decoration: none; font-size: 14px; }
   .new { display: inline-block; font-size: 11px; font-weight: bold; color: #0B1019; background: #FF6B1A; border-radius: 4px; padding: 0 6px; margin-left: 6px; vertical-align: 2px; }
+  figure { margin: 16px 0 8px; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid rgba(242,244,247,0.12); }
+  figure.narrow img { max-width: 360px; margin: 0 auto; }
+  figcaption { font-size: 12px; color: rgba(242,244,247,0.55); margin-top: 6px; text-align: center; }
+  .side { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 640px) { .side { grid-template-columns: 1fr; } }
+  ol.keys { list-style: none; padding: 0; margin: 10px 0; counter-reset: k; }
+  ol.keys li { counter-increment: k; position: relative; padding: 6px 0 6px 38px; border-bottom: 1px solid rgba(242,244,247,0.08); }
+  ol.keys li::before { content: counter(k); position: absolute; left: 0; top: 7px; width: 26px; height: 26px; border-radius: 50%;
+    background: #C7FF3D; color: #0B1019; font-weight: 800; font-size: 14px; line-height: 26px; text-align: center; }
+  ol.keys b { color: #F2F4F7; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+  .legend { background: #F9F7F0; border-radius: 10px; padding: 8px; }
+  .legend svg { display: block; width: 100%; height: auto; }
   table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  td, th { border-bottom: 1px solid rgba(242,244,247,0.12); padding: 6px 8px; text-align: left; color: rgba(242,244,247,0.82); }
+  td, th { border-bottom: 1px solid rgba(242,244,247,0.12); padding: 6px 8px; text-align: left; color: rgba(242,244,247,0.82); vertical-align: top; }
+  th { white-space: nowrap; color: #F2F4F7; }
   .last { color: rgba(242,244,247,0.4); font-size: 12px; margin-top: 40px; }
 </style>
 </head>
@@ -36,88 +51,135 @@
     <a href="privacy.html">プライバシー</a>
   </div>
 
-  <p>作戦ボード（Playbook タブ）の使い方です。作戦ボード・説明モード・PDF は「Playbook Pro」の機能です。選手がコーチの配信を見るだけなら無料で使えます。<span class="new">次のアップデート</span> の印が付いた機能は、次のアップデートで追加されます。</p>
+  <p>作戦ボード（Playbook タブ）の使い方を、画面の図で説明します。図の番号は、下の説明の番号と対応しています。作戦ボード・説明モード・PDF は「Playbook Pro」の機能です。選手がコーチの配信を見るだけなら無料で使えます。<span class="new">次のアップデート</span>の印が付いたものは、次のアップデートで使えるようになります。</p>
 
   <ul class="toc">
+    <li><a href="#list">一覧</a></li>
     <li><a href="#make">プレーを作る</a></li>
-    <li><a href="#draw">線を描く・動かす</a></li>
-    <li><a href="#info">コール・番号・情報</a></li>
+    <li><a href="#symbols">記号の見方</a></li>
     <li><a href="#present">説明モード</a></li>
     <li><a href="#live">選手への配信</a></li>
     <li><a href="#share">配る（PDF）</a></li>
-    <li><a href="#settings">表示の設定・記号の見方</a></li>
+    <li><a href="#wristband">リストバンド</a></li>
   </ul>
 
-  <h2 id="make">プレーを作る</h2>
-  <h3>1. 攻撃か守備かを選ぶ</h3>
-  <div class="answer"><p>一覧の上の「攻撃／守備」で、作る側を選びます。攻撃のプレーでは自分のチームが ○、守備のプレーでは × で描かれます（アメリカの作戦図の書き方）。</p></div>
-  <h3>2. 章を選んで追加</h3>
-  <div class="answer"><p>右上の ＋ から章を選ぶと、新しいプレーが開きます。攻撃はラン・パス・RPO・スクリーン・プレーアクション・プロテクション、守備はフロント・カバレッジ・ブリッツ、ほかにスペシャルがあります。</p></div>
-  <h3>3. 隊形を選ぶ</h3>
-  <div class="answer"><p>盤の上の「隊形」を押して、ひな形を選びます。11 人がその隊形に並びます。守備のプレーでは「守備の型」を選びます。</p></div>
-  <h3>4. 相手の守備を置く（攻撃のプレー）</h3>
-  <div class="answer"><p>「相手の守備」でカバレッジを選ぶと、相手が並びます。「割り当て」で、守備それぞれが守る場所の表示を切り替えられます。「表示しない」を選ぶと自分のチームだけになります。</p></div>
-  <h3>5. 並びを直す</h3>
-  <div class="answer"><p>右上の四角 4 つのメニューから、左右反転・選手の追加（攻撃／守備）・線をすべて消す、ができます。選手をタップして選ぶと、記号（WR・TE など）の変更や削除ができます。</p></div>
-
-  <h2 id="draw">線を描く・動かす</h2>
-  <p>盤の下の道具を選んでから、盤の上で操作します。</p>
-  <table>
-    <tr><th>移動</th><td>選手をドラッグして動かす。タップで選ぶと記号の変更・削除ができます</td></tr>
-    <tr><th>ルート</th><td>選手から指でなぞるとルート。描き直すと置き換わります</td></tr>
-    <tr><th>ブロック</th><td>選手から指でなぞるとブロック（先が T の線）</td></tr>
-    <tr><th>モーション</th><td>選手から指でなぞるとスナップ前のモーション（点線）。ルートはその先から始まります</td></tr>
-    <tr><th>読み順</th><td>WR をタップした順に、QB が読む順番が付きます。もう一度タップで外す</td></tr>
-    <tr><th>消す</th><td>消したい線をタップ</td></tr>
-  </table>
-  <p>右上の矢印で 1 つ前に戻ります。盤の右下の「再生」で、描いた通りに選手が動きます。相手の守備を置いていれば、線を描いていない守備は型どおりに動きます。</p>
-
-  <h2 id="info">コール・番号・情報</h2>
-  <h3>コールを組み立てる</h3>
-  <div class="answer"><p>盤の上のコール（最初は「コールを組み立てる」）を押します。攻撃は「隊形＋向き＋プロテクション＋モーション＋コンセプト」、守備は「フロント＋ブリッツ＋カバレッジ」の順です。候補から選ぶか、チームの言葉をそのまま入力します。</p></div>
-  <h3>番号を決める<span class="new">次のアップデート</span></h3>
-  <div class="answer">
-    <p>コールの右の「# 番号」を押して入力します。サイドラインで呼ぶ番号で、コールシートとリストバンドに載ります。同じ番号がほかのプレーにあると知らせます。「空き番号を使う」を押すと、章の範囲で空いている番号が入ります。</p>
-    <p>番号はリストバンドの画面でまとめて振ることもできます（<a href="#share">配る</a>を参照）。</p>
+  <h2 id="list">一覧（Playbook タブ）</h2>
+  <div class="side">
+    <figure class="narrow"><img src="img/guide_list.jpg" alt="Playbook タブの一覧画面" loading="lazy" width="520" height="1453"><figcaption>iPad の一覧（iPhone も同じ並び）</figcaption></figure>
+    <div>
+      <ol class="keys">
+        <li><b>攻撃／守備</b> — 一覧に出す側を切り替えます。新しく作るプレーもこの側になります</li>
+        <li><b>配る</b> — プレイブック・コールシート・リストバンドの PDF を作ります</li>
+        <li><b>使い方</b> — アプリの中でもこの説明を見られます<span class="new">次のアップデート</span></li>
+        <li><b>説明を見る</b> — 選手用。コーチの配信に参加します（無料）</li>
+        <li><b>設定</b> — チーム名（PDF に印刷）と守備の記号（× か ■）</li>
+        <li><b>＋</b> — 章（ラン・パス・スペシャルなど）を選んで、新しいプレーを作ります</li>
+      </ol>
+      <p>今の版では、「配る」「使い方」「説明を見る」「設定」のボタンは画面の上の端にアイコンで並んでいます。iPad では「…」の中にまとまっていることがあります。次のアップデートで、図のように名前つきで並ぶようになります。</p>
+    </div>
   </div>
-  <h3>プレーの情報</h3>
-  <div class="answer"><p>ⓘ（iPad では盤の下）で、名前・章・使う状況（3rd & 短 など）・覚える週・メモを付けます。「使う状況」がコールシートの区分になります。</p></div>
+
+  <h2 id="make">プレーを作る（作図の画面）</h2>
+  <figure><img src="img/guide_editor.jpg" alt="作図の画面" loading="lazy" width="1000" height="1163"><figcaption>作図の画面（iPad 縦。iPhone では情報の欄は ⓘ の中）</figcaption></figure>
+  <ol class="keys">
+    <li><b>隊形</b> — ひな形を選ぶと、自分のチームの 11 人がその隊形に並びます。守備のプレーでは「守備の型」を選びます</li>
+    <li><b>相手の守備</b> — カバレッジを選ぶと相手が並び、守る場所（ゾーン）が色で出ます。「割り当て」で表示を切り替えられます</li>
+    <li><b>コール</b> — 押すと、隊形＋向き＋プロテクション＋モーション＋コンセプトの順にコールを組み立てられます。候補にない言葉はそのまま入力できます</li>
+    <li><b>番号</b> — サイドラインで呼ぶ番号です。コールシートとリストバンドに載ります。同じ番号がほかのプレーにあると知らせます<span class="new">次のアップデート</span></li>
+    <li><b>説明モード</b> — 盤を画面いっぱいにして、書き込みながら説明します（<a href="#present">下で説明</a>）</li>
+    <li><b>道具</b> — 下の表を参照。道具を選んでから盤の上をなぞります</li>
+    <li><b>再生</b> — 描いた通りに選手が動きます。線を描いていない守備は、選んだ型どおりに動きます</li>
+    <li><b>右上のボタン</b> — 左から、1 つ前に戻す・メニュー（左右反転・選手の追加・線をすべて消す）・プレーの情報（名前・章・使う状況・覚える週・メモ）</li>
+  </ol>
+  <table>
+    <tr><th>移動</th><td>選手をドラッグして動かします。タップで選ぶと、記号（WR・TE など）の変更や削除ができます</td></tr>
+    <tr><th>ルート</th><td>選手から指でなぞるとルート（先が矢印）。描き直すと置き換わります</td></tr>
+    <tr><th>ブロック</th><td>選手から指でなぞるとブロック（先が T の線）</td></tr>
+    <tr><th>モーション</th><td>選手から指でなぞると、スナップ前のモーション（点線）。ルートはモーションの先から始まります</td></tr>
+    <tr><th>読み順</th><td>WR をタップした順に、QB が読む順番（青い丸の数字）が付きます。もう一度タップすると外れます</td></tr>
+    <tr><th>消す</th><td>消したい線をタップします</td></tr>
+  </table>
+  <p>「使う状況」（1st &amp; 10・3rd &amp; 短・レッドゾーンなど）を付けておくと、コールシートでその区分に並びます。</p>
+
+  <h2 id="symbols">記号の見方</h2>
+  <p>アメリカの作戦図の書き方に合わせています。記号は「自分のチームか相手か」ではなく、攻撃か守備かで決まります。守備のプレーを作るときは、自分のチームが × で描かれます。</p>
+  <div class="legend">
+    <svg viewBox="0 0 720 150" role="img" aria-label="記号の見方の図">
+      <g font-family="-apple-system, Hiragino Sans, sans-serif" font-size="13" fill="#141A29" text-anchor="middle">
+        <circle cx="60" cy="50" r="17" fill="#FAF8F0" stroke="#141A29" stroke-width="2.5"/>
+        <text x="60" y="55" font-weight="700">WR</text>
+        <text x="60" y="100">攻撃の選手</text>
+        <rect x="128" y="33" width="34" height="34" fill="#FAF8F0" stroke="#141A29" stroke-width="2.5"/>
+        <text x="145" y="100">センター</text>
+        <g stroke="#BF1F1F" stroke-width="4" stroke-linecap="round"><line x1="215" y1="35" x2="245" y2="65"/><line x1="245" y1="35" x2="215" y2="65"/></g>
+        <text x="230" y="28" fill="#BF1F1F" font-weight="800">M</text>
+        <text x="230" y="100">守備の選手</text>
+        <rect x="298" y="35" width="30" height="30" fill="#BF1F1F"/><text x="313" y="55" fill="#fff" font-weight="800">M</text>
+        <text x="313" y="100">守備（■ 表示）</text>
+        <g stroke="#141A29" stroke-width="3" fill="none" stroke-linecap="round"><path d="M385 70 L385 40 L420 25"/></g>
+        <polygon points="428,21 414,22 419,32" fill="#141A29"/>
+        <text x="405" y="100">ルート</text>
+        <g stroke="#141A29" stroke-width="3" stroke-linecap="round"><line x1="478" y1="70" x2="498" y2="38"/><line x1="490" y1="33" x2="506" y2="43"/></g>
+        <text x="492" y="100">ブロック</text>
+        <path d="M545 55 L605 55" stroke="#141A29" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/>
+        <text x="575" y="100">モーション</text>
+        <circle cx="668" cy="50" r="13" fill="#1A73E6"/><text x="668" y="55" fill="#fff" font-weight="800">1</text>
+        <text x="668" y="100">QB の読む順番</text>
+        <text x="360" y="135" font-size="12" fill="#5A6070">線の色: 攻撃は黒、守備は赤。説明モードの書き込みは選んだペンの色</text>
+      </g>
+    </svg>
+  </div>
 
   <h2 id="present">説明モード（ミーティング）</h2>
-  <h3>開く</h3>
-  <div class="answer"><p>プレーの画面の「説明モード」を押すと、盤が画面いっぱいになります。左右の矢印で次のプレーへ移ります。</p></div>
-  <h3>書き込む</h3>
-  <div class="answer"><p>指や Apple Pencil でそのまま書けます。ペンの色は 4 色です。消しゴム・「1 画戻す」・「全部消す」も使えます。「書かない」にすると、触っても書かれません。</p></div>
-  <h3>保存・画像で送る</h3>
-  <div class="answer"><p>「保存」を押すと書き込みがプレーに残り、次に開いたときと PDF に入ります。「画像で送る」を押すと、書き込みごと 1 枚の画像にして送れます。</p></div>
+  <figure><img src="img/guide_present.jpg" alt="説明モードの画面" loading="lazy" width="1000" height="1333"><figcaption>説明モード。赤い点線と丸はコーチの書き込み</figcaption></figure>
+  <ol class="keys">
+    <li><b>ペンと色</b> — 指や Apple Pencil でそのまま書けます。色は 4 色</li>
+    <li><b>消しゴム・書かない</b> — 「書かない」にすると、触っても書かれません（画面を指しながら話すとき）</li>
+    <li><b>1 画戻す・全部消す</b></li>
+    <li><b>保存</b> — 書き込みがプレーに残り、次に開いたときと PDF に入ります</li>
+    <li><b>画像で送る</b> — 書き込みごと 1 枚の画像にして送れます</li>
+    <li><b>配信</b> — 同じ部屋の選手の iPhone に、この画面を映します（<a href="#live">次の節</a>）</li>
+    <li><b>再生</b> — 動きを見せます。「割り当て」で守備の守る場所の表示を切り替えます</li>
+    <li><b>前後のプレー</b> — 次のプレーへ移ります（配信中は選手の画面も一緒に変わります）</li>
+  </ol>
 
   <h2 id="live">選手の iPhone への配信</h2>
-  <div class="answer">
-    <p>説明モードの「配信」→「選手の iPhone に配信する」を押すと、4 桁のコードが出ます。選手は Playbook タブのアンテナのボタン（コーチの説明を見る）を押し、名前とコードを入れて参加します。</p>
-    <p>同じ部屋（Wi-Fi か Bluetooth が届く範囲）で使います。インターネットは使いません。同時に見られるのは <strong>20 人くらいまで</strong>が目安です。選手は無料のまま参加できます。</p>
-    <p>つながらないときは<a href="support.html">サポート</a>の「配信につながらないときは」をご覧ください。</p>
+  <div class="side">
+    <figure><img src="img/guide_viewer.jpg" alt="選手の画面" loading="lazy" width="1000" height="1042"><figcaption>選手の画面。コーチの書き込みと再生がそのまま映ります</figcaption></figure>
+    <div>
+      <ol class="keys">
+        <li><b>LIVE</b> — コーチの画面を見ている印です</li>
+      </ol>
+      <p><b>コーチ:</b> 説明モードの「配信」→「選手の iPhone に配信する」を押すと、4 桁のコードが出ます。</p>
+      <p><b>選手:</b> Playbook タブの「説明を見る」を押し、名前とコードを入れて参加します。</p>
+      <p>同じ部屋（Wi-Fi か Bluetooth が届く範囲）で使います。インターネットは使いません。同時に見られるのは <strong>20 人くらいまで</strong>が目安です。選手は無料のまま参加できます。つながらないときは<a href="support.html">サポート</a>をご覧ください。</p>
+    </div>
   </div>
 
   <h2 id="share">配る（PDF）</h2>
-  <p>一覧の左上の共有ボタンから選びます。</p>
+  <p>一覧の「配る」から選びます。どの画面にも「プレビュー」があり、設定を変えるとすぐに表示が変わります。タップすると実際の PDF を拡大して確かめられます<span class="new">次のアップデート</span>。</p>
   <h3>プレイブック</h3>
-  <div class="answer"><p>「プレイブックを送る」を選びます。表紙と目次が付きます。「1 ページに 1 プレー（説明用）」か「1 ページに 4 プレー（一覧・配布用）」を選べます。説明モードの書き込みとメモを入れるかどうかも選べます。AirDrop・LINE・メールなどで選手に送れます。</p></div>
+  <p>表紙と目次が付きます。「1 ページに 1 プレー（説明用）」か「1 ページに 4 プレー（一覧・配布用）」を選べます。説明モードの書き込みとメモを入れるかどうかも選べます。AirDrop・LINE・メールなどで選手に送れます。</p>
   <h3>コールシート</h3>
-  <div class="answer"><p>「コールシートを作る」を選びます。プレーの「使う状況」ごとに、番号とコールが並びます（1 ページに 6 区分・A4 横）。対戦相手と試合日を入れられます。□ は試合中のチェック用です。</p></div>
-  <h3>リストバンド</h3>
-  <div class="answer">
-    <p>「リストバンドを作る」を選びます。1 ページ目がコーチ用の一覧、2 ページ目からが手首用のカード（4.5 × 2.5 インチ・1 枚 24 プレー・点線で切り取り）です。印刷は「実際のサイズ（100%）」で行ってください。</p>
-    <p>番号はランが 10〜39、パスが 40〜79、スペシャルが 80〜99 の範囲で振ります。「番号を散らす」をオンにすると、並びから推測されにくくなります。「コールの最初の 1 桁をダミーにする」をオンにすると、サイドラインで「7・24」のように呼び、選手は最初の 1 桁を無視します。</p>
-    <p><span class="new">次のアップデート</span> 「番号の無いプレーに振る」では、手で決めた番号はそのまま残ります。全部を振り直すときは「すべて振り直す」を押します。</p>
-  </div>
-  <h3>作る前に見た目を確かめる<span class="new">次のアップデート</span></h3>
-  <div class="answer"><p>どの画面にも「プレビュー」があり、設定を変えるとすぐに表示が変わります。タップするか「拡大して見る」を押すと、実際の PDF を拡大して確かめられます。</p></div>
+  <figure><img src="img/guide_callsheet.jpg" alt="コールシートの例" loading="lazy" width="1000" height="706"><figcaption>コールシート（A4 横）。状況ごとに番号とコールが並び、□ は試合中のチェック用</figcaption></figure>
+  <p>プレーの「使う状況」ごとに並びます（1 ページに 6 区分）。対戦相手と試合日を入れられます。リストバンドの版を選ぶと、その版の番号で並びます<span class="new">次のアップデート</span>。</p>
 
-  <h2 id="settings">表示の設定・記号の見方</h2>
-  <div class="answer">
-    <p>一覧の左上の歯車で、チーム名（コールシート・リストバンドに印刷）と、守備の記号（× か ■）を変えられます。</p>
-    <p>記号: 攻撃は ○（センターだけ □）、守備は ×（または ■）。線は攻撃が黒、守備が赤です。ルートは矢印、ブロックは先が T、モーションは点線で描きます。青い丸の数字は QB が読む順番です。</p>
+  <h2 id="wristband">リストバンド</h2>
+  <figure><img src="img/guide_wristband_screen.jpg" alt="リストバンドの画面" loading="lazy" width="1000" height="1261"><figcaption>リストバンドの画面</figcaption></figure>
+  <ol class="keys">
+    <li><b>版 A〜D</b><span class="new">次のアップデート</span> — 同じプレーに、版ごとに別の番号を振れます。A はプレーの画面で決めた番号、B〜D はこの画面で振ります。試合や週ごとに版を替えると、相手に番号を覚えられにくくなります。カードとコールシートには版の文字が入ります</li>
+    <li><b>番号を振る</b> — 番号の無いプレーにまとめて振ります。手で決めた番号はそのまま残ります<span class="new">次のアップデート</span>。ランは 10〜39、パスは 40〜79、スペシャルは 80〜99 の範囲です。「番号を散らす」で並びから推測されにくくなります</li>
+    <li><b>カードの種類</b><span class="new">次のアップデート</span> — 「全員共通」か「ポジション別」。ポジション別では、カードを作るポジション（X・Z・RB・OL など）を選びます</li>
+    <li><b>プレビュー</b> — 1 ページ目がコーチ用の一覧、2 ページ目から手首用のカードです</li>
+  </ol>
+
+  <h3>全員共通のカードとポジション別のカード</h3>
+  <div class="cards">
+    <figure><img src="img/guide_card_common.jpg" alt="全員共通のカード" loading="lazy" width="700" height="400"><figcaption>全員共通: 番号とコール（QB 用・全員が同じカードのとき）</figcaption></figure>
+    <figure><img src="img/guide_card_position_rb.jpg" alt="RB のポジション別カード" loading="lazy" width="700" height="400"><figcaption>ポジション別（RB）: 番号ごとに自分の動きだけの小さな図<span class="new">次のアップデート</span></figcaption></figure>
   </div>
+  <p>ポジション別のカードには、作図で描いた線（ルート・ブロック・モーション）が小さな図で入ります。点線はスクリメージライン、丸がスタートの位置です。OL のカードは 5 人分のブロックと、プロテクションのコールが入ります。<b>線を描いておくほど、カードが役に立ちます。</b></p>
+  <p>カードは 4.5 × 2.5 インチで、1 枚に 24 プレーまで入ります。点線で切り取ってリストバンドに入れてください。印刷は「実際のサイズ（100%）」で行います。「コールの最初の 1 桁をダミーにする」をオンにすると、サイドラインで「7・24」のように呼び、選手は最初の 1 桁を無視します。</p>
 
   <p class="last">© 2026 Playbook</p>
 </body>
