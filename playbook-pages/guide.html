@@ -67,6 +67,7 @@
     <li><a href="#present">説明モード</a></li>
     <li><a href="#live">選手への配信</a></li>
     <li><a href="#playbook">プレイブックを作る</a></li>
+    <li><a href="#excel">Excel</a></li>
     <li><a href="#callsheet">コールシート</a></li>
     <li><a href="#wristband">リストバンドを作る</a></li>
   </ul>
@@ -77,7 +78,7 @@
     <div>
       <ol class="keys">
         <li><b>攻撃／守備</b> — 一覧に出す側を切り替えます。新しく作るプレーもこの側になります</li>
-        <li><b>配る</b> — <a href="#playbook">プレイブック</a>・<a href="#callsheet">コールシート</a>・<a href="#wristband">リストバンド</a>の PDF を作ります</li>
+        <li><b>配る</b> — <a href="#playbook">プレイブック</a>・<a href="#callsheet">コールシート</a>・<a href="#wristband">リストバンド</a>の PDF と、<a href="#excel">Excel</a>（.xlsx）を作ります</li>
         <li><b>使い方</b> — アプリの中でもこの説明を見られます<span class="new">次のアップデート</span></li>
         <li><b>説明を見る</b> — 選手用。コーチの配信に参加します（無料）</li>
         <li><b>設定</b> — チーム名（PDF に印刷）と守備の記号（× か ■）</li>
@@ -176,17 +177,40 @@
   <ol class="keys">
     <li><b>表紙</b> — 表題（例: PLAYBOOK 2026）とチーム名</li>
     <li><b>載せるもの</b> — 攻撃・守備、「章を選ぶ」で章ごとに（例: 今週はパスだけ）</li>
+    <li><b>並べ方（プレイブックの型）</b><span class="new">次のアップデート</span> — 下の「並べ方を選ぶ」を参照。目次もこの並べ方になります</li>
     <li><b>レイアウト</b> — 「1 ページに 1 プレー（説明用）」か「1 ページに 4 プレー（一覧・配布用）」</li>
     <li><b>書き込み・メモ</b> — 説明モードの書き込みと、プレーのメモを入れるかどうか</li>
     <li><b>プレビュー</b> — 仕上がりが並びます。タップで拡大<span class="new">次のアップデート</span></li>
-    <li><b>PDF を作る</b></li>
   </ol>
-  <h3>できあがりの例</h3>
+
+  <h3>並べ方を選ぶ<span class="new">次のアップデート</span></h3>
+  <p>プレイブックの並べ方はチームによって違います。アメリカのチームの例を参考に、4 つの型から選べます。</p>
+  <table>
+    <tr><th>プレーの種類ごと</th><td>ラン・パス・RPO・スクリーン…の章ごと。NFL などのプレイブック本体はこの形で、ランの型 → パス（クイック・ドロップバック・プレーアクション）→ スクリーンの順に覚えていきます</td></tr>
+    <tr><th>状況ごと<br>（ゲームプラン）</th><td>1st &amp; 10・2nd &amp; 中・3rd &amp; 短・レッドゾーン・2 ミニッツなど、プレーの「使う状況」ごと。試合の週に配るゲームプランや、サイドラインのコールシートはこの形です。複数の状況に付いたプレーは、目次のそれぞれに載ります</td></tr>
+    <tr><th>隊形ごと</th><td>コールの隊形（Doubles・Trips・Pistol など）ごと。同じ並びから何ができるかが一目で分かります。高校やフラッグフットボールでよく使われます</td></tr>
+    <tr><th>覚える週ごと</th><td>プレーの「覚える週」ごと。キャンプやシーズン前に、少しずつ配って覚えてもらうとき</td></tr>
+  </table>
+  <p>攻撃と守備の両方を載せるときは、目次の見出しが「攻撃｜1st &amp; 10」「守備｜1st &amp; 10」のように分かれます。</p>
+  <div class="cards">
+    <figure><img src="img/guide_pb_cover_situation.jpg" alt="状況ごとの目次" loading="lazy" width="900" height="637"><figcaption>状況ごと: 1st &amp; 10・3rd &amp; 中・レッドゾーン…の順に目次が並ぶ</figcaption></figure>
+    <figure><img src="img/guide_pb_cover_formation.jpg" alt="隊形ごとの目次" loading="lazy" width="900" height="637"><figcaption>隊形ごと: Doubles・Pistol・Trips…ごとに並ぶ</figcaption></figure>
+  </div>
+
+  <h3>できあがりの例（プレーの種類ごと）</h3>
   <figure><img src="img/guide_pb_cover.jpg" alt="プレイブックの表紙と目次" loading="lazy" width="900" height="637"><figcaption>1 ページ目: 表紙と目次（章ごとに番号・プレー名・ページ）</figcaption></figure>
   <div class="cards">
     <figure><img src="img/guide_pb_pdf.jpg" alt="1 ページに 1 プレー" loading="lazy" width="900" height="637"><figcaption>1 ページに 1 プレー: 大きな図と、読む順番・想定する守備・使う状況・メモ</figcaption></figure>
     <figure><img src="img/guide_pb_pdf4.jpg" alt="1 ページに 4 プレー" loading="lazy" width="900" height="637"><figcaption>1 ページに 4 プレー: 一覧・配布用（紙を減らせる）</figcaption></figure>
   </div>
+
+  <h2 id="excel">Excel に書き出す<span class="new">次のアップデート</span></h2>
+  <p>一覧の「配る」→「Excel に書き出す（.xlsx）」で、プレーの一覧を表にして送れます。スタッフとゲームプランを組むときや、チームの表に貼り付けるときに使います。Excel・Numbers・Google スプレッドシートで開けます。</p>
+  <figure><img src="img/guide_xlsx.jpg" alt="Excel に書き出した表" loading="lazy" width="752" height="380"><figcaption>攻撃のシート（1 行目は固定・並べ替えとフィルターができます）</figcaption></figure>
+  <table>
+    <tr><th>攻撃・守備のシート</th><td>1 プレー 1 行。番号（版 A〜D）・プレー名・コール・章・隊形・使う状況・覚える週・読む順番・想定する守備・メモ</td></tr>
+    <tr><th>状況別のシート</th><td>状況ごとに 1 行ずつ（同じプレーが複数の状況に出ます）。フィルターで「3rd &amp; 中」だけにすると、その状況の候補がすぐ並びます</td></tr>
+  </table>
 
   <h2 id="callsheet">コールシート</h2>
   <figure><img src="img/guide_callsheet.jpg" alt="コールシートの例" loading="lazy" width="1000" height="706"><figcaption>コールシート（A4 横）。状況ごとに番号とコールが並び、□ は試合中のチェック用</figcaption></figure>
