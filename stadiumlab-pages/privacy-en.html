@@ -33,9 +33,23 @@
   <p>This policy explains how StadiumLab (“the app”) handles information.</p>
 
   <h2>1. Information we collect</h2>
-  <p>The app <strong>collects no information at all</strong>. No account is needed, and the app contains <strong>no analytics SDK and no advertising SDK</strong>. The parks you build and your settings are never sent to any server.</p>
+  <p>The app <strong>does not collect or store any information that identifies you</strong>. No account is needed, and the app contains <strong>no third-party analytics SDK and no advertising SDK</strong>. What is inside your parks (names, dimensions, images) and your settings are never sent to any server.</p>
+  <p>The only thing that leaves your device is the <strong>anonymous usage counts</strong> described in section 2.</p>
 
-  <h2>2. Stored on your device</h2>
+  <h2>2. Anonymous usage counts</h2>
+  <p>To learn how much the app is used, it sends <strong>anonymous counts</strong> to <code>collect.appline.app</code>. Only these are counted, and only as <strong>totals</strong>:</p>
+  <ul>
+    <li><strong>How many times the app was opened</strong></li>
+    <li><strong>How many times a park of your own was added</strong> (saved, duplicated or opened from a file; the park itself is not sent)</li>
+    <li><strong>How many times the Pro screen was opened, the purchase button was tapped, and a purchase or restore completed</strong></li>
+  </ul>
+  <p><strong>What is sent (and nothing else):</strong> a fixed event name (<code>app_open</code> / <code>park_created</code> / <code>paywall_shown</code> / <code>purchase_tapped</code> / <code>purchase_success</code> / <code>purchase_restored</code>) and the app version (for example, 1.0).</p>
+  <p><strong>What is never sent:</strong> your name, email address, account details, device identifiers (IDFA, IDFV or similar), advertising ID, location, the names, dimensions or images of your parks, purchase amounts or payment details, or anything else that could identify you.</p>
+  <p><strong>You cannot be identified or tracked:</strong> the app <strong>assigns no persistent identifier</strong> to your device (no device ID, no session ID). All that arrives is how many times an action happened in total. With nothing to link those events together, <strong>it is structurally impossible to identify a particular user, follow one person over time, or build a profile</strong>. Per-person figures such as how many people use the app or how many keep using it come only from the anonymous data Apple provides in App Store Connect.</p>
+  <p><strong>Filtered on arrival:</strong> the server records only the event names above and discards anything else it receives.</p>
+  <p><strong>Where it goes:</strong> only to our server on Cloudflare. It is never shared with Google, Firebase, Meta or any other third party. The request passes through Cloudflare’s network, but <strong>IP addresses are not recorded, stored or used</strong>, and are never linked to the counts.</p>
+
+  <h2>3. Stored on your device</h2>
   <p>The following data is stored <strong>only on your device</strong>:</p>
   <ul>
     <li>The parks you build (dimensions, stands, roofs, facilities, colors, scenery and so on) and their design history</li>
@@ -44,29 +58,29 @@
   </ul>
   <p>None of this leaves your device, and it is not synced through iCloud or any other service. Deleting the app deletes this data.</p>
 
-  <h2>3. Device permissions</h2>
+  <h2>4. Device permissions</h2>
   <ul>
     <li><strong>Add to Photos</strong> — used only when you save a photo or video of your park to Photos from the share sheet. The app never reads your photo library.</li>
   </ul>
   <p>To put an image on a video board, the app uses the iOS photo picker. The app receives <strong>only the image you choose</strong> and does not ask for access to your whole library. The app does not ask for the camera, microphone, location, contacts or any other permission.</p>
 
-  <h2>4. Network</h2>
-  <p>The app <strong>does not communicate with any server, ours or anyone else’s</strong>. The only network use is the App Store, when you make or restore the in-app purchase described in section 5.</p>
+  <h2>5. Network</h2>
+  <p>The app connects only to send the anonymous counts in section 2, and to the App Store when you make or restore the in-app purchase in section 6. It does not connect to any third-party server.</p>
 
-  <h2>5. In-app purchase (StadiumLab Pro)</h2>
+  <h2>6. In-app purchase (StadiumLab Pro)</h2>
   <p>The app offers StadiumLab Pro, a one-time in-app purchase that unlocks the drone tour, watching from any seat, weather, saving more than one park, detailed facilities, sending parks to BattingLab and more. All purchases are processed by Apple through StoreKit and are covered by Apple’s privacy policy (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/</a>). We never receive your payment details; the app only learns from the App Store whether the purchase has been made.</p>
 
-  <h2>6. Sharing and export</h2>
+  <h2>7. Sharing and export</h2>
   <p>Photos, tour videos, park files (<code>.stadiumlab</code>), and BattingLab files (<code>.blpark</code>) or codes are created <strong>only when you ask for them</strong> and are handed to the standard iOS share sheet or file picker. You choose where they go; nothing is sent to our servers.</p>
   <p>Park files and BattingLab files or codes contain only the park’s design (including any images you placed on a video board). They contain no device information and nothing that identifies you.</p>
 
-  <h2>7. Children’s privacy</h2>
-  <p>Because the app collects no information, it collects no personal information from anyone, including children under 13.</p>
+  <h2>8. Children’s privacy</h2>
+  <p>The app collects no personal information from anyone, including children under 13. The only thing that leaves the device is the anonymous counts in section 2, which carry no identifier and cannot be linked to any person.</p>
 
-  <h2>8. Changes</h2>
+  <h2>9. Changes</h2>
   <p>If this policy changes, this page will be updated along with the date at the top.</p>
 
-  <h2>9. Contact</h2>
+  <h2>10. Contact</h2>
   <p>For questions or bug reports, please <a href="mailto:trim.hoist.6b@icloud.com">contact us</a>.</p>
 
   <p class="last">© 2026 StadiumLab</p>
