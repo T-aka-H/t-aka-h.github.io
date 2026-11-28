@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studyloopline — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #050614;
+    color: #e8eef8;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    line-height: 1.7;
+  }
+  h1 { color: #e8eef8; }
+  h2 { color: rgba(232,238,248,0.85); margin-top: 28px; }
+  p, li { color: rgba(232,238,248,0.78); }
+  a { color: #6cb8ff; }
+  code {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    background: rgba(91, 138, 255, 0.10);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #b4c8ff;
+  }
+  .last { color: rgba(232,238,248,0.40); font-size: 12px; }
+  .langtoggle {
+    margin: 8px 0 24px;
+    font-size: 13px;
+    color: rgba(232, 238, 248, 0.55);
+  }
+  .langtoggle a { margin-right: 12px; }
+  hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    margin: 48px 0 24px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Studyloopline — Privacy Policy</h1>
+<p class="last">Last updated: 2026-08-01 (v1.2.1 — added Anonymous Usage Statistics)</p>
+
+<div class="langtoggle">
+  <a href="#en">English</a>
+  <a href="#ja">日本語</a>
+</div>
+
+<section id="en">
+
+<p>Studyloopline ("the App") is developed and operated by an independent developer. This Privacy Policy describes how the App handles user information.</p>
+
+<h2>Summary</h2>
+<ul>
+  <li>The App does <strong>not</strong> collect personal data, and assigns you <strong>no identifier</strong> of any kind.</li>
+  <li>The App does <strong>not</strong> contain third-party analytics or tracking SDKs. It sends <strong>anonymous counts of which screens were opened</strong> to the developer's own server — see "Anonymous Usage Statistics" below.</li>
+  <li>The App does <strong>not</strong> display advertisements.</li>
+  <li>The App does <strong>not</strong> contain in-app purchases.</li>
+  <li>All learning progress is stored locally on your device using iOS UserDefaults / SwiftData.</li>
+</ul>
+
+<h2>Data Collection</h2>
+<p>The App collects no personal data. Local learning state — practice answer history, Level Check results, accuracy by topic, learning streak, theme preference — is stored on your device using iOS standard storage (UserDefaults and SwiftData) and never leaves it. The only thing sent to the developer is the anonymous screen counts described next.</p>
+
+<h2>Anonymous Usage Statistics</h2>
+<p>To decide which parts of the App are worth maintaining, it sends <strong>anonymous counts of which screens were opened</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, each of the five main screens (Lab, Level Check, Practice, Curriculum, My Progress) is reached, each of the nine Lab modules is opened, a practice question is answered, a Level Check is completed, and — if you use the optional personal backend — which of its screens were opened.</p>
+<p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+<p><strong>What is never sent:</strong> no name, email, device identifier (IDFA / IDFV), advertising ID, or location — and none of your learning content: not the questions, your answers, whether you got them right, your level, your accuracy, or your streak.</p>
+<p><strong>The optional personal backend: what is and is not counted.</strong> If you unlock and use the advanced BYO feature described below, the same kind of anonymous screen counts are recorded for it too — that a screen was opened, that a subject was switched, that today's questions were submitted. <strong>Nothing about your backend or its contents is ever sent:</strong> not your server URL, not your token, not your learner name, not which subject you switched to, not the questions, not your answers, and not a single byte exchanged with your own server. The developer still has <strong>no access</strong> to anything on your backend — that promise is unchanged. What is recorded is only "this screen was opened N times in total", with no identifier attached.</p>
+<p><strong>No individual can be identified or tracked:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user (no device ID, no session ID). All that is stored is "this screen was opened N times in total" — there is no key to join these counts on, which makes it structurally impossible to identify a learner, follow the same person over time, or build a profile. Your IP address is not logged, stored, or used.</p>
+<p><strong>Where it goes:</strong> only to the developer's own server. It is never shared with any third party such as Google, Firebase, or Meta. These counts are not linked to your identity and therefore do not constitute tracking under App Tracking Transparency (ATT); the App does not request ATT permission.</p>
+
+<h2>Camera (QR Code Scanning)</h2>
+<p>Studyloopline does <strong>not</strong> request camera access. The App itself never accesses the camera.</p>
+
+<h2>Local Storage</h2>
+<p>The App stores the following data locally on your device. This data never leaves your device unless you explicitly enable the Personal Backend feature.</p>
+<ul>
+  <li>Practice answer history (which problems you've solved, correct/incorrect, timestamp)</li>
+  <li>Level Check results (which level you were assigned, accuracy)</li>
+  <li>Theme preference (Sky / Ocean / Sunset / Forest / Lavender / Mono)</li>
+  <li>UI preferences (Japanese / English language follows iOS system setting)</li>
+</ul>
+<p>You can delete this data at any time by uninstalling the App.</p>
+
+<h2>Third Parties</h2>
+<p>Studyloopline does <strong>not</strong> integrate with any third-party SDKs, analytics services, advertising networks, or data brokers. The App uses only Apple's first-party frameworks:</p>
+<ul>
+  <li>SwiftUI — UI framework</li>
+  <li>SwiftData — local data persistence</li>
+  <li>AVFoundation — audio playback (only when Personal Backend is configured)</li>
+  <li>StoreKit — version checking (no purchases)</li>
+</ul>
+<p>The one non-Apple destination is the developer's own endpoint (<code>collect.appline.app</code>) for the anonymous screen counts described above. It is operated by the developer, not a third party, and involves no analytics SDK.</p>
+
+<h2>Children</h2>
+<p>The App is suitable for all ages (Apple Age Rating 4+). It does not knowingly collect data from children.</p>
+
+<h2>Personal Backend (Optional)</h2>
+<p><strong>This feature is strictly optional and is not enabled by default.</strong> Most users will never use it, and the App is fully functional without it (the Lab modules, Level Check, the 177 Practice problems, and the Calculator all work entirely offline).</p>
+<p>Studyloopline includes an optional advanced feature that lets you connect the App to <strong>a personal backend that you run yourself</strong> — typically a Cloudflare Worker + R2 bucket on <strong>your</strong> own account, executing an open-source learning loop (Claude Code + NotebookLM, etc). This feature exists for users who want to build their own personalized statistics tutor; it is <strong>not</strong> a service we provide.</p>
+<p>This feature is <strong>hidden by default</strong> and must be unlocked explicitly by the user. <strong>Unless you take explicit action to enable and configure it, the App makes no outbound network requests for learning content.</strong> When (and only when) enabled and configured, the App communicates exclusively with <strong>the server URL you specify</strong>, using a token <strong>you</strong> control:</p>
+<ul>
+  <li>The App fetches today's questions and audio mini-lecture from your server.</li>
+  <li>The App submits your answers to your server (so your backend can grade and adapt to your level).</li>
+  <li>The App fetches past lectures, feedback messages, and a personal changelog from your server.</li>
+</ul>
+<p>The developer of Studyloopline has <strong>no access</strong> to data exchanged between your device and your personal backend. Your backend is yours; your data stays in your own account. The developer never sees your server URL or your token, and operates no shared backend for this feature.</p>
+<p>You can disable this feature at any time from the App's settings, which clears the saved server URL and token from your device.</p>
+<p>When this feature is configured, the App can stream audio mini-lectures from your own server using Apple's AVFoundation (playback category, to allow background playback). No audio recording occurs.</p>
+
+<h2>Changes to this Policy</h2>
+<p>If we change this Privacy Policy, we will update the "Last updated" date above. Material changes will be communicated through the App's release notes.</p>
+
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, please contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
+
+</section>
+
+<hr>
+
+<section id="ja">
+
+<h1>Studyloopline — プライバシーポリシー</h1>
+<p>本ポリシーは、Studyloopline（以下「本アプリ」）におけるユーザー情報の取扱いを説明します。</p>
+
+<h2>サマリー</h2>
+<ul>
+  <li>本アプリは個人情報を<strong>収集せず</strong>、利用者に<strong>いかなる識別子も割り当てません</strong>。</li>
+  <li>本アプリはサードパーティの分析・トラッキング SDK を<strong>含みません</strong>。開発者自身のサーバーへ<strong>どの画面が開かれたかの匿名の回数</strong>のみを送信します（下記「匿名の利用統計」参照）。</li>
+  <li>本アプリは広告を<strong>表示しません</strong>。</li>
+  <li>本アプリはアプリ内課金を<strong>含みません</strong>。</li>
+  <li>学習進捗はすべてデバイス上に UserDefaults / SwiftData でローカル保存されます。</li>
+</ul>
+
+<h2>データ収集</h2>
+<p>本アプリは個人情報を一切収集しません。学習状態（練習問題の回答履歴・レベル判定結果・トピック別正答率・連続学習日数・テーマ設定）は、iOS 標準ストレージ（UserDefaults および SwiftData）でデバイス上にローカル保存され、デバイスを離れることはありません。開発者に送られるのは、次に記載する匿名の画面カウントだけです。</p>
+
+<h2>匿名の利用統計</h2>
+<p>アプリのどの部分を維持する価値があるかを判断するため、開発者が運用するサーバー（Cloudflare 上の <code>collect.appline.app</code>）に<strong>どの画面が開かれたかの匿名の回数</strong>を送信します。数えているのは、アプリの起動回数、5つの主要画面（実験室・レベル判定・練習・カリキュラム・マイ進捗）への到達回数、実験室 9 モジュールそれぞれを開いた回数、練習問題に 1 問答えた回数、レベル判定を完了した回数、そして任意のパーソナルバックエンドを使う場合はその画面の到達回数で、いずれも<strong>合計値のみ</strong>です。</p>
+<p><strong>送信するもの（これだけ）:</strong> あらかじめ決められた固定のイベント名と、アプリのバージョン番号のみです。</p>
+<p><strong>送信しないもの:</strong> 氏名・メールアドレス・端末識別子（IDFA / IDFV）・広告ID・位置情報は送信しません。学習内容も一切送りません — 問題文・あなたの回答・正誤・レベル・正答率・連続学習日数のいずれも送信しません。</p>
+<p><strong>任意のパーソナルバックエンドについて — 何を数え、何を数えないか。</strong> 下記の BYO 機能を解錠して使う場合、その画面についても同じ匿名カウントを記録します（画面が開かれたこと、科目を切り替えたこと、今日の問題を提出したこと）。<strong>バックエンドとその中身に関するものは一切送信しません</strong> — サーバー URL・トークン・learner 名・どの科目に切り替えたか・問題文・あなたの回答、そして自分のサーバーとやり取りした 1 バイトも送りません。「そのデータに開発者はアクセスできない」という約束は変わりません。記録されるのは「この画面が合計N回開かれた」だけで、識別子は一切付きません。</p>
+<p><strong>個人の識別・追跡はできません:</strong> 本アプリは端末やユーザーに<strong>永続的な識別子を一切割り当てません</strong>（端末ID・セッションIDなし）。保存されるのは「この画面が合計N回開かれた」だけで、それらを結び付ける鍵が存在しないため、学習者を識別すること・同一人物を追跡すること・プロファイルを作ることは構造上不可能です。IPアドレスは記録・保存・利用しません。</p>
+<p><strong>送信先:</strong> 開発者自身のサーバーのみです。Google・Firebase・Meta などの第三者に渡すことはありません。これらのカウントは個人と結び付いていないため、App Tracking Transparency（ATT）でいう「トラッキング」には該当せず、ATT の許可も求めません。</p>
+
+<h2>カメラ</h2>
+<p>本アプリは<strong>カメラへのアクセスを要求しません</strong>。本アプリがカメラにアクセスすることはありません。</p>
+
+<h2>ローカルストレージ</h2>
+<p>本アプリは以下のデータをデバイス上にローカル保存します。パーソナルバックエンド機能を明示的に有効化しない限り、これらのデータがデバイスを離れることはありません。</p>
+<ul>
+  <li>練習問題の回答履歴（解いた問題・正誤・タイムスタンプ）</li>
+  <li>レベル判定結果（判定されたレベル・正答率）</li>
+  <li>テーマ設定（Sky / Ocean / Sunset / Forest / Lavender / Mono）</li>
+  <li>UI 設定（日本語 / 英語は iOS のシステム設定に従います）</li>
+</ul>
+<p>これらのデータは本アプリをアンインストールするだけで完全に削除されます。</p>
+
+<h2>第三者サービス</h2>
+<p>Studyloopline は第三者 SDK・分析サービス・広告ネットワーク・データブローカーと一切連携していません。本アプリは Apple の純正フレームワークのみを利用しています:</p>
+<ul>
+  <li>SwiftUI — UI フレームワーク</li>
+  <li>SwiftData — ローカルデータ永続化</li>
+  <li>AVFoundation — 音声再生（パーソナルバックエンド設定時のみ）</li>
+  <li>StoreKit — バージョン確認（課金はありません）</li>
+</ul>
+<p>Apple 以外の唯一の送信先は、上記の匿名の画面カウントを送る開発者自身のエンドポイント（<code>collect.appline.app</code>）です。第三者ではなく開発者が運用しており、分析 SDK は介在しません。</p>
+
+<h2>子ども</h2>
+<p>本アプリは全年齢対象（Apple Age Rating 4+）です。子どもからの情報収集は一切行いません。</p>
+
+<h2>パーソナルバックエンド（任意）</h2>
+<p><strong>本機能は完全に任意で、初期状態では無効です。</strong>ほとんどのユーザーはこの機能を使う必要はなく、本アプリは本機能を使わなくても完全に動作します（実験室・レベル判定・177 問の練習・電卓はすべてオフラインで利用できます）。</p>
+<p>本アプリには、<strong>あなた自身が運営するパーソナルバックエンド</strong>に接続できる任意の上級機能があります。バックエンドは通常、<strong>あなた自身の</strong>アカウントで動かす Cloudflare Worker + R2 バケットで、オープンソースの学習ループ（Claude Code + NotebookLM など）を実行します。この機能は、自分専用のパーソナル統計チューターを構築したいユーザー向けに存在するものであり、開発者が提供するサービスでは<strong>ありません</strong>。</p>
+<p>本機能は<strong>初期状態では隠されており</strong>、ユーザー自身が明示的に有効化する必要があります。<strong>あなたが明示的に有効化・設定しない限り、本アプリは学習コンテンツに関する外部通信を一切行いません。</strong>有効化・設定した場合に限り、本アプリは <strong>あなたが指定したサーバー URL とのみ</strong>、<strong>あなたが</strong>管理するトークンを使って通信します:</p>
+<ul>
+  <li>本アプリは、あなたのサーバーから今日の問題と音声ミニ講義を取得します。</li>
+  <li>本アプリは、あなたのサーバーに回答を送信します（あなたのバックエンドが採点とパーソナライゼーションを行えるように）。</li>
+  <li>本アプリは、あなたのサーバーから過去の講義・フィードバック・変更履歴を取得します。</li>
+</ul>
+<p>Studyloopline の開発者は、あなたのデバイスとあなたのパーソナルバックエンドの間でやり取りされるデータには<strong>一切アクセスできません</strong>。バックエンドはあなたのもので、データはあなた自身のアカウントに留まります。開発者があなたのサーバー URL やトークンを見ることはなく、本機能のために開発者が共通バックエンドを運営することもありません。</p>
+<p>本機能は、アプリの設定画面からいつでも無効化できます。無効化するとデバイスに保存されたサーバー URL とトークンは消去されます。</p>
+<p>本機能を設定した場合、Apple の AVFoundation を用いてあなた自身のサーバーから音声ミニ講義をストリーミング再生できます（バックグラウンド再生のため playback カテゴリ）。録音は一切行いません。</p>
+
+<h2>本ポリシーの変更</h2>
+<p>本ポリシーを変更する場合は、上部の「Last updated」日付を更新します。重要な変更はアプリのリリースノートでもお知らせします。</p>
+
+<h2>お問い合わせ</h2>
+<p>本プライバシーポリシーについてご質問がある場合は、<a href="mailto:trim.hoist.6b@icloud.com">こちらまで</a>ご連絡ください。</p>
+
+</section>
+
+</body>
+</html>

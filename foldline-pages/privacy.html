@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foldline — Privacy Policy</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #05070D;
+    color: #EAF2FF;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    line-height: 1.7;
+  }
+  h1 { color: #EAF2FF; }
+  h2 { color: rgba(234, 242, 255, 0.85); margin-top: 28px; }
+  p, li { color: rgba(234, 242, 255, 0.78); }
+  a { color: #6cb8ff; }
+  .last { color: rgba(234, 242, 255, 0.40); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>Foldline — Privacy Policy</h1>
+<p class="last">Last updated: 2026-08-01 (v1.0.2 — added Anonymous Usage Statistics section)</p>
+
+<p>This Privacy Policy describes how Foldline ("the App") handles user information.</p>
+
+<h2>Data Collection</h2>
+<p>The App collects no personal data. Local game state — best score, total play time, settings — is stored on your device using iOS UserDefaults and never leaves it. The only thing the developer receives is the anonymous usage counts described under "Anonymous Usage Statistics" below.</p>
+
+<h2>Anonymous Usage Statistics</h2>
+<p>To decide which parts of the game are worth maintaining, the App sends <strong>anonymous usage counts</strong> to a server operated by the developer (<code>collect.appline.app</code>, on Cloudflare). What is counted, all as <strong>totals (aggregates) only</strong>: how many times the app is opened, a game is started, a game-over is reached, a mini-game is triggered, the leaderboard is opened, and an interstitial ad is requested.</p>
+<p><strong>What is sent (only this):</strong> a fixed, predefined event name plus the app version number. Nothing else.</p>
+<p><strong>What is never sent:</strong> no name, email, device identifier (IDFA / IDFV), advertising ID, location, scores, play time, or which mini-game you got.</p>
+<p><strong>No individual can be identified or tracked through these counts:</strong> the App assigns <strong>no persistent identifier</strong> to a device or user for this purpose (no device ID, no session ID). All that is stored is "how many times, in total, something happened" — there is no key to join these counts on, so they cannot become a per-player log or profile. Your IP address is not logged, stored, or used.</p>
+<p><strong>These counts are separate from advertising.</strong> They go only to the developer's own server and are <strong>never combined with anything Google AdMob collects</strong>, nor shared with Google, Firebase, Meta, or any other third party. The ATT prompt described below concerns AdMob only; these anonymous counts do not depend on your answer to it and are not tracking under ATT.</p>
+<p>The App displays advertisements via Google AdMob. Google AdMob may collect device identifiers (e.g., IDFA when granted via App Tracking Transparency, or anonymous identifiers when not granted) to serve and attribute ads. Please see "Advertising (AdMob)" below for details.</p>
+
+<h2>Advertising (AdMob)</h2>
+<p>The App uses <strong>Google AdMob</strong> to display interstitial ads (full-screen ads shown between game sessions, after the game-over screen at a low frequency with cooldown to avoid back-to-back display).</p>
+<p>To respect Apple's App Tracking Transparency (ATT) framework, the App will ask for your permission before tracking activity across other companies' apps and websites. You can <strong>decline</strong> this prompt and the App will function exactly the same — only ads will be less personalized.</p>
+<p>Google AdMob's privacy practices, including details on data collection and EU/US user rights (GDPR/CCPA), are documented at: <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
+<p>The App enforces a <strong>maximum content rating of "Parental Guidance" (PG)</strong> at the SDK level, blocking sexual content, dating, gambling, alcohol/tobacco promotion, and similar categories from appearing as ads. We additionally block sensitive ad categories on the AdMob console.</p>
+
+<h2>Game Center</h2>
+<p>If you choose to sign in to Game Center (a service provided by Apple), the App submits your best score and total play time to Apple's leaderboards. Score submission is handled entirely by Apple's GameKit framework. The developer does not have access to your Game Center identity or scores beyond what is publicly visible on the leaderboard.</p>
+<p>Game Center is governed by Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></p>
+
+<h2>Local Storage</h2>
+<p>The App stores progress data (best score, cumulative play time, BGM preference, onboarding completion flag) locally on your device using iOS UserDefaults. This data never leaves your device.</p>
+
+<h2>Third Parties</h2>
+<p>The App integrates with the following third-party services:</p>
+<ul>
+<li><strong>Google AdMob</strong> — interstitial advertising. PG-rated content only. See "Advertising" section above.</li>
+<li>The developer's own endpoint (<code>collect.appline.app</code>) for the anonymous counts described above — not a third party, and no analytics SDK is involved.</li>
+<li>Apple's own frameworks (SwiftUI, Core Haptics, GameKit, AVFoundation, App Tracking Transparency) — these are not third parties.</li>
+</ul>
+
+<h2>Children</h2>
+<p>The App is suitable for ages 4 and up (Apple Age Rating 4+). It does not knowingly collect data from children under 13 (or the equivalent age in your jurisdiction).</p>
+
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:trim.hoist.6b@icloud.com">trim.hoist.6b@icloud.com</a>.</p>
+
+</body>
+</html>

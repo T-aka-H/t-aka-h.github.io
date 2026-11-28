@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meettap — Support</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #0B0E14; color: #E8EBF0;
+    max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; line-height: 1.8;
+  }
+  h1 { font-size: 28px; letter-spacing: 1px; }
+  h2 { margin-top: 34px; font-size: 18px; color: #3D9DF2; }
+  p, li { color: rgba(232,235,240,0.80); }
+  a { color: #3D9DF2; }
+  strong { color: #E8EBF0; }
+  .sub { color: rgba(232,235,240,0.55); font-size: 15px; margin-top: -6px; }
+  .nav { margin: 16px 0 30px; }
+  .nav a { margin-right: 16px; }
+  .last { color: rgba(232,235,240,0.35); font-size: 12px; margin-top: 48px; }
+  .lang { font-size: 13px; margin-bottom: 8px; }
+  .answer { color: rgba(232,235,240,0.80); margin: 0 0 18px; }
+</style>
+</head>
+<body>
+  <div class="lang"><a href="support.html">日本語</a></div>
+  <h1>Meettap — Support</h1>
+  <div class="nav">
+    <a href="index-en.html">Home</a>
+    <a href="support-en.html">Support</a>
+    <a href="privacy-en.html">Privacy</a>
+  </div>
+  <h2>Contact</h2>
+  <p>For questions or bug reports, please use the form below.</p>
+  <form id="contact-form">
+    <textarea id="cf-message" rows="5" maxlength="2000" required
+      placeholder="Your question or bug report"
+      style="width:100%;box-sizing:border-box;background:#151B28;color:#E8EBF0;border:1px solid rgba(232,235,240,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit"></textarea>
+    <input id="cf-contact" type="text" maxlength="200"
+      placeholder="Where we can reach you (optional)"
+      style="width:100%;box-sizing:border-box;margin-top:10px;background:#151B28;color:#E8EBF0;border:1px solid rgba(232,235,240,0.2);border-radius:10px;padding:12px;font-size:15px;font-family:inherit">
+    <input id="cf-website" type="text" tabindex="-1" autocomplete="off"
+      style="position:absolute;left:-9999px" aria-hidden="true">
+    <button type="submit"
+      style="margin-top:12px;background:#3D9DF2;color:#fff;border:none;border-radius:10px;padding:12px 26px;font-size:15px;font-weight:700;cursor:pointer">Send</button>
+    <p id="cf-result" style="font-size:14px"></p>
+  </form>
+  <p>If the form does not work for you, you can also contact us <a href="mailto:trim.hoist.6b@icloud.com">here</a>.</p>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const result = document.getElementById("cf-result");
+      result.textContent = "Sending…";
+      try {
+        const res = await fetch("https://meettap.appline.app/contact", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            message: document.getElementById("cf-message").value,
+            contact: document.getElementById("cf-contact").value,
+            website: document.getElementById("cf-website").value,
+            lang: "en",
+          }),
+        });
+        if (!res.ok) throw new Error();
+        result.textContent = "Sent. Thank you!";
+        document.getElementById("cf-message").value = "";
+      } catch {
+        result.textContent = "Could not send. Please try again later.";
+      }
+    });
+  </script>
+  <p>If you are using a beta build, you can also use TestFlight's feedback feature.</p>
+
+  <h1 style="font-size:22px;margin-top:44px">Frequently asked questions</h1>
+  <h2>Does the other person need Meettap installed?</h2>
+  <p class="answer">After public release, no. Opening the link launches a lightweight App Clip that goes straight to the meet-up screen. During the beta period, both sides should install the app from TestFlight.</p>
+  <h2>How much of my location can the other person see?</h2>
+  <p class="answer">While you are far apart, only a position rounded to a roughly 100-meter grid is shared, so your exact address is never revealed. Once you are close, precise distance and direction are computed directly between the two devices and are never sent to a server.</p>
+  <h2>Can one side search for the other without being seen?</h2>
+  <p class="answer">No. Location sharing is always mutual. Whenever you can see the other person, they can see you.</p>
+  <h2>How long does a link stay valid?</h2>
+  <p class="answer">It stops working once you meet, once either side ends the session, or three hours after it was created. An expired link reveals nothing.</p>
+  <h2>My link arrived as plain text and could not be tapped</h2>
+  <p class="answer">iOS Messages shows links from <strong>unknown senders</strong> (people not in the recipient's contacts) as plain, untappable text - an anti-spam measure the app cannot override. Apple's own support docs state: if you cannot open a link from an unknown sender, mark that sender as known. Three fixes on the recipient's side: <strong>tap "Mark as Known" in Messages</strong> (Apple's official step), <strong>reply to the thread with anything</strong> (even just "OK"), or add you to their contacts. Failing that, they can long-press the link text, copy it, and paste it into Safari.</p>
+  <h2>Can there be times when I cannot create a new link?</h2>
+  <p class="answer">Rarely, yes. Meettap limits how many links can be created per day, and how many can be created from one network in a short time. While a limit is reached, you will see “We are busy right now” and cannot create a new link. This exists to prevent runaway costs and misuse, and it clears on its own — about an hour if the network limit was reached, or the next day if the overall daily limit was reached. <strong>Meet-ups already in progress are not affected.</strong> Links that are already open keep working, and you can keep searching for each other.</p>
+  <h2>Is any data kept after we meet?</h2>
+  <p class="answer">Nothing is kept on the server &mdash; the session is deleted the moment you meet. On your device, a record is saved only on the occasions you tap "Save this meet-up" on the meet-up screen. Nothing is saved by default, and the location itself is never recorded.</p>
+
+  <h2>What does a saved meet-up contain?</h2>
+  <p class="answer">The date and time, the farthest distance seen while tracking, the distance when you met, and how long it took. The app has no way of knowing who the other person is, so any name is one you type yourself. Records stay on this device only and are never sent to our server or to iCloud. You can delete them individually or all at once from the list.</p>
+
+  <h2>What can I do on Apple Watch?</h2>
+  <p class="answer">Start a meet-up on your iPhone and the distance and arrow appear on your wrist. The Watch mirrors what the iPhone shows, so it does no location gathering or networking of its own and every generation of Apple Watch works. Installing the iPhone app installs the Watch app too. Keep the iPhone app open during a meet-up (it is fine in your pocket).</p>
+  <h2>The arrow or distance is not showing</h2>
+  <p class="answer">Check that location access is allowed (Settings → Meettap → Location → While Using the App), and keep the app open. It does not run in the background.</p>
+  <h2>I do not get precise distance in tenths of a meter</h2>
+  <p class="answer">Precise ranging requires ultra-wideband (UWB) support on both devices. iPhone 11 and later support it, but iPhone SE and iPhone 16e do not. If either device lacks it, you get direction and an approximate distance instead.</p>
+  <h2>The arrow looks blurred</h2>
+  <p class="answer">Direction cannot be determined while the phone is lying flat. Hold your iPhone upright and the arrow will sharpen.</p>
+  <h2>The other person uses Android</h2>
+  <p class="answer">Meettap currently supports meet-ups between iPhones only.</p>
+
+  <p class="last">© 2026 Meettap</p>
+</body>
+</html>
